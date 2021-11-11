@@ -239,7 +239,7 @@ function DrugCard({ posts }) {
                 </h2>
                 <AccordionPanel pb={4}>
                   <Button>
-                    <a href="https://www.medicines.org.uk/emc/" target="_blank">
+                    <a href="https://www.medicines.org.uk/emc/" target="_blank" rel="noreferrer">
                       SPC
                     </a>
                   </Button>
