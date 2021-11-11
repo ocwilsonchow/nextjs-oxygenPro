@@ -117,15 +117,18 @@ function DrugCard({ posts }) {
             <Badge colorScheme="messenger" fontSize="md" mb={3}>
               {post.drugClass}
             </Badge>
-            <Flex>
+            <Flex flexDir="column">
               <Text mr={2} fontWeight="bold">
                 Brands:
               </Text>
               {post.brandNames.map((brandName, index) => {
                 return (
-                  <Text mr={2} key={index}>
-                    {brandName}
-                  </Text>
+                    <List key={index}>
+                    <ListItem my={1} mr={2}>
+                      <ListIcon as={AiFillCheckCircle} color="green.500" />
+                      {brandName}
+                    </ListItem>
+                  </List>
                 );
               })}
             </Flex>
