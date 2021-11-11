@@ -23,6 +23,7 @@ import {
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
 import { MdCheckCircle, ChevronRightIcon } from "@chakra-ui/icons";
+import { AiFillWarning, AiFillCheckCircle } from 'react-icons/ai'
 
 function DrugCard({ posts }) {
   console.log(posts);
@@ -108,12 +109,12 @@ function DrugCard({ posts }) {
               },
             }}
           >
-            <Text fontWeight="bold" fontSize="4xl">
+            <Text fontWeight="bold" fontSize="4xl" mb={3}>
               {post.drugName.map((name, i) => {
                 return <Text key={i}>{name}</Text>;
               })}
             </Text>
-            <Badge colorScheme="messenger" mb={3}>
+            <Badge colorScheme="messenger" fontSize="md" mb={3}>
               {post.drugClass}
             </Badge>
             <Flex>
@@ -172,9 +173,28 @@ function DrugCard({ posts }) {
               </Text>
               {post.warning.map((warning, index) => {
                 return (
-                  <Text my={1} mr={2} key={index}>
-                    {warning}
-                  </Text>
+                    <List key={index}>
+                    <ListItem my={1} mr={2}>
+                      <ListIcon as={AiFillWarning} color="green.500" />
+                      {warning}
+                    </ListItem>
+                  </List>
+                );
+              })}
+            </List>
+            <List flexWrap="wrap">
+              <Text mr={2} fontWeight="bold">
+                Monitoring Requirement:
+              </Text>
+              {post.monitoringRequirement.map((requirement, index) => {
+                return (
+                    <List key={index}>
+                    <ListItem my={1} mr={2}>
+                      <ListIcon as={AiFillCheckCircle } color="green.500" />
+                      {requirement}
+                    </ListItem>
+                  </List>
+                  
                 );
               })}
             </List>
@@ -186,7 +206,7 @@ function DrugCard({ posts }) {
                 return (
                   <List key={index}>
                     <ListItem my={1} mr={2}>
-                      <ListIcon as={MdCheckCircle} color="green.500" />
+                      <ListIcon as={AiFillCheckCircle } color="green.500" />
                       {remark}
                     </ListItem>
                   </List>
