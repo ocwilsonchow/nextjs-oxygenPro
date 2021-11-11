@@ -151,7 +151,7 @@ function DrugCard({ posts }) {
                 </Text>
                 {post.majorSideEffects.map((se, index) => {
                   return (
-                    <Tag my={1} mr={2} key={index}>
+                    <Tag my={1} mr={2} key={index} colorScheme="facebook">
                       {se}
                     </Tag>
                   );
