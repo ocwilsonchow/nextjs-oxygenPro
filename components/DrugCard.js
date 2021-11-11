@@ -228,6 +228,17 @@ function DrugCard({ posts }) {
                 </h2>
                 <AccordionPanel pb={4}>{post.mechanismOfAction}</AccordionPanel>
               </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      <Text fontWeight="bold">Reference</Text>
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>{post.mechanismOfAction}</AccordionPanel>
+              </AccordionItem>
             </Accordion>
           </Box>
         );
