@@ -2,6 +2,7 @@ import {
   Box,
   Image,
   Badge,
+  Button,
   Text,
   Center,
   Code,
@@ -23,7 +24,7 @@ import {
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
 import { MdCheckCircle, ChevronRightIcon } from "@chakra-ui/icons";
-import { AiFillWarning, AiFillCheckCircle } from 'react-icons/ai'
+import { AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
 
 function DrugCard({ posts }) {
   console.log(posts);
@@ -123,7 +124,7 @@ function DrugCard({ posts }) {
               </Text>
               {post.brandNames.map((brandName, index) => {
                 return (
-                    <List key={index}>
+                  <List key={index}>
                     <ListItem my={1} mr={2}>
                       <ListIcon as={AiFillCheckCircle} color="green.500" />
                       {brandName}
@@ -176,7 +177,7 @@ function DrugCard({ posts }) {
               </Text>
               {post.warning.map((warning, index) => {
                 return (
-                    <List key={index}>
+                  <List key={index}>
                     <ListItem my={1} mr={2}>
                       <ListIcon as={AiFillWarning} color="green.500" />
                       {warning}
@@ -191,13 +192,12 @@ function DrugCard({ posts }) {
               </Text>
               {post.monitoringRequirement.map((requirement, index) => {
                 return (
-                    <List key={index}>
+                  <List key={index}>
                     <ListItem my={1} mr={2}>
-                      <ListIcon as={AiFillCheckCircle } color="green.500" />
+                      <ListIcon as={AiFillCheckCircle} color="green.500" />
                       {requirement}
                     </ListItem>
                   </List>
-                  
                 );
               })}
             </List>
@@ -209,7 +209,7 @@ function DrugCard({ posts }) {
                 return (
                   <List key={index}>
                     <ListItem my={1} mr={2}>
-                      <ListIcon as={AiFillCheckCircle } color="green.500" />
+                      <ListIcon as={AiFillCheckCircle} color="green.500" />
                       {remark}
                     </ListItem>
                   </List>
@@ -237,7 +237,13 @@ function DrugCard({ posts }) {
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4}>{post.mechanismOfAction}</AccordionPanel>
+                <AccordionPanel pb={4}>
+                  <Button>
+                    <a href="https://www.medicines.org.uk/emc/" target="_blank">
+                      SPC
+                    </a>
+                  </Button>
+                </AccordionPanel>
               </AccordionItem>
             </Accordion>
           </Box>
