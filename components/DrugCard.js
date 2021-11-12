@@ -26,7 +26,7 @@ import {
   BreadcrumbSeparator,
   useColorModeValue
 } from "@chakra-ui/react";
-import { MdCheckCircle, ChevronRightIcon } from "@chakra-ui/icons";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import { AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
 
 function DrugCard({ posts }) {
