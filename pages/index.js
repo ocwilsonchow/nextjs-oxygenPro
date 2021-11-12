@@ -10,7 +10,7 @@ import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(1600);
 
   useEffect(() => {
     const handleResize = () => {
