@@ -100,6 +100,7 @@ function DrugCard({ posts, width }) {
           </Menu>
         </Flex>
       </Flex>
+      <Divider mb={3}/>
 
       <Tabs variant="soft-rounded" >
         <TabList>
@@ -113,11 +114,11 @@ function DrugCard({ posts, width }) {
           return (
             <GridItem
               key={index}
-              m={3}
+              m={2}
               p={5}
               bg={cardBackground}
               maxH={1000}
-              width={width >= 900 ? "31%" : "100%"}
+              width={width >= 1100 ? "32%" : "100%"}
               borderRadius="lg"
               overflowY="auto"
               css={{

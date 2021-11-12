@@ -77,6 +77,7 @@ export default function Home({ posts, topics }) {
           <GridItem
             colSpan={width >= 1400 ? "17" : "20"}
             rowSpan={4}
+            mx={5}
             bg={gridBackground}
             borderRadius="20px"
             overflow="auto"
