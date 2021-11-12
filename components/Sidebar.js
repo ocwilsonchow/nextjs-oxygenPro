@@ -1,43 +1,10 @@
 import { Flex, Button, Text, Box, IconButton, useColorModeValue } from "@chakra-ui/react";
 
-function Sidebar() {
+function Sidebar( {topics} ) {
   const categories = ["Home", "Minor Ailments", "Drug Treatments", "Diseases"];
-  const TherapeuticTopics = [
-    "Asthma",
-    "COPD",
-    "Diabetes",
-    "Hyperlipidaemia",
-    "Hypertension",
-    "Heart Failure",
-    "Myocardial Infarction",
-    "Venous Thromboembolism",
-    "Stroke",
-    "Atrial Fibrillation",
-    "Depression",
-    "Anxiety",
-    "Bipolar Disorder",
-    "Schizophrenia",
-    "Parkinson's Disease",
-    "Dementia",
-    "Nausea and Labyrinth",
-    "Oncology",
-    "Insomnia",
-    "Migraine",
-    "Epilepsy",
-    "Thyroid Disorders",
-    "Glaucoma",
-    "Gout",
-    "Rheumatoid Arthritis",
-    "Chronic Bowel Disease",
-    "Constipation",
-    "Hormonal Contraception",
-    "EHC",
-    "HRT",
-    "Dysmenorrhoea",
-    "Cystitis",
-    "Menorrhagia",
-  ];
+  
   const bgColor = useColorModeValue("gray.100", "gray.900")
+  console.log(topics)
 
   return (
     <Flex
@@ -66,7 +33,7 @@ function Sidebar() {
           );
         })}
       </Flex>
-      {TherapeuticTopics.map((topic) => {
+      {topics.therapeuticAreas.map((topic, index) => {
         return (
           <>
             <Box
@@ -80,8 +47,9 @@ function Sidebar() {
               my={2}
               transition="all ease 0.3s"
               cursor="pointer"
+              key={index}
             >
-              {topic}
+              {topic.name}
             </Box>
           </>
         );

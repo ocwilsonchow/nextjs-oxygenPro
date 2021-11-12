@@ -8,7 +8,7 @@ import DrugCard from "../components/DrugCard";
 import Gadget from "../components/Gadget";
 import { getPosts, getTopics } from "../services";
 
-export default function Home({ posts }) {
+export default function Home({ posts, topics }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
   const [width, setWidth] = useState();
 
@@ -35,7 +35,7 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <Header />
+        <Header topics={topics}/>
       </nav>
 
       <main>
@@ -68,7 +68,7 @@ export default function Home({ posts }) {
               },
             }}
           >
-            <Sidebar width={width} />
+            <Sidebar width={width} topics={topics} />
           </GridItem>
 
           {/* Main */}

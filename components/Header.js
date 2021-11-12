@@ -42,7 +42,7 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
-function Header({ width }) {
+function Header({ width, topics }) {
   const { toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -123,7 +123,7 @@ function Header({ width }) {
                   },
                 }}
               >
-                <Sidebar />
+                <Sidebar topics={topics} />
               </DrawerBody>
 
               <DrawerFooter>
