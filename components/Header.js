@@ -56,10 +56,10 @@ function Header({ width }) {
         flexWrap="wrap"
       >
         <Flex ml="1%">
-          <Text fontWeight="bold" fontSize="4xl">
+          <Text fontWeight="bold" fontSize="3xl">
             Oxygen
           </Text>
-          <Text fontSize="4xl" fontWeight="bold" colorScheme="facebook">
+          <Text fontSize="3xl" fontWeight="bold" colorScheme="facebook">
             Pro
           </Text>
         </Flex>
@@ -75,12 +75,10 @@ function Header({ width }) {
               <PopoverContent>
                 <PopoverArrow />
                 <PopoverBody>
-                    <InputGroup>
+                  <InputGroup>
                     <Input placeholder="Search the library + Enter" />
                     <InputRightElement mr={5} />
-                    </InputGroup>
-                  
-                  
+                  </InputGroup>
                 </PopoverBody>
               </PopoverContent>
             </Portal>
