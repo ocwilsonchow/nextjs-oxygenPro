@@ -46,7 +46,6 @@ export default function Home({ posts }) {
           className="grid"
           gap={4}
           overflow="hidden"
-          p={5}
         >
           {/* Sidebar */}
           <GridItem
@@ -103,6 +102,7 @@ export default function Home({ posts }) {
             display={width >= 1500 ? "normal" : "none"}
             bg={gridBackground}
             borderRadius="20px"
+            mr={5}
           >
             <Gadget />
           </GridItem>
