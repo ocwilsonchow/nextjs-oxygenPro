@@ -69,7 +69,7 @@ function DrugCard({ posts, width }) {
             p={5}
             bg={cardBackground}
             maxH={1000}
-            maxWidth={width>=1800? "31%" : "45%"}
+            width={width>=1000? "31%" : "100%"}
             borderRadius="lg"
             overflowY="auto"
             css={{
