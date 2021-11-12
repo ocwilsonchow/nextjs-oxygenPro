@@ -45,6 +45,7 @@ function Sidebar() {
       justifyContent="flex-end"
       alignItems="flex-start"
       className="sidebar"
+      
     >
       <Flex mt={5} mb={10} flexDir="column" alignItems="flex-start">
         {categories.map((category, i) => {

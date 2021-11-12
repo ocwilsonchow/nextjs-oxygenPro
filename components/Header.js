@@ -41,6 +41,7 @@ import {
   Kbd,
   InputRightElement,
 } from "@chakra-ui/react";
+import Sidebar from "./Sidebar";
 function Header({ width }) {
   const { toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -107,17 +108,29 @@ function Header({ width }) {
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
-              <DrawerHeader>Create your account</DrawerHeader>
-
-              <DrawerBody>
-                <Input placeholder="Type here..." />
+              <DrawerHeader></DrawerHeader>
+              <DrawerBody
+                css={{
+                  "&::-webkit-scrollbar": {
+                    width: "8px",
+                  },
+                  "&::-webkit-scrollbar-track": {
+                    width: "6px",
+                  },
+                  "&::-webkit-scrollbar-thumb": {
+                    background: "teal",
+                    borderRadius: "24px",
+                  },
+                }}
+              >
+                <Sidebar />
               </DrawerBody>
 
               <DrawerFooter>
                 <Button variant="outline" mr={3} onClick={onClose}>
-                  Cancel
+                  Close
                 </Button>
-                <Button colorScheme="blue">Save</Button>
+                <Button colorScheme="blue">Sign in</Button>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
