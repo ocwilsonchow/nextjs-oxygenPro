@@ -10,7 +10,7 @@ import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(window.innerWidth);
 
 
   useEffect(() => {
@@ -24,6 +24,7 @@ export default function Home({ posts, topics }) {
     };
   }, []);
 
+  
   return (
     <div className={styles.container}>
       <Head>

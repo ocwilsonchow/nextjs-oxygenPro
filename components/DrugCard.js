@@ -74,13 +74,13 @@ function DrugCard({ posts, width }) {
             overflowY="auto"
             css={{
               "&::-webkit-scrollbar": {
-                width: "5px",
+                width: "4px",
               },
               "&::-webkit-scrollbar-track": {
-                width: "6px",
+                width: "3px",
               },
               "&::-webkit-scrollbar-thumb": {
-                background: "teal",
+                background: "#1D4044",
                 borderRadius: "24px",
               },
             }}

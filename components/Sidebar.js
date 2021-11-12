@@ -2,9 +2,7 @@ import { Flex, Button, Text, Box, IconButton, useColorModeValue } from "@chakra-
 
 function Sidebar( {topics} ) {
   const categories = ["Home", "Minor Ailments", "Drug Treatments", "Diseases"];
-  
   const bgColor = useColorModeValue("gray.100", "gray.900")
-  console.log(topics)
 
   return (
     <Flex

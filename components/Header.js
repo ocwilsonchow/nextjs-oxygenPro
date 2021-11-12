@@ -40,12 +40,14 @@ import {
   Portal,
   Kbd,
   InputRightElement,
+  colorMode
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 function Header({ width, topics }) {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  
 
   return (
     <>
@@ -86,7 +88,7 @@ function Header({ width, topics }) {
           </Popover>
 
           <IconButton
-            icon={<SunIcon />}
+            icon={ colorMode === "light" ? <MoonIcon /> : <SunIcon /> }
             onClick={toggleColorMode}
             rounded="100%"
             mx={2}
