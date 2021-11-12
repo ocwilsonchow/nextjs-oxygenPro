@@ -1,4 +1,4 @@
-import { Flex, Button, Text, Box, IconButton } from "@chakra-ui/react";
+import { Flex, Button, Text, Box, IconButton, useColorModeValue } from "@chakra-ui/react";
 
 function Sidebar() {
   const categories = ["Home", "Minor Ailments", "Drug Treatments", "Diseases"];
@@ -19,7 +19,7 @@ function Sidebar() {
     "Schizophrenia",
     "Parkinson's Disease",
     "Dementia",
-    "Nausea and Labyrinth Disorder",
+    "Nausea and Labyrinth",
     "Oncology",
     "Insomnia",
     "Migraine",
@@ -31,32 +31,58 @@ function Sidebar() {
     "Chronic Bowel Disease",
     "Constipation",
     "Hormonal Contraception",
-    "Emergency Hormonal Contraception",
-    "Hormonal Replacement Therapy",
+    "EHC",
+    "HRT",
     "Dysmenorrhoea",
     "Cystitis",
     "Menorrhagia",
   ];
+  const bgColor = useColorModeValue("gray.100", "gray.900")
 
   return (
     <Flex
       flexDir="column"
       justifyContent="flex-end"
       alignItems="flex-start"
-      pl={5}
       className="sidebar"
     >
-      <Flex mt={5} mb={10} flexDir="column" alignItems="flex-start"  >
-      {categories.map((category, i) => {
-        return <Button key={i} bg="none" mb={3} fontWeight="bold">{category}</Button>;
-      })}
+      <Flex mt={5} mb={10} flexDir="column" alignItems="flex-start">
+        {categories.map((category, i) => {
+          return (
+            <Box
+              key={i}
+              fontWeight="bold"
+              _hover={{ bg: "teal.600" }}
+              borderRadius="3EM"
+              _focus={{ boxShadow: "outline" }}
+              px={4}
+              py={1}
+              my={1}
+              transition="all ease 0.3s"
+            >
+              {category}
+            </Box>
+          );
+        })}
       </Flex>
       {TherapeuticTopics.map((topic) => {
         return (
           <>
-            <Button bg="none" mb={2}>
+            <Box
+              bg="none"
+              my={2}
+              fontWeight="bold"
+              _hover={{ bg: "teal.500" }}
+              borderRadius="3EM"
+              _focus={{ boxShadow: "outline" }}
+              px={4}
+              py={1}
+              my={1}
+              transition="all ease 0.3s"
+              cursor="pointer"
+            >
               {topic}
-            </Button>
+            </Box>
           </>
         );
       })}

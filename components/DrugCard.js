@@ -12,6 +12,8 @@ import {
   ListItem,
   ListIcon,
   Tag,
+  Grid,
+  GridItem,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -22,47 +24,20 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbSeparator,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { MdCheckCircle, ChevronRightIcon } from "@chakra-ui/icons";
 import { AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
 
 function DrugCard({ posts }) {
-  console.log(posts);
+  const cardBackground = useColorModeValue("gray.200", "gray.800");
   const medicineCategory = {
     bodySystem: "Endocrinology",
     therapeuticClass: "Diabetes",
   };
 
-  const medicineExample = [
-    {
-      drugClass: "GLP-1 agonist",
-      drugName: "Exenatide",
-      keyword: ["Diabetes", "Diabetic ketoacidosis"],
-      brandName: ["Saxenda®", "Victoza®"],
-      indication: ["type-2 diabetes mellitus"],
-      mainSE: [
-        "GI disturbance",
-        "renal impairment",
-        "skin reaction",
-        "acute pancreatitis",
-        "headache",
-        "drowsiness",
-        "appetite decrease",
-        "taste altered",
-        "vomiting",
-      ],
-      mhraWarning: ["diabetic ketoacidosis"],
-      mechanism:
-        "GLP-1 is released from the distal ileum and colon within minutes of a meal and, while it enhances glucose-dependent insulin production and secretion, it also decreases glucagon secretion, increase glucose uptake and glycogen synthesis in peripheral tissues, delay gastric emptying and increase satiety.",
-      remarks: [
-        "Only for BMI ≥35 + have specific psychological or medical problems associated with obesity, or",
-        "BMI ≤35 but insulin therapy would have significant occupational implications.",
-      ],
-    },
-  ];
-
   return (
-    <Flex flexWrap="wrap">
+    <Flex flexWrap="wrap" p={5}>
       <Flex my={3} mx={5}>
         <Breadcrumb
           spacing="8px"
@@ -85,16 +60,16 @@ function DrugCard({ posts }) {
         </Breadcrumb>
       </Flex>
       <Divider orientation="horizontal" mb={5} />
+      <Flex flexWrap="wrap" justifyContent="center">
       {posts.map((post, index) => {
         return (
-          <Box
+          <GridItem
             key={index}
             m={3}
             p={5}
-            minmax="300px"
-            maxW="400px"
+            bg={cardBackground}
             maxH={1000}
-            borderWidth="1px"
+            width="400px"
             borderRadius="lg"
             overflowY="auto"
             css={{
@@ -110,7 +85,7 @@ function DrugCard({ posts }) {
               },
             }}
           >
-            <Text fontWeight="bold" fontSize="4xl" mb={3}>
+            <Text fontWeight="bold" fontSize="3xl" mb={3}>
               {post.drugName.map((name, i) => {
                 return <Text key={i}>{name}</Text>;
               })}
@@ -239,16 +214,21 @@ function DrugCard({ posts }) {
                 </h2>
                 <AccordionPanel pb={4}>
                   <Button>
-                    <a href="https://www.medicines.org.uk/emc/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://www.medicines.org.uk/emc/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       SPC
                     </a>
                   </Button>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
-          </Box>
+          </GridItem>
         );
       })}
+      </Flex>
     </Flex>
   );
 }

@@ -1,17 +1,29 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Grid, GridItem, useColorModeValue } from "@chakra-ui/react";
-
+import { Grid, GridItem, useColorModeValue, Text } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import DrugCard from "../components/DrugCard";
 import Gadget from "../components/Gadget";
-import { getPosts } from "../services"
+import { getPosts, getTopics } from "../services";
 
-export default function Home( { posts }) {
+export default function Home({ posts }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const scrollColor = useColorModeValue("#fff", "#333");
+  const [width, setWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+    };
+
+    window.addEventListener("resize", handleResize);
+    console.log(width)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+
+  }, [width] )
 
   return (
     <div className={styles.container}>
@@ -31,18 +43,19 @@ export default function Home( { posts }) {
         <Grid
           height="90vh"
           templateRows="repeat(4, auto)"
-          templateColumns="repeat(5, 1fr)"
+          templateColumns="repeat(20, 1fr)"
+          className="grid"
           gap={4}
           overflow="hidden"
           p={5}
         >
           {/* Sidebar */}
           <GridItem
-            rowSpan={4}
-            colSpan={1}
+          display={width>=1500? "normal" : "none"}
             overflow="auto"
+            colSpan={3}
+            rowSpan={4}
             pl={5}
-            minWidth="350px"
             borderRadius="20px"
             css={{
               "&::-webkit-scrollbar": {
@@ -62,11 +75,10 @@ export default function Home( { posts }) {
 
           {/* Main */}
           <GridItem
-            colSpan={3}
+            colSpan={width>=1500? "13" : "20"}
             rowSpan={4}
             bg={gridBackground}
             borderRadius="20px"
-            minW="330px"
             overflow="auto"
             css={{
               "&::-webkit-scrollbar": {
@@ -81,14 +93,16 @@ export default function Home( { posts }) {
               },
             }}
           >
-            <DrugCard posts={posts} />
             
+            <DrugCard posts={posts} />
           </GridItem>
 
           {/* Gadget */}
           <GridItem
-            colSpan={1}
+          minW="300px"
+            colSpan={4}
             rowSpan={4}
+            display={width>=1500? "normal" : "none"}
             bg={gridBackground}
             borderRadius="20px"
           >
@@ -102,9 +116,9 @@ export default function Home( { posts }) {
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
-  
+  const topics = (await getTopics()) || [];
+
   return {
-    props: { posts }
-    
-  }
+    props: { posts, topics },
+  };
 }
