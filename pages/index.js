@@ -69,7 +69,7 @@ export default function Home({ posts }) {
               },
             }}
           >
-            <Sidebar />
+            <Sidebar  width={width}/>
           </GridItem>
 
           {/* Main */}

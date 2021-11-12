@@ -36,8 +36,6 @@ function DrugCard({ posts, width }) {
     therapeuticClass: "Diabetes",
   };
 
-  console.log(posts)
-
   return (
     <Flex flexWrap="wrap" p={5}>
       <Flex my={3} mx={5}>

@@ -1,7 +1,13 @@
 import React, { useRef } from "react";
-import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { MoonIcon, SunIcon, SearchIcon, HamburgerIcon } from "@chakra-ui/icons";
+import {
+  MoonIcon,
+  SunIcon,
+  SearchIcon,
+  HamburgerIcon,
+  EditIcon,
+  ChevronDownIcon,
+} from "@chakra-ui/icons";
 import {
   Center,
   Flex,
@@ -10,8 +16,6 @@ import {
   HStack,
   VStack,
   Button,
-  Grid,
-  GridItem,
   useColorMode,
   IconButton,
   InputGroup,
@@ -25,13 +29,22 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  Portal,
+  Kbd,
+  InputRightElement,
 } from "@chakra-ui/react";
-function Header() {
+function Header({ width }) {
   const { toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-
 
   return (
     <>
@@ -42,29 +55,37 @@ function Header() {
         alignItems="center"
         flexWrap="wrap"
       >
-        <Flex ml={8} >
+        <Flex ml="1%">
           <Text fontWeight="bold" fontSize="4xl">
             Oxygen
           </Text>
-          <Text fontSize="4xl"  fontWeight="bold" colorScheme="facebook" >
+          <Text fontSize="4xl" fontWeight="bold" colorScheme="facebook">
             Pro
           </Text>
         </Flex>
-       
 
-        <InputGroup maxWidth="400px"  >
-          <InputLeftElement
-            pointerEvents="none"
-          />
-          <Input className="search-bar" type="tel" placeholder="Search the library" boxShadow="base" borderRadius="20px"/>
-        </InputGroup>
+        <Flex flexWrap="wrap" float="right">
+          <Popover>
+            <PopoverTrigger>
+              <IconButton icon={<SearchIcon />} mx={2} borderRadius="100%">
+                Trigger
+              </IconButton>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverBody>
+                    <InputGroup>
+                    <Input placeholder="Search the library" />
+                    <InputRightElement mr={5} children={<Kbd>Enter</Kbd>}/>
+                    </InputGroup>
+                  
+                  
+                </PopoverBody>
+              </PopoverContent>
+            </Portal>
+          </Popover>
 
-        <Flex flexWrap="wrap" mr={5} float="right" >
-        <IconButton
-            icon={<SearchIcon />}
-            rounded="100%"
-            mx={2}
-          />
           <IconButton
             icon={<SunIcon />}
             onClick={toggleColorMode}
