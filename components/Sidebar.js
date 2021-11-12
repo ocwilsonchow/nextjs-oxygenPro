@@ -34,15 +34,15 @@ function Sidebar({ topics }) {
             alignItems="center"
               key={i}
               fontWeight="bold"
-              _hover={{ bg: "teal.600" }}
+              _hover={{ bg: "blue.400" }}
               borderRadius="3EM"
               _focus={{ boxShadow: "outline" }}
               px={4}
               py={1}
-              my={1}
+              my={2}
               transition="all ease 0.3s"
             >
-              <Flex mr={2}>{category.icon}</Flex> {category.name}
+              <Flex mr={3} fontSize="xl">{category.icon}</Flex ><Flex >{category.name}</Flex>
             </Flex>
           );
         })}

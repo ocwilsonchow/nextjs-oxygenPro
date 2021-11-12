@@ -51,7 +51,7 @@ export default function Home({ posts, topics }) {
         >
           {/* Sidebar */}
           <GridItem
-            display={width >= 1300 ? "normal" : "none"}
+            display={width >= 1400 ? "normal" : "none"}
             overflow="auto"
             colSpan={3}
             rowSpan={4}
@@ -75,14 +75,14 @@ export default function Home({ posts, topics }) {
 
           {/* Main */}
           <GridItem
-            colSpan={width >= 1300 ? "13" : "20"}
+            colSpan={width >= 1400 ? "17" : "20"}
             rowSpan={4}
             bg={gridBackground}
             borderRadius="20px"
             overflow="auto"
             css={{
               "&::-webkit-scrollbar": {
-                width: "5px",
+                width: "8px",
               },
               "&::-webkit-scrollbar-track": {
                 width: "6px",
@@ -96,7 +96,7 @@ export default function Home({ posts, topics }) {
             <DrugCard posts={posts} width={width} />
           </GridItem>
 
-          {/* Gadget */}
+          {/* Gadget
           <GridItem
             minW="300px"
             colSpan={4}
@@ -107,7 +107,7 @@ export default function Home({ posts, topics }) {
             mr={5}
           >
             <Gadget />
-          </GridItem>
+          </GridItem> */}
         </Grid>
       </main>
     </div>

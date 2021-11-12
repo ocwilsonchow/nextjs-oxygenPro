@@ -36,9 +36,15 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
+import Gadget from "./Gadget";
 
 function DrugCard({ posts, width }) {
   const cardBackground = useColorModeValue("gray.200", "gray.800");
@@ -49,12 +55,17 @@ function DrugCard({ posts, width }) {
 
   return (
     <Flex flexWrap="wrap" p={5}>
-      <Flex my={3} mx={5} width="100%" alignItems="center" justifyContent="space-between">
+      <Flex
+        my={2}
+        mx={1}
+        width="100%"
+        alignItems="center"
+        justifyContent="space-between"
+      >
         <Breadcrumb
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
           fontWeight="bold"
-          
         >
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Home</BreadcrumbLink>
@@ -72,7 +83,12 @@ function DrugCard({ posts, width }) {
         </Breadcrumb>
         <Flex>
           <Menu>
-            <MenuButton as={Button} size="sm" bg={cardBackground} rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              as={Button}
+              size="sm"
+              bg={cardBackground}
+              rightIcon={<ChevronDownIcon />}
+            >
               More
             </MenuButton>
             <MenuList>
@@ -84,8 +100,15 @@ function DrugCard({ posts, width }) {
           </Menu>
         </Flex>
       </Flex>
-      <Divider orientation="horizontal" mb={5} />
-      <Flex flexWrap="wrap" justifyContent="center">
+
+      <Tabs variant="soft-rounded" >
+        <TabList>
+          <Tab>Drug Cards</Tab>
+          <Tab>Treatment Guidelines</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+          <Flex flexWrap="wrap" justifyContent="center">
         {posts.map((post, index) => {
           return (
             <GridItem
@@ -94,7 +117,7 @@ function DrugCard({ posts, width }) {
               p={5}
               bg={cardBackground}
               maxH={1000}
-              width={width >= 1000 ? "31%" : "100%"}
+              width={width >= 900 ? "31%" : "100%"}
               borderRadius="lg"
               overflowY="auto"
               css={{
@@ -256,6 +279,14 @@ function DrugCard({ posts, width }) {
           );
         })}
       </Flex>
+          </TabPanel>
+          <TabPanel>
+           <Gadget />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+      <Divider orientation="horizontal" mb={5} />
+      
     </Flex>
   );
 }

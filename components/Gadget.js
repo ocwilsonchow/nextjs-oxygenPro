@@ -3,9 +3,9 @@ import { Flex, Divider } from '@chakra-ui/react'
 
 function Gadget() {
     return (
-        <Flex flexDir="column" p={5}>
-          <Flex my={3} mx={5} fontWeight="bold" >Treatment Guideline</Flex>  
-          <Divider orientation="horizontal" />
+        <Flex  p={2} width="100%" >
+          <Flex my={3} mx={5} fontWeight="bold" fontSize="3xl">Treatment Guideline</Flex>  
+          {/* <Divider orientation="horizontal" /> */}
           
         </Flex>
     )
