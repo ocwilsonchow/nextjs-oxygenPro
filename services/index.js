@@ -10,6 +10,7 @@ export const getPosts = async () => {
         brandNames
         drugClass
         drugName
+        indication
         formulation
         majorSideEffects
         mechanismOfAction
@@ -18,7 +19,7 @@ export const getPosts = async () => {
         seriousSideEffect
         slug
         therapeuticArea
-        warning
+        caution
         id
         proOnly
       }

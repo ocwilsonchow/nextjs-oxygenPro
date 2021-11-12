@@ -29,12 +29,14 @@ import {
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
 
-function DrugCard({ posts }) {
+function DrugCard({ posts, width }) {
   const cardBackground = useColorModeValue("gray.200", "gray.800");
   const medicineCategory = {
     bodySystem: "Endocrinology",
     therapeuticClass: "Diabetes",
   };
+
+  console.log(posts)
 
   return (
     <Flex flexWrap="wrap" p={5}>
@@ -69,7 +71,7 @@ function DrugCard({ posts }) {
             p={5}
             bg={cardBackground}
             maxH={1000}
-            width="400px"
+            maxWidth={width>=1800? "31%" : "45%"}
             borderRadius="lg"
             overflowY="auto"
             css={{
@@ -112,7 +114,7 @@ function DrugCard({ posts }) {
               <Text mr={2} fontWeight="bold">
                 Indications:
               </Text>
-              {post.therapeuticArea.map((area, index) => {
+              {post.indication.map((area, index) => {
                 return (
                   <Text mr={2} key={index}>
                     {area}
@@ -148,9 +150,9 @@ function DrugCard({ posts }) {
             </List>
             <List flexWrap="wrap">
               <Text mr={2} fontWeight="bold">
-                Warnings:
+                Cautions:
               </Text>
-              {post.warning.map((warning, index) => {
+              {post.caution.map((warning, index) => {
                 return (
                   <List key={index}>
                     <ListItem my={1} mr={2}>

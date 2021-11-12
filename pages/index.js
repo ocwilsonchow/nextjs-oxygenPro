@@ -10,7 +10,7 @@ import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState()
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,7 +18,6 @@ export default function Home({ posts }) {
     };
 
     window.addEventListener("resize", handleResize);
-    console.log(width)
     return () => {
       window.removeEventListener("resize", handleResize)
     }
@@ -94,7 +93,7 @@ export default function Home({ posts }) {
             }}
           >
             
-            <DrugCard posts={posts} />
+            <DrugCard posts={posts} width={width} />
           </GridItem>
 
           {/* Gadget */}
