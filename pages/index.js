@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Grid, GridItem, useColorModeValue, Text } from "@chakra-ui/react";
@@ -10,19 +10,20 @@ import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const [width, setWidth] = useState(window.innerWidth);
-
+  const [width, setWidth] = useState();
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
-
+   
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  
 
   
   return (
