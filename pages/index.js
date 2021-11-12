@@ -10,7 +10,7 @@ import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const [width, setWidth] = useState(1600);
+  const [width, setWidth] = useState();
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,7 +51,7 @@ export default function Home({ posts, topics }) {
         >
           {/* Sidebar */}
           <GridItem
-            display={width >= 1500 ? "normal" : "none"}
+            display={width >= 1300 ? "normal" : "none"}
             overflow="auto"
             colSpan={3}
             rowSpan={4}
@@ -75,7 +75,7 @@ export default function Home({ posts, topics }) {
 
           {/* Main */}
           <GridItem
-            colSpan={width >= 1500 ? "13" : "20"}
+            colSpan={width >= 1300 ? "13" : "20"}
             rowSpan={4}
             bg={gridBackground}
             borderRadius="20px"
@@ -101,7 +101,7 @@ export default function Home({ posts, topics }) {
             minW="300px"
             colSpan={4}
             rowSpan={4}
-            display={width >= 1500 ? "normal" : "none"}
+            display={width >= 1300 ? "normal" : "none"}
             bg={gridBackground}
             borderRadius="20px"
             mr={5}
