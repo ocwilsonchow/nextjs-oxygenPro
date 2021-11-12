@@ -76,7 +76,7 @@ function Sidebar() {
               _focus={{ boxShadow: "outline" }}
               px={4}
               py={1}
-              my={1}
+              my={2}
               transition="all ease 0.3s"
               cursor="pointer"
             >
