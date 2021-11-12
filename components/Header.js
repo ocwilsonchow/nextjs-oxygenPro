@@ -55,7 +55,7 @@ function Header() {
         <InputGroup maxWidth="400px"  >
           <InputLeftElement
             pointerEvents="none"
-            children={<SearchIcon color="gray.300" />}
+            // children={<SearchIcon color="gray.300" />}
           />
           <Input className="search-bar" type="tel" placeholder="Search the library" boxShadow="base" borderRadius="20px"/>
         </InputGroup>

@@ -70,7 +70,6 @@ function Sidebar() {
           <>
             <Box
               bg="none"
-              my={2}
               fontWeight="bold"
               _hover={{ bg: "teal.500" }}
               borderRadius="3EM"
