@@ -1,8 +1,24 @@
-import { Flex, Button, Text, Box, IconButton, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Button,
+  Text,
+  Box,
+  IconButton,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { AiFillHome } from "react-icons/ai"
+import { MdSick } from "react-icons/md"
+import { GiMedicines } from "react-icons/gi"
+import { FaBookMedical } from "react-icons/fa"
 
-function Sidebar( {topics} ) {
-  const categories = ["Home", "Minor Ailments", "Drug Treatments", "Diseases"];
-  const bgColor = useColorModeValue("gray.100", "gray.900")
+function Sidebar({ topics }) {
+  const categories = [
+    { name: "Home", icon: <AiFillHome/>  },
+    { name: "Minor Ailments", icon: <MdSick/>  },
+    { name: "Drug Treatments", icon: <GiMedicines/>  },
+    { name: "Diseases", icon: <FaBookMedical/> },
+  ];
+  const bgColor = useColorModeValue("gray.100", "gray.900");
 
   return (
     <Flex
@@ -10,12 +26,12 @@ function Sidebar( {topics} ) {
       justifyContent="flex-end"
       alignItems="flex-start"
       className="sidebar"
-      
     >
       <Flex mt={5} mb={10} flexDir="column" alignItems="flex-start">
         {categories.map((category, i) => {
           return (
-            <Box
+            <Flex
+            alignItems="center"
               key={i}
               fontWeight="bold"
               _hover={{ bg: "teal.600" }}
@@ -26,8 +42,8 @@ function Sidebar( {topics} ) {
               my={1}
               transition="all ease 0.3s"
             >
-              {category}
-            </Box>
+              <Flex mr={2}>{category.icon}</Flex> {category.name}
+            </Flex>
           );
         })}
       </Flex>
