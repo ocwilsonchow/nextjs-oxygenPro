@@ -10,19 +10,19 @@ import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts }) {
   const gridBackground = useColorModeValue("gray.100", "gray.900");
-  const [width, setWidth] = useState()
+  const [width, setWidth] = useState();
+
 
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth)
+      setWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-
-  }, [width] )
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -50,7 +50,7 @@ export default function Home({ posts }) {
         >
           {/* Sidebar */}
           <GridItem
-          display={width>=1500? "normal" : "none"}
+            display={width >= 1500 ? "normal" : "none"}
             overflow="auto"
             colSpan={3}
             rowSpan={4}
@@ -69,12 +69,12 @@ export default function Home({ posts }) {
               },
             }}
           >
-            <Sidebar  width={width}/>
+            <Sidebar width={width} />
           </GridItem>
 
           {/* Main */}
           <GridItem
-            colSpan={width>=1500? "13" : "20"}
+            colSpan={width >= 1500 ? "13" : "20"}
             rowSpan={4}
             bg={gridBackground}
             borderRadius="20px"
@@ -92,16 +92,15 @@ export default function Home({ posts }) {
               },
             }}
           >
-            
             <DrugCard posts={posts} width={width} />
           </GridItem>
 
           {/* Gadget */}
           <GridItem
-          minW="300px"
+            minW="300px"
             colSpan={4}
             rowSpan={4}
-            display={width>=1500? "normal" : "none"}
+            display={width >= 1500 ? "normal" : "none"}
             bg={gridBackground}
             borderRadius="20px"
           >

@@ -76,8 +76,8 @@ function Header({ width }) {
                 <PopoverArrow />
                 <PopoverBody>
                     <InputGroup>
-                    <Input placeholder="Search the library" />
-                    <InputRightElement mr={5} children={<Kbd>Enter</Kbd>}/>
+                    <Input placeholder="Search the library + Enter" />
+                    <InputRightElement mr={5} />
                     </InputGroup>
                   
                   
