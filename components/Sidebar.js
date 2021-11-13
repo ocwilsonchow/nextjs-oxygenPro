@@ -5,6 +5,7 @@ import {
   Box,
   IconButton,
   useColorModeValue,
+  Divider
 } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
 import { MdSick } from "react-icons/md";
