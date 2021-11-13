@@ -15,17 +15,19 @@ import Gadget from "../components/Gadget";
 import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
-  const [isLargerThanHD, isDisplayingInBrowser] = useMediaQuery([
-    "(min-width: 1920px)",
+  const [isLargeScreen, isDisplayingInBrowser] = useMediaQuery([
+    "(min-width: 1400px)",
     "(display-mode: browser)",
   ]);
   const gridBackground = useColorModeValue("gray.100", "gray.900");
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    if (isLargerThanHD) {
+    if (isLargeScreen) {
       return setWidth(1500)
-    } 
+    } else {
+      setWidth(300)
+    }
     }, [] )
 
   useEffect(() => {

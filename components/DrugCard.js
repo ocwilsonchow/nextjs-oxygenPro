@@ -104,7 +104,7 @@ function DrugCard({ posts, width }) {
 
       <Tabs variant="soft-rounded" >
         <TabList>
-          <Tab>Drug Cards</Tab>
+          <Tab>Drug Treatment</Tab>
           <Tab>Treatment Guidelines</Tab>
         </TabList>
         <TabPanels>
