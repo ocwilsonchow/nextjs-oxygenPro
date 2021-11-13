@@ -119,6 +119,7 @@ function DrugCard({ posts, width }) {
               bg={cardBackground}
               maxH={1000}
               width={width >= 1100 ? "32%" : "100%"}
+              
               borderRadius="lg"
               overflowY="auto"
               css={{

@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Grid, GridItem, useColorModeValue, Text } from "@chakra-ui/react";
+import {
+  Grid,
+  GridItem,
+  useColorModeValue,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import DrugCard from "../components/DrugCard";
@@ -9,23 +15,30 @@ import Gadget from "../components/Gadget";
 import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
+  const [isLargerThanHD, isDisplayingInBrowser] = useMediaQuery([
+    "(min-width: 1920px)",
+    "(display-mode: browser)",
+  ]);
   const gridBackground = useColorModeValue("gray.100", "gray.900");
   const [width, setWidth] = useState();
+
+  useEffect(() => {
+    if (isLargerThanHD) {
+      return setWidth(1500)
+    } 
+    }, [] )
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
-   
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  
-
-  
   return (
     <div className={styles.container}>
       <Head>
@@ -37,7 +50,7 @@ export default function Home({ posts, topics }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <Header topics={topics}/>
+        <Header topics={topics} />
       </nav>
 
       <main>
