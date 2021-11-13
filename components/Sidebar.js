@@ -51,9 +51,9 @@ function Sidebar({ topics }) {
               w="100%"
               transition="all ease 0.5s"
             >
-              <Flex mr={3} fontSize="xl">
+              {/* <Flex mr={3} fontSize="xl">
                 {category.icon}
-              </Flex>
+              </Flex> */}
               <Flex>{category.name}</Flex>
             </Flex>
           );
