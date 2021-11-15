@@ -10,7 +10,6 @@ import {
 export default function HomeSectionOne() {
   return (
     <Flex
-      py={20}
       flexDir="column"
       justifyContent="center"
       alignItems="center"
