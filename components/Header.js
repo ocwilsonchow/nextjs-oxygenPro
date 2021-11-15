@@ -64,7 +64,13 @@ function Header({ width, topics }) {
           <Text fontWeight="bold" fontSize="3xl">
             Oxygen
           </Text>
-          <Text fontSize="3xl" fontWeight="bold" colorScheme="facebook">
+          <Text
+            fontSize="3xl"
+            fontWeight="bold"
+            colorScheme="facebook"
+            bgClip="text"
+            bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
+          >
             Pro
           </Text>
         </Flex>
@@ -133,9 +139,7 @@ function Header({ width, topics }) {
                 <Sidebar topics={topics} />
               </DrawerBody>
 
-              <DrawerFooter>
-             
-              </DrawerFooter>
+              <DrawerFooter></DrawerFooter>
             </DrawerContent>
           </Drawer>
         </Flex>

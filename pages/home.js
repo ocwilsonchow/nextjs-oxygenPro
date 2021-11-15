@@ -19,9 +19,9 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
       </nav>
-      <Center flexDir="column" py={10}>
+      <Center flexDir="column" my={40}>
         <Flex
-          py={20}
+          pb={50}
           flexDir="column"
           justifyContent="center"
           alignItems="center"
@@ -29,10 +29,10 @@ export default function home({ topics }) {
           <Text
             display="inline"
             align="center"
-            fontSize="7xl"
+            fontSize="8xl"
             fontWeight="bold"
             bgClip="text"
-            bgGradient="linear(to-r, gray.300, yellow.400, pink.200)"
+            bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
           >
             Bring Life to Healthcare{""}
           </Text>
@@ -43,7 +43,13 @@ export default function home({ topics }) {
             </Text>
           </Box>
           <Box px={5}>
-            <Text mt={5} fontSize="large" align="center" fontWeight="medium" opacity="0.6">
+            <Text
+              mt={5}
+              fontSize="large"
+              align="center"
+              fontWeight="medium"
+              opacity="0.6"
+            >
               Oxygen Pro is a modern platform for anyone on earth to access high
               quality, evidence-based medical information.
             </Text>
@@ -68,25 +74,20 @@ export default function home({ topics }) {
               color="black"
               colorScheme="facebook"
               mr={5}
-              boxShadow="lg"
             >
               Get Started
             </Button>
           </Link>
           <Link href="/home" passHref={true}>
-            <Button
-              size="lg"
-              fontWeight="bold"
-              colorScheme="twitter"
-              boxShadow="lg"
-            >
+            <Button size="lg" fontWeight="bold" colorScheme="twitter">
               Know More
             </Button>
           </Link>
         </Center>
       </Center>
-      <Divider my={30} />
+      <Center>
       <HomeSectionOne />
+      </Center>
     </div>
   );
 }
