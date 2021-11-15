@@ -69,7 +69,7 @@ function Header({ width, topics }) {
             fontWeight="bold"
             colorScheme="facebook"
             bgClip="text"
-            bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
+            bgGradient="linear(to-r, gray.500, gray.500, gray.600)"
           >
             Pro
           </Text>

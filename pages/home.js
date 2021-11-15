@@ -19,7 +19,7 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
       </nav>
-      <Center flexDir="column" my="20vh">
+      <Center flexDir="column" my={["2vh","5vh","10vh","20vh"]}>
         <Flex
           pb={10}
           flexDir="column"
