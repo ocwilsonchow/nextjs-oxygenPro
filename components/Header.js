@@ -43,6 +43,10 @@ import {
   colorMode
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
+import Link from 'next/link'
+import {FaHome} from 'react-icons/fa'
+
+
 function Header({ width, topics }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -68,6 +72,12 @@ function Header({ width, topics }) {
         </Flex>
 
         <Flex flexWrap="wrap" float="right">
+        <Link href="/home">
+        <IconButton
+            icon={<FaHome/>}
+            rounded="100%"
+            mx={2}
+          /></Link>
           <Popover>
             <PopoverTrigger>
               <IconButton icon={<SearchIcon />} mx={2} borderRadius="100%">

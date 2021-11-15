@@ -45,7 +45,7 @@ function Sidebar({ topics }) {
                 w="100%"
                 transition="all ease 0.5s"
               >
-                <Flex>{category.name}</Flex>
+                <Flex key={i}>{category.name}</Flex>
               </Flex>
             </Link>
           );
