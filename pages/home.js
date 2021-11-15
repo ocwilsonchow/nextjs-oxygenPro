@@ -22,7 +22,7 @@ export default function home({ topics }) {
           </Text>
         </Flex>
         <Center>
-          <Link href="/"><Button>Get Started</Button></Link>
+          <Link href="/" passHref={true}><Button>Get Started</Button></Link>
         </Center>
       </main>
     </div>

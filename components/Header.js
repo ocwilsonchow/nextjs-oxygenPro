@@ -72,7 +72,7 @@ function Header({ width, topics }) {
         </Flex>
 
         <Flex flexWrap="wrap" float="right">
-        <Link href="/home">
+        <Link href="/home"passHref={true}>
         <IconButton
             icon={<FaHome/>}
             rounded="100%"

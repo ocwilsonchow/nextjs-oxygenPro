@@ -31,7 +31,7 @@ function Sidebar({ topics }) {
       >
         {categories.map((category, i) => {
           return (
-            <Link href={category.route}>
+            <Link href={category.route} key={i} passHref={true}>
               <Flex
                 alignItems="center"
                 key={i}
