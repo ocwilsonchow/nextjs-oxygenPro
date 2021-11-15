@@ -27,25 +27,25 @@ export default function home({ topics }) {
           alignItems="center"
         >
           <Text
-            display="inline"
             align="center"
-            fontSize="8xl"
+            fontSize={["4xl", "5xl", "6xl", "8xl"]}
             fontWeight="bold"
             bgClip="text"
             bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
+            flexWrap="wrap"
           >
             Bring Life to Healthcare{""}
           </Text>
 
           <Box>
-            <Text fontSize="4xl" fontWeight="bold" align="center" px={5}>
+            <Text fontSize={["xl", "2xl", "3xl", "4xl"]} fontWeight="bold" align="center" px={5}>
               Welcome to the modern medicine information library for everyone
             </Text>
           </Box>
           <Box px={5}>
             <Text
               mt={5}
-              fontSize="large"
+              fontSize={["xs", "small", "md", "large"]}
               align="center"
               fontWeight="medium"
               opacity="0.6"
@@ -54,7 +54,7 @@ export default function home({ topics }) {
               quality, evidence-based medical information.
             </Text>
             <Text
-              fontSize="large"
+              fontSize={["xs", "small", "md", "large"]}
               colorScheme="gray"
               align="center"
               fontWeight="medium"
