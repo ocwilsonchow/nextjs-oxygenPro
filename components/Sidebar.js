@@ -1,4 +1,4 @@
-import { Flex, Text, Box, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Text, Box, useColorModeValue, Divider } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
 import { MdSick } from "react-icons/md";
 import { GiMedicines } from "react-icons/gi";
@@ -21,9 +21,9 @@ function Sidebar({ topics }) {
       alignItems="flex-start"
       className="sidebar"
     >
+      <Divider my={5} />
       <Flex
-        mt={5}
-        mb={10}
+        
         flexDir="column"
         alignItems="flex-start"
         w="90%"
@@ -51,10 +51,8 @@ function Sidebar({ topics }) {
           );
         })}
       </Flex>
-
-      <Text px={4} py={2} fontWeight="bold" fontSize="xl">
-        Topics
-      </Text>
+      <Divider my={5} />
+      
       {topics.therapeuticAreas.map((topic, index) => {
         return (
           <>
@@ -77,7 +75,9 @@ function Sidebar({ topics }) {
           </>
         );
       })}
+      <Divider my={5} />
     </Flex>
+    
   );
 }
 

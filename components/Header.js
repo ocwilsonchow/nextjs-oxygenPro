@@ -40,18 +40,16 @@ import {
   Portal,
   Kbd,
   InputRightElement,
-  colorMode
+  colorMode,
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
-import Link from 'next/link'
-import {FaHome} from 'react-icons/fa'
-
+import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 
 function Header({ width, topics }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  
 
   return (
     <>
@@ -72,12 +70,9 @@ function Header({ width, topics }) {
         </Flex>
 
         <Flex flexWrap="wrap" float="right">
-        <Link href="/home"passHref={true}>
-        <IconButton
-            icon={<FaHome/>}
-            rounded="100%"
-            mx={2}
-          /></Link>
+          <Link href="/home" passHref={true}>
+            <IconButton icon={<FaHome />} rounded="100%" mx={2} />
+          </Link>
           <Popover>
             <PopoverTrigger>
               <IconButton icon={<SearchIcon />} mx={2} borderRadius="100%">
@@ -98,7 +93,7 @@ function Header({ width, topics }) {
           </Popover>
 
           <IconButton
-            icon={ colorMode === "light" ? <MoonIcon /> : <SunIcon /> }
+            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}
             rounded="100%"
             mx={2}
@@ -139,10 +134,7 @@ function Header({ width, topics }) {
               </DrawerBody>
 
               <DrawerFooter>
-                <Button variant="outline" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-                <Button colorScheme="blue">Sign in</Button>
+             
               </DrawerFooter>
             </DrawerContent>
           </Drawer>

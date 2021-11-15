@@ -1,8 +1,17 @@
 import React from "react";
-import { Text, Flex, Button, Center, Box } from "@chakra-ui/react";
+import {
+  Text,
+  Flex,
+  Button,
+  Center,
+  Box,
+  Divider,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { getPosts, getTopics } from "../services";
 import Header from "../components/Header";
 import Link from "next/link";
+import HomeSectionOne from "../components/HomeSectionOne";
 
 export default function home({ topics }) {
   return (
@@ -10,7 +19,7 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
       </nav>
-      <main>
+      <Center flexDir="column" py={10}>
         <Flex
           py={20}
           flexDir="column"
@@ -27,19 +36,10 @@ export default function home({ topics }) {
               bgClip="text"
               bgGradient="linear(to-r, gray.300, yellow.400, pink.200)"
             >
-              Life
+              Life {""}
             </Text>
+            to Healthcare
           </Text>
-          <Box>
-            <Text
-              fontSize="7xl"
-              fontWeight="bold"
-              align="center"
-              display="inline"
-            >
-              to Healthcare
-            </Text>
-          </Box>
           <Box>
             {" "}
             <Text
@@ -48,26 +48,59 @@ export default function home({ topics }) {
               align="center"
               bgClip="text"
               bgGradient="linear(to-r, gray.300, yellow.400, pink.200)"
+              px={5}
             >
               Welcome to the modern medicine information library for everyone
             </Text>
           </Box>
-          <Box maxW="60%">
-            <Text mt={5} fontSize="large" color="gray.400" align="center">
+          <Box px={5}>
+            <Text
+              mt={5}
+              fontSize="large"
+              color="gray.500"
+              align="center"
+              fontWeight="medium"
+            >
               Oxygen Pro is a modern platform for anyone on earth to access high
-              quality, evidence-based medical information. Whether you are a
-              healthcare professional or not, we have got you covered.
+              quality, evidence-based medical information.
+            </Text>
+            <Text
+              fontSize="large"
+              color="gray.500"
+              align="center"
+              fontWeight="medium"
+            >
+              Whether you are a healthcare professional or not, we have got you
+              covered.
             </Text>
           </Box>
         </Flex>
-        <Center>
+        <Center >
           <Link href="/" passHref={true}>
-            <Button size="lg" colorScheme="yellow">
+            <Button
+              size="lg"
+              bg="yellow.400"
+              fontWeight="bold"
+              color="black"
+              colorScheme="facebook"
+              mr={5}
+            >
               Get Started
             </Button>
           </Link>
+          <Link href="/home" passHref={true}>
+            <Button
+              size="lg"
+              fontWeight="bold"        
+              colorScheme="twitter"
+            >
+              Know More
+            </Button>
+          </Link>
         </Center>
-      </main>
+      </Center>
+      <Divider my={30}/>
+      <HomeSectionOne />
     </div>
   );
 }
