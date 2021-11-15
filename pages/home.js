@@ -56,7 +56,7 @@ export default function home({ topics }) {
             <Text mt={5} fontSize="large" color="gray.400" align="center">
               Oxygen Pro is a modern platform for anyone on earth to access high
               quality, evidence-based medical information. Whether you are a
-              healthcare professional or not, we've got you covered.
+              healthcare professional or not, we have got you covered.
             </Text>
           </Box>
         </Flex>
