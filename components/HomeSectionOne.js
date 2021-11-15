@@ -10,11 +10,11 @@ import {
 export default function HomeSectionOne() {
   return (
     <Flex
-    my={10}
+    my={[5,5,10,10]}
       flexDir="column"
       justifyContent="center"
       alignItems="center"
-      py={20}
+      py={[10,10,20,20]}
       bgGradient="linear(to-l, #7928CA, #FF0080)"
       w="90%"
       borderRadius="1.5rem"
