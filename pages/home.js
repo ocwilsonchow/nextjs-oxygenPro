@@ -19,9 +19,9 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
       </nav>
-      <Center flexDir="column" my={40}>
+      <Center flexDir="column" my="20vh">
         <Flex
-          pb={50}
+          pb={10}
           flexDir="column"
           justifyContent="center"
           alignItems="center"
