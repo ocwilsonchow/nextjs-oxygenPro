@@ -19,10 +19,10 @@ export default function HomeSectionOne() {
       w="90%"
       borderRadius="1.5rem"
     >
-         <Text fontSize="6xl" fontWeight="bold" align="center" color="white">
+         <Text fontSize={["3xl", "4xl", "5xl", "6xl"]} fontWeight="bold" align="center" color="white">
             Clean to Read,
           </Text>
-          <Text fontSize="6xl" fontWeight="bold" align="center" color="white">
+          <Text fontSize={["3xl", "4xl", "5xl", "6xl"]} fontWeight="bold" align="center" color="white">
             Easy to Navigate.
           </Text>
     </Flex>
