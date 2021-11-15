@@ -61,11 +61,11 @@ function Header({ width, topics }) {
         flexWrap="wrap"
       >
         <Flex ml="1%">
-          <Text fontWeight="bold" fontSize="3xl">
+          <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "3xl"]}>
             Oxygen
           </Text>
           <Text
-            fontSize="3xl"
+            fontSize={["2xl", "2xl", "3xl", "3xl"]}
             fontWeight="bold"
             colorScheme="facebook"
             bgClip="text"
@@ -77,11 +77,11 @@ function Header({ width, topics }) {
 
         <Flex flexWrap="wrap" float="right">
           <Link href="/home" passHref={true}>
-            <IconButton icon={<FaHome />} rounded="100%" mx={2} />
+            <IconButton icon={<FaHome />} rounded="100%" mx={[1,1,2,2]} />
           </Link>
           <Popover>
             <PopoverTrigger>
-              <IconButton icon={<SearchIcon />} mx={2} borderRadius="100%">
+              <IconButton icon={<SearchIcon />} mx={[1,1,2,2]} borderRadius="100%">
                 Trigger
               </IconButton>
             </PopoverTrigger>
@@ -102,14 +102,14 @@ function Header({ width, topics }) {
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}
             rounded="100%"
-            mx={2}
+            mx={[1,1,2,2]}
           />
           <IconButton
             ref={btnRef}
             icon={<HamburgerIcon />}
             onClick={onOpen}
             rounded="100%"
-            mx={2}
+            mx={[1,1,2,2]}
           />
 
           <Drawer

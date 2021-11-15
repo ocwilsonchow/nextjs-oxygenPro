@@ -28,7 +28,7 @@ export default function home({ topics }) {
         >
           <Text
             align="center"
-            fontSize={["4xl", "5xl", "6xl", "8xl"]}
+            fontSize={["5xl", "6xl", "7xl", "8xl"]}
             fontWeight="bold"
             bgClip="text"
             bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
