@@ -35,7 +35,7 @@ export default function home({ topics }) {
           </Link>
         </Center>
       </nav>
-      <Center flexDir="column" my={["2vh", "5vh", "10vh", "20vh"]}>
+      <Center flexDir="column" my={["2vh", "5vh", "10vh", "15vh"]}>
         <Flex
           pb={10}
           flexDir="column"
@@ -55,7 +55,7 @@ export default function home({ topics }) {
 
           <Box>
             <Text
-              fontSize={["xl", "2xl", "3xl", "4xl"]}
+              fontSize={["xl", "2xl", "3xl", "5xl"]}
               fontWeight="bold"
               align="center"
               px={5}
@@ -63,26 +63,18 @@ export default function home({ topics }) {
               Welcome to the modern medical library for everyone
             </Text>
           </Box>
-          <Box px={5}>
+          <Center px={5} >
             <Text
               mt={5}
-              fontSize={["xs", "small", "md", "large"]}
+              fontSize={["xs", "small", "md", "xl"]}
               align="center"
               fontWeight="medium"
+              w={["100%", "80%", "60%", "60%"]}
             >
-              Oxygen Pro is a modern platform for anyone on earth to access high
-              quality, evidence-based medical information.
+              Oxygen Pro is a platform for anyone on earth to access high
+              quality, evidence-based health and medical information. Our mission is to empower everyone to make better and informed self-care decisions, and to live a healthier life.
             </Text>
-            <Text
-              fontSize={["xs", "small", "md", "large"]}
-              colorScheme="gray"
-              align="center"
-              fontWeight="medium"
-            >
-              Whether you are a healthcare professional or not, we have got you
-              covered.
-            </Text>
-          </Box>
+          </Center>
         </Flex>
         <Center>
           <Link href="/" passHref={true}>
@@ -97,19 +89,20 @@ export default function home({ topics }) {
               Get Started 💨
             </Button>
           </Link>
-          <Link href="/home" passHref={true}>
+          {/* <Link href="/home" passHref={true}>
             <Button size="lg" fontWeight="bold" colorScheme="twitter">
               Know More 👀
             </Button>
-          </Link>
+          </Link> */}
         </Center>
-      </Center>
-      <Center>
-        <HomeSectionOne />
       </Center>
       <Center>
         <HomeSectionTwo />
       </Center>
+      <Center>
+        <HomeSectionOne />
+      </Center>
+     
     </div>
   );
 }

@@ -5,6 +5,7 @@ import {
   useColorModeValue,
   Text,
   useMediaQuery,
+  Divider
 } from "@chakra-ui/react";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
@@ -98,7 +99,8 @@ export default function Index({ topics }) {
             }}
           >
               
-              <Text p={5} fontWeight="bold" fontSize={["xl", "2xl", "3xl", "4xl"]}>Therapeutics</Text>
+              <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="md"  >Therapeutics</Text>
+                <Divider />
           </GridItem>
         </Grid>
       </main>

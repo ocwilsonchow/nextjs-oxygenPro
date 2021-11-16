@@ -52,7 +52,7 @@ export default function Home({ posts, topics }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <Header topics={topics} />
+        <Header topics={topics}/>
       </nav>
 
       <main>
