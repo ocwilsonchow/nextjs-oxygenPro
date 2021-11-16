@@ -21,7 +21,7 @@ function Sidebar({ topics }) {
       alignItems="flex-start"
       className="sidebar"
     >
-      <Divider my={5} />
+      <Divider my={3} />
       <Flex
         
         flexDir="column"
@@ -39,6 +39,7 @@ function Sidebar({ topics }) {
                 _hover={{ bg: "blue.400" }}
                 borderRadius="2EM"
                 _focus={{ boxShadow: "outline" }}
+                _active={{bg: "gold"}}
                 px={4}
                 py={2}
                 my={2}
@@ -51,7 +52,7 @@ function Sidebar({ topics }) {
           );
         })}
       </Flex>
-      <Divider my={5} />
+      <Divider my={3} />
       
       {topics.therapeuticAreas.map((topic, index) => {
         return (
@@ -62,9 +63,10 @@ function Sidebar({ topics }) {
               _hover={{ bg: "teal.500" }}
               borderRadius="2EM"
               _focus={{ boxShadow: "outline" }}
+              _active={{bg: "gold"}}
               px={4}
               py={2}
-              my={2}
+              my={1}
               width="90%"
               transition="all ease 0.5s"
               cursor="pointer"

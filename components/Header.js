@@ -41,7 +41,18 @@ import {
   Kbd,
   InputRightElement,
   colorMode,
-  useColorModeValue
+  useColorModeValue,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+  Badge
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
@@ -51,21 +62,18 @@ function Header({ width, topics }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const bgColor = useColorModeValue("white", "gray.800")
+  const bgColor = useColorModeValue("white", "gray.800");
 
   return (
     <>
       <Flex
-        py={3}
+        py={4}
         px={5}
         justifyContent="space-between"
         alignItems="center"
         flexWrap="wrap"
-
-       
-        
       >
-        <Flex ml="1%">
+        <Flex ml="1%" alignItems="center">
           <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "3xl"]}>
             Oxygen
           </Text>
@@ -75,6 +83,7 @@ function Header({ width, topics }) {
             colorScheme="facebook"
             bgClip="text"
             bgGradient="linear(to-r, gray.500, gray.500, gray.600)"
+            cursor="pointer"
           >
             Pro
           </Text>
@@ -82,11 +91,15 @@ function Header({ width, topics }) {
 
         <Flex flexWrap="wrap" float="right">
           <Link href="/home" passHref={true}>
-            <IconButton icon={<FaHome />} rounded="100%" mx={[1,1,2,2]} />
+            <IconButton icon={<FaHome />} rounded="100%" mx={[1, 1, 2, 2]} />
           </Link>
           <Popover>
             <PopoverTrigger>
-              <IconButton icon={<SearchIcon />} mx={[1,1,2,2]} borderRadius="100%">
+              <IconButton
+                icon={<SearchIcon />}
+                mx={[1, 1, 2, 2]}
+                borderRadius="100%"
+              >
                 Trigger
               </IconButton>
             </PopoverTrigger>
@@ -102,19 +115,32 @@ function Header({ width, topics }) {
               </PopoverContent>
             </Portal>
           </Popover>
-
           <IconButton
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}
             rounded="100%"
-            mx={[1,1,2,2]}
+            mx={[1, 1, 2, 2]}
           />
+          {/* <Menu>
+            <MenuButton
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              mx={[1, 1, 2, 2]}
+              borderRadius="25px"
+            >Pro</MenuButton>
+            <MenuList>
+              <MenuItem fontWeight="bold">Oxygen <Badge mx={1} bg="gold" color="black">Pro</Badge></MenuItem>
+              <MenuItem fontWeight="bold">Oxygen <Badge mx={1} bg="teal.400" color="black">Health</Badge></MenuItem>
+              <MenuItem fontWeight="bold"> Oxygen <Badge mx={1} bg="blue.400" color="black">Nutrition</Badge></MenuItem>
+              <MenuItem fontWeight="bold">Oxygen <Badge mx={1} bg="green.400" color="black">Dentist</Badge></MenuItem>
+            </MenuList>
+          </Menu> */}
           <IconButton
             ref={btnRef}
             icon={<HamburgerIcon />}
             onClick={onOpen}
             rounded="100%"
-            mx={[1,1,2,2]}
+            mx={[1, 1, 2, 2]}
           />
 
           <Drawer
