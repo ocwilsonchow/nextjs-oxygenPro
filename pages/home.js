@@ -19,6 +19,21 @@ export default function home({ topics }) {
     <div>
       <nav>
         <Header topics={topics} />
+        <Center p={3} bg="black">
+          <Text mr={2} fontWeight="bold">
+            Sponsor Oxygen's development team!
+          </Text>
+          <Link href="/sponsor" passHref={true}>
+            <Button size="sm">
+              <Text
+                bgClip="text"
+                bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
+              >
+                Sponsor
+              </Text>
+            </Button>
+          </Link>
+        </Center>
       </nav>
       <Center flexDir="column" my={["2vh", "5vh", "10vh", "20vh"]}>
         <Flex
@@ -54,7 +69,6 @@ export default function home({ topics }) {
               fontSize={["xs", "small", "md", "large"]}
               align="center"
               fontWeight="medium"
-             
             >
               Oxygen Pro is a modern platform for anyone on earth to access high
               quality, evidence-based medical information.
@@ -64,7 +78,6 @@ export default function home({ topics }) {
               colorScheme="gray"
               align="center"
               fontWeight="medium"
-              
             >
               Whether you are a healthcare professional or not, we have got you
               covered.
