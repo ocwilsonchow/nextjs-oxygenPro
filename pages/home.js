@@ -21,7 +21,7 @@ export default function home({ topics }) {
         <Header topics={topics} />
         <Center p={3} bg="black">
           <Text mr={2} fontWeight="bold">
-            Sponsor Oxygen's development team!
+            Sponsor Oxygen development team!
           </Text>
           <Link href="/sponsor" passHref={true}>
             <Button size="sm">
