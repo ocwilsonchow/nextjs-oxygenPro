@@ -8,10 +8,9 @@ import {
 } from "@chakra-ui/react";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
-import DrugCard from "../../components/DrugCard";
 import { getPosts, getTopics } from "../../services";
 
-export default function index({ posts, topics }) {
+export default function Index({ topics }) {
   const [isLargeScreen, isDisplayingInBrowser] = useMediaQuery([
     "(min-width: 1400px)",
     "(display-mode: browser)",
