@@ -19,7 +19,7 @@ export default function home({ topics }) {
     <div>
       <nav>
         <Header topics={topics} />
-        <Center p={3} bg="black">
+        <Flex p={3} bg="black" justifyContent="center" alignItems="center" flexWrap="wrap">
           <Text mr={2} fontWeight="bold" color="white">
             Sponsor Oxygen development team!
           </Text>
@@ -33,7 +33,7 @@ export default function home({ topics }) {
               </Text>
             </Button>
           </Link>
-        </Center>
+        </Flex>
       </nav>
       <Center flexDir="column" my={["2vh", "5vh", "10vh", "15vh"]}>
         <Flex
@@ -84,7 +84,6 @@ export default function home({ topics }) {
               fontWeight="bold"
               color="black"
               colorScheme="facebook"
-              mr={5}
             >
               Get Started 💨
             </Button>
