@@ -20,11 +20,11 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
         <Center p={3} bg="black">
-          <Text mr={2} fontWeight="bold">
+          <Text mr={2} fontWeight="bold" color="white">
             Sponsor Oxygen development team!
           </Text>
           <Link href="/sponsor" passHref={true}>
-            <Button size="sm">
+            <Button size="sm" bg="gray.700">
               <Text
                 bgClip="text"
                 bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
