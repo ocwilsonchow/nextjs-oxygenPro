@@ -12,6 +12,7 @@ import { getPosts, getTopics } from "../services";
 import Header from "../components/Header";
 import Link from "next/link";
 import HomeSectionOne from "../components/HomeSectionOne";
+import HomeSectionTwo from "../components/HomeSectionTwo";
 
 export default function home({ topics }) {
   return (
@@ -19,7 +20,7 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
       </nav>
-      <Center flexDir="column" my={["2vh","5vh","10vh","20vh"]}>
+      <Center flexDir="column" my={["2vh", "5vh", "10vh", "20vh"]}>
         <Flex
           pb={10}
           flexDir="column"
@@ -38,8 +39,13 @@ export default function home({ topics }) {
           </Text>
 
           <Box>
-            <Text fontSize={["xl", "2xl", "3xl", "4xl"]} fontWeight="bold" align="center" px={5}>
-              Welcome to the modern medicine information library for everyone
+            <Text
+              fontSize={["xl", "2xl", "3xl", "4xl"]}
+              fontWeight="bold"
+              align="center"
+              px={5}
+            >
+              Welcome to the modern medical library for everyone
             </Text>
           </Box>
           <Box px={5}>
@@ -48,7 +54,7 @@ export default function home({ topics }) {
               fontSize={["xs", "small", "md", "large"]}
               align="center"
               fontWeight="medium"
-              opacity="0.6"
+             
             >
               Oxygen Pro is a modern platform for anyone on earth to access high
               quality, evidence-based medical information.
@@ -58,7 +64,7 @@ export default function home({ topics }) {
               colorScheme="gray"
               align="center"
               fontWeight="medium"
-              opacity="0.6"
+              
             >
               Whether you are a healthcare professional or not, we have got you
               covered.
@@ -75,18 +81,21 @@ export default function home({ topics }) {
               colorScheme="facebook"
               mr={5}
             >
-              Get Started
+              Get Started 💨
             </Button>
           </Link>
           <Link href="/home" passHref={true}>
             <Button size="lg" fontWeight="bold" colorScheme="twitter">
-              Know More
+              Know More 👀
             </Button>
           </Link>
         </Center>
       </Center>
       <Center>
-      <HomeSectionOne />
+        <HomeSectionOne />
+      </Center>
+      <Center>
+        <HomeSectionTwo />
       </Center>
     </div>
   );

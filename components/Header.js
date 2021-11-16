@@ -41,6 +41,7 @@ import {
   Kbd,
   InputRightElement,
   colorMode,
+  useColorModeValue
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
@@ -50,15 +51,19 @@ function Header({ width, topics }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const bgColor = useColorModeValue("white", "gray.800")
 
   return (
     <>
       <Flex
-        py={5}
+        py={3}
         px={5}
         justifyContent="space-between"
         alignItems="center"
         flexWrap="wrap"
+
+       
+        
       >
         <Flex ml="1%">
           <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "3xl"]}>
