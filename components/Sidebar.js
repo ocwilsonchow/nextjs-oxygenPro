@@ -57,7 +57,8 @@ function Sidebar({ topics }) {
       {topics.therapeuticAreas.map((topic, index) => {
         return (
           <>
-            <Box
+           <Link href={`/therapeutics/${topic.slug}`} key={index}>
+           <Box
               bg="none"
               fontWeight="bold"
               _hover={{ bg: "teal.500" }}
@@ -73,7 +74,7 @@ function Sidebar({ topics }) {
               key={index}
             >
               {topic.name}
-            </Box>
+            </Box></Link>
           </>
         );
       })}
