@@ -15,7 +15,7 @@ export default function HomeSectionOne() {
       alignItems="center"
       py={[10, 10, 20, 20]}
       px={[10, 10, 20, 20]}
-      bgGradient="linear(to-l, #7928CA, #FF0080)"
+      bg="#25254f"
       w={["90%", "90%", "90%", "60%"]}
       borderRadius="1.5rem"
       flexWrap="wrap"
@@ -26,8 +26,10 @@ export default function HomeSectionOne() {
           fontWeight="bold"
           m={2}
           color="white"
+          bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
+          bgClip="text"
         >
-          Tidy to Read, Easy to Navigate.
+          You, empowered to live better, healthier.
         </Text>
         <Text
           fontSize={["xs", "sm", "md", "xl"]}
@@ -35,10 +37,13 @@ export default function HomeSectionOne() {
           m={2}
           color="white"
         >
-          Oxygen Pro is designed for pharmacy students, trainee pharmacists and
-          pharmacists to look up medication and treatment information in a
-          convenient way.
+          You can easily get the information about medications and diseases on
+          Oxygen. Our content is carefully designed and edited to ensure you get all the
+          essential information you need. Of course, for those who love to go in depth, we have also got you covered.
         </Text>
+        <Button mt={5} color="white" variant="outline" borderRadius="2rem">
+          See what you can access on Oxygen
+        </Button>
       </Flex>
       <Flex w="50%"></Flex>
     </Flex>
