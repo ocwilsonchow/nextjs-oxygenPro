@@ -41,6 +41,8 @@ export default function Home({ posts, topics }) {
     };
   }, []);
 
+  console.log(topics)
+
   return (
     <div className={styles.container}>
       <Head>

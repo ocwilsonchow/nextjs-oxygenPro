@@ -113,6 +113,8 @@ export async function getStaticProps() {
   const topics = (await getTopics()) || [];
 
   return {
+    
     props: { posts, topics },
+
   };
 }
