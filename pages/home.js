@@ -82,21 +82,7 @@ export default function home({ topics }) {
           </Link> */}
         </Center>
       </Center>
-      <Flex p={3} mb={20} bg="black" justifyContent="center" alignItems="center" flexWrap="wrap">
-          <Text mr={2} fontWeight="bold" color="white">
-            Sponsor Oxygen development team!
-          </Text>
-          <Link href="/sponsor" passHref={true}>
-            <Button size="sm" bg="gray.700">
-              <Text
-                bgClip="text"
-                bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
-              >
-                Sponsor
-              </Text>
-            </Button>
-          </Link>
-        </Flex>
+      
       <Center>
         <HomeSectionTwo />
       </Center>
