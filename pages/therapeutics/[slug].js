@@ -17,7 +17,7 @@ function dynamic(params, topics) {
         <Center my={10} p={5} bg="black" fontWeight="bold" color="white">
           Nice! The dynamic routing is working! 👊🏻
         </Center>
-        <Link href="/">
+        <Link href="/" passHref={true}>
           <Button my={10}>Go back to home page </Button>
         </Link>
       </Flex>

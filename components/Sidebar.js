@@ -35,7 +35,7 @@ function Sidebar({ topics, posts }) {
     >
       <Center>
         <Link href="/sponsor" passHref={true}>
-          <Button size="sm" bg="gray.700" bg={bgColor} >
+          <Button size="sm"  bg={bgColor} >
             <Text
               bgClip="text"
               bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
