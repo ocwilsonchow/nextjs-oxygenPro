@@ -10,10 +10,6 @@ import Layout from "../../components/Layout"
 
 function dynamic(params, topics) {
   console.log(params);
-  console.log(topics)
-  console.log(params.specificTopicContent)
- 
-
   return (
     <Layout topics={params.topics}>
       <Flex justifyContent="center" alignItems="center" flexDir="column" p={10}>

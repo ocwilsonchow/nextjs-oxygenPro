@@ -36,14 +36,14 @@ function TherapeuticCategory() {
 
   return (
     <Flex p={2} flexWrap="wrap">
-      {categories.map((card) => {
+      {categories.map((card, i) => {
         return (
-          <Flex flexDir="column" p={5} m={2} bg={cardBackgroundColor} w="300px" borderRadius="15px">
+          <Flex key={i} flexDir="column" p={5} m={2} bg={cardBackgroundColor} w="300px" borderRadius="15px">
             <Text fontWeight="bold" fontSize="3xl" >
               {card.category}
             </Text>
             <List my={2}>
-              {card.topic.map((title) => {
+              {card.topic.map((title, i) => {
                 return (
                   <ListItem
                     fontWeight="bold"
@@ -52,6 +52,7 @@ function TherapeuticCategory() {
                     transition="all ease 0.5s"
                     px={2}
                     py={1}
+                    key={i}
                   >
                     {title}
                   </ListItem>

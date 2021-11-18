@@ -58,7 +58,7 @@ function Sidebar({ topics, posts }) {
       {topics.therapeuticAreas.map((topic, index) => {
         return (
           <>
-           <Link href={`/therapeutics/${topic.slug}`} key={index}>
+           <Link href={`/therapeutics/${topic.slug}`} key={index} passHref={true}>
            <Box
               bg="none"
               fontWeight="bold"
