@@ -52,7 +52,9 @@ function TherapeuticCategory() {
                     transition="all ease 0.5s"
                     px={2}
                     py={1}
+                    my={1}
                     key={i}
+                    borderRadius="lg"
                   >
                     {title}
                   </ListItem>
