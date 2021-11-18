@@ -9,9 +9,12 @@ import {
   Text,
   useMediaQuery,
   Divider,
+  Center,
+  Flex,
 } from "@chakra-ui/react";
+import Footer from "../components/Footer";
 
-const Layout = ({ topics, children}) => {
+const Layout = ({ topics, children }) => {
   const [isLargeScreen, isDisplayingInBrowser] = useMediaQuery([
     "(min-width: 1400px)",
     "(display-mode: browser)",
@@ -38,7 +41,7 @@ const Layout = ({ topics, children}) => {
     };
   }, []);
 
-  console.log(topics)
+  console.log(topics);
 
   return (
     <>

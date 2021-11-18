@@ -62,7 +62,7 @@ function Header({ width, topics }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const bgColor = useColorModeValue("white", "gray.800");
-  console.log(topics)
+
 
   return (
     <>

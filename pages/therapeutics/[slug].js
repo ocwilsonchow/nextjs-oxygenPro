@@ -11,6 +11,7 @@ import Layout from "../../components/Layout"
 function dynamic(params, topics) {
   console.log(params);
   console.log(topics)
+  console.log(params.specificTopicContent)
  
 
   return (

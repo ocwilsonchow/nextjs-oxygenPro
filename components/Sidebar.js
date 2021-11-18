@@ -13,7 +13,7 @@ function Sidebar({ topics, posts }) {
     { name: "Diseases", icon: <FaBookMedical />, route: "/" },
   ];
   const bgColor = useColorModeValue("gray.100", "gray.900");
-  console.log(topics)
+
 
   return (
     <Flex

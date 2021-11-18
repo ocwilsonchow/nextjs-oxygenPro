@@ -50,10 +50,10 @@ export const getTopics = async () => {
 };
 
 
-export const getSpecificTopics = async () => {
+export const getSpecificTopics = async (slug) => {
   const query = gql`
-    query MyQuery {
-      therapeuticArea(where: {slug: "diabetes"}) {
+    query MyQuery ($slug: String){
+      therapeuticArea(where: {slug: $slug}) {
         briefSummary
         clinicalFeatures
         name
@@ -64,5 +64,10 @@ export const getSpecificTopics = async () => {
         slug
       }
     }
-  `
+  `;
+
+
+  const result = await request(graphqlAPI, query);
+  console.log(result)
+  return result;
 }
