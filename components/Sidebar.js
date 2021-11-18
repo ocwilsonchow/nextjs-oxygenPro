@@ -9,7 +9,7 @@ function Sidebar({ topics, posts }) {
   const categories = [
     { name: "Home", icon: <AiFillHome />, route: "/home" },
     { name: "Minor Ailments", icon: <MdSick />, route: "/" },
-    { name: "Therapeutics", icon: <GiMedicines />, route: "/therapeutics" },
+    { name: "Therapeutic Topics", icon: <GiMedicines />, route: "/therapeutics" },
     { name: "Diseases", icon: <FaBookMedical />, route: "/" },
   ];
   const bgColor = useColorModeValue("gray.100", "gray.900");

@@ -54,8 +54,6 @@ export const getSpecificTopics = async (slug) => {
   const query = gql`
     query MyQuery ($slug: String){
       therapeuticArea(where: {slug: $slug}) {
-        briefSummary
-        clinicalFeatures
         name
         id
         nonPharmacologicalTreatment

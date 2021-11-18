@@ -11,6 +11,7 @@ import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import { getPosts, getTopics } from "../../services";
 import Layout from "../../components/Layout"
+import TherapeuticCategory from "../../components/TherapeuticCategory";
 
 export default function Index({ topics }) {
   const [isLargeScreen, isDisplayingInBrowser] = useMediaQuery([
@@ -100,8 +101,9 @@ export default function Index({ topics }) {
             }}
           >
               
-              <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="md"  >Therapeutics</Text>
+              <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="xl" >Therapeutics Categories</Text>
                 <Divider />
+                <TherapeuticCategory />
           </GridItem>
         </Grid>
       </main>
