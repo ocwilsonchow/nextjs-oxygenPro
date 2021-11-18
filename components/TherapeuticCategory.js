@@ -69,26 +69,28 @@ function TherapeuticCategory() {
             p={5}
             m={2}
             bg={cardBackgroundColor}
-            w={["100%", "100%", "45%", "23.5%"]}
+            w={["100%", "100%", "31%", "23.5%"]}
             borderRadius="15px"
           >
             <Text
               fontWeight="bold"
               px={2}
-              fontSize={["lg", "lg", "3xl", "3xl"]}
-              color="green.500"
+              fontSize={["lg", "lg", "xl", "2xl"]}
+              color="green.600"
             >
               {card.category}
             </Text>
             <List my={2}>
               {card.topic.map((title, i) => {
                 return (
-                  <div>
+                  <>
                     <ListItem
                       fontSize={["xs", "sm", "lg", "lg"]}
                       fontWeight="bold"
                       cursor="pointer"
                       _hover={{ bg: "blue.600" }}
+                      _focus={{ boxShadow: "outline" }}
+                      _active={{ bg: "teal.500" }}
                       transition="all ease 0.5s"
                       py={1}
                       px={2}
@@ -99,7 +101,7 @@ function TherapeuticCategory() {
                       {title}
                     </ListItem>
                     <Divider my={1} borderColor={borderColor}/>
-                  </div>
+                  </>
                 );
               })}
             </List>
