@@ -5,7 +5,7 @@ import {
   useColorModeValue,
   Divider,
   Button,
-  Center
+  Center,
 } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
 import { MdSick } from "react-icons/md";
@@ -33,16 +33,13 @@ function Sidebar({ topics, posts }) {
       alignItems="flex-start"
       className="sidebar"
     >
-      <Center>
+      <Flex justifyContent="center" w="100%">
         <Link href="/sponsor" passHref={true}>
-          <Button size="sm"  bg={bgColor} >
-            <Text fontWeight="bold" color="white"
-            >
-              Sponsor Our Development 🙌🏻
-            </Text>
+          <Button bg={bgColor} color="white">
+            Sponsor ☕️
           </Button>
         </Link>
-      </Center>
+      </Flex>
       <Divider my={3} />
       <Flex flexDir="column" alignItems="flex-start" w="90%" cursor="pointer">
         {categories.map((category, i) => {
