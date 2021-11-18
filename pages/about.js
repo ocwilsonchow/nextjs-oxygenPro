@@ -1,15 +1,20 @@
 import React from 'react'
 import { getPosts, getTopics } from "../services";
 import Header from '../components/Header'
-import {Flex, Text, Center} from "@chakra-ui/react"
+import {Flex, Text, Center, Code} from "@chakra-ui/react"
 
 export default function about({topics}) {
     return (
         <>
             <Header topics={topics} />
-            <Flex justifyContent="center">
+            <Flex justifyContent="center" flexDir="column">
                 <Center my={10} fontWeight="bold" fontSize="5xl">
                     About Oxygen
+                </Center>
+                <Center>
+                <Code fontSize="xl">
+                    Writing🙇🏻
+                </Code>
                 </Center>
             </Flex>
         </>
