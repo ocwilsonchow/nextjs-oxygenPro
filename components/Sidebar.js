@@ -8,7 +8,7 @@ import Link from "next/link";
 function Sidebar({ topics, posts }) {
   const categories = [
     { name: "Home", icon: <AiFillHome />, route: "/home" },
-    { name: "Minor Ailments", icon: <MdSick />, route: "/" },
+    { name: "Minor Ailments", icon: <MdSick />, route: "/minorAilments" },
     { name: "Therapeutic Topics", icon: <GiMedicines />, route: "/therapeutics" },
     { name: "Diseases", icon: <FaBookMedical />, route: "/" },
   ];

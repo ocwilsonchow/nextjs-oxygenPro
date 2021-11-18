@@ -36,7 +36,7 @@ export default function home({ topics }) {
             bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
             flexWrap="wrap"
           >
-            Bring Life to Healthcare{""}
+            Revitalize Healthcare{""}
           </Text>
 
           <Box>
