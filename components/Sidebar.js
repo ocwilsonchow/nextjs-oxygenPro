@@ -24,7 +24,7 @@ function Sidebar({ topics, posts }) {
     },
     { name: "Diseases", icon: <FaBookMedical />, route: "/" },
   ];
-  const bgColor = useColorModeValue("gray.800", "gray.700");
+  const bgColor = useColorModeValue("gray.700", "gray.900");
 
   return (
     <Flex
@@ -33,13 +33,11 @@ function Sidebar({ topics, posts }) {
       alignItems="flex-start"
       className="sidebar"
     >
-      <Flex justifyContent="center" w="100%">
-        <Link href="/sponsor" passHref={true}>
-          <Button bg={bgColor} color="white">
-            Sponsor ☕️
-          </Button>
-        </Link>
-      </Flex>
+       <Link href="/sponsor" passHref={true}>
+            <Button ml={2} bg={bgColor} color="white">
+              Sponsor ☕️
+            </Button>
+          </Link>
       <Divider my={3} />
       <Flex flexDir="column" alignItems="flex-start" w="90%" cursor="pointer">
         {categories.map((category, i) => {
@@ -64,6 +62,7 @@ function Sidebar({ topics, posts }) {
             </Link>
           );
         })}
+       
       </Flex>
       <Divider my={3} />
 
