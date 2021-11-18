@@ -17,7 +17,7 @@ function dynamic(params, topics) {
     <Layout topics={params.topics}>
       <Flex justifyContent="center" alignItems="center" flexDir="column" p={10}>
         <h1>Welcome to the {params.specificTopic} page!</h1>
-        <Center my={10} p={5} bg="black" fontWeight="bold">
+        <Center my={10} p={5} bg="black" fontWeight="bold" color="white">
           Nice! The dynamic routing is working! 👊🏻
         </Center>
         <Link href="/">
