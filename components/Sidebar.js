@@ -24,7 +24,7 @@ function Sidebar({ topics, posts }) {
     },
     { name: "Diseases", icon: <FaBookMedical />, route: "/" },
   ];
-  const bgColor = useColorModeValue("gray.600", "gray.900");
+  const bgColor = useColorModeValue("gray.800", "gray.900");
 
   return (
     <Flex
@@ -35,12 +35,12 @@ function Sidebar({ topics, posts }) {
     >
       <Center>
         <Link href="/sponsor" passHref={true}>
-          <Button size="sm"  bg={bgColor} >
+          <Button size="sm"  bg={bgColor} colorScheme="facebook">
             <Text
               bgClip="text"
               bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
             >
-              Sponsor Our Development 🤙🏻
+              Sponsor Our Development 🙌🏻
             </Text>
           </Button>
         </Link>
