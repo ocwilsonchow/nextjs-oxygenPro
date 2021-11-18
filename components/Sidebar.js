@@ -5,7 +5,7 @@ import { GiMedicines } from "react-icons/gi";
 import { FaBookMedical } from "react-icons/fa";
 import Link from "next/link";
 
-function Sidebar({ topics }) {
+function Sidebar({ topics, posts }) {
   const categories = [
     { name: "Home", icon: <AiFillHome />, route: "/home" },
     { name: "Minor Ailments", icon: <MdSick />, route: "/" },
@@ -13,6 +13,7 @@ function Sidebar({ topics }) {
     { name: "Diseases", icon: <FaBookMedical />, route: "/" },
   ];
   const bgColor = useColorModeValue("gray.100", "gray.900");
+  console.log(topics)
 
   return (
     <Flex

@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import styles from "../styles/Home.module.css";
 import {
   MoonIcon,
   SunIcon,
@@ -63,6 +62,7 @@ function Header({ width, topics }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const bgColor = useColorModeValue("white", "gray.800");
+  console.log(topics)
 
   return (
     <>
@@ -121,20 +121,6 @@ function Header({ width, topics }) {
             rounded="100%"
             mx={[1, 1, 2, 2]}
           />
-          {/* <Menu>
-            <MenuButton
-              as={Button}
-              rightIcon={<ChevronDownIcon />}
-              mx={[1, 1, 2, 2]}
-              borderRadius="25px"
-            >Pro</MenuButton>
-            <MenuList>
-              <MenuItem fontWeight="bold">Oxygen <Badge mx={1} bg="gold" color="black">Pro</Badge></MenuItem>
-              <MenuItem fontWeight="bold">Oxygen <Badge mx={1} bg="teal.400" color="black">Health</Badge></MenuItem>
-              <MenuItem fontWeight="bold"> Oxygen <Badge mx={1} bg="blue.400" color="black">Nutrition</Badge></MenuItem>
-              <MenuItem fontWeight="bold">Oxygen <Badge mx={1} bg="green.400" color="black">Dentist</Badge></MenuItem>
-            </MenuList>
-          </Menu> */}
           <IconButton
             ref={btnRef}
             icon={<HamburgerIcon />}
@@ -180,3 +166,4 @@ function Header({ width, topics }) {
 }
 
 export default Header;
+

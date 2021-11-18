@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+
 import {
   Grid,
   GridItem,
@@ -11,7 +11,6 @@ import {
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import DrugCard from "../components/DrugCard";
-import Gadget from "../components/Gadget";
 import { getPosts, getTopics } from "../services";
 
 export default function Home({ posts, topics }) {
@@ -44,7 +43,7 @@ export default function Home({ posts, topics }) {
   console.log(topics)
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Oxygen Pro</title>
         <meta
@@ -115,7 +114,7 @@ export default function Home({ posts, topics }) {
           </GridItem>
         </Grid>
       </main>
-    </div>
+    </>
   );
 }
 

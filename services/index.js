@@ -48,3 +48,21 @@ export const getTopics = async () => {
   console.log(result)
   return result;
 };
+
+
+export const getSpecificTopics = async () => {
+  const query = gql`
+    query MyQuery {
+      therapeuticArea(where: {slug: "diabetes"}) {
+        briefSummary
+        clinicalFeatures
+        name
+        id
+        nonPharmacologicalTreatment
+        pharmacologicalTreatmentSteps
+        proOnly
+        slug
+      }
+    }
+  `
+}

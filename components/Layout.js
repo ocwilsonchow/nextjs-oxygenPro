@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import { getPosts, getTopics } from "../services";
 import {
   Grid,
   GridItem,
   useColorModeValue,
   Text,
   useMediaQuery,
-  Divider
+  Divider,
 } from "@chakra-ui/react";
-import Sidebar from "../../components/Sidebar";
-import Header from "../../components/Header";
-import { getPosts, getTopics } from "../../services";
-import Layout from "../../components/Layout"
 
-export default function Index({ topics }) {
+const Layout = ({ topics, children}) => {
   const [isLargeScreen, isDisplayingInBrowser] = useMediaQuery([
     "(min-width: 1400px)",
     "(display-mode: browser)",
@@ -39,12 +38,11 @@ export default function Index({ topics }) {
     };
   }, []);
 
-  return (
-    <div>
-      <nav>
-        <Header topics={topics} />
-      </nav>
+  console.log(topics)
 
+  return (
+    <>
+      <Header topics={topics} />
       <main>
         <Grid
           height="90vh"
@@ -99,23 +97,25 @@ export default function Index({ topics }) {
               },
             }}
           >
-              
-              <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="md"  >Therapeutics</Text>
-                <Divider />
+            <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="md">
+              Therapeutics
+            </Text>
+            {children}
+            <Divider />
           </GridItem>
         </Grid>
       </main>
-    </div>
+    </>
   );
-}
+};
+
+export default Layout;
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
   const topics = (await getTopics()) || [];
 
   return {
-    
     props: { posts, topics },
-
   };
 }
