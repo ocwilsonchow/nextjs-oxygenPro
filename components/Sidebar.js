@@ -15,14 +15,14 @@ import Link from "next/link";
 
 function Sidebar({ topics, posts }) {
   const categories = [
-    { name: "Home", icon: <AiFillHome />, route: "/home" },
-    { name: "Minor Ailments", icon: <MdSick />, route: "/minorAilments" },
+    { name: "Home", route: "/home" },
+    { name: "About Oxygen", route: "/about" },
+    { name: "Minor Ailments", route: "/minorAilments" },
     {
       name: "Therapeutic Topics",
-      icon: <GiMedicines />,
       route: "/therapeutics",
     },
-    { name: "Diseases", icon: <FaBookMedical />, route: "/" },
+    { name: "Diseases", route: "/" },
   ];
   const bgColor = useColorModeValue("gray.700", "gray.900");
 
@@ -33,11 +33,11 @@ function Sidebar({ topics, posts }) {
       alignItems="flex-start"
       className="sidebar"
     >
-       <Link href="/sponsor" passHref={true}>
-            <Button ml={2} bg={bgColor} color="white">
-              Sponsor ☕️
-            </Button>
-          </Link>
+      <Link href="/sponsor" passHref={true}>
+        <Button ml={2} bg={bgColor} color="white">
+          Sponsor ☕️
+        </Button>
+      </Link>
       <Divider my={3} />
       <Flex flexDir="column" alignItems="flex-start" w="90%" cursor="pointer">
         {categories.map((category, i) => {
@@ -62,7 +62,6 @@ function Sidebar({ topics, posts }) {
             </Link>
           );
         })}
-       
       </Flex>
       <Divider my={3} />
 
