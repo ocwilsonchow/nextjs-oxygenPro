@@ -101,7 +101,7 @@ export default function Index({ topics }) {
             }}
           >
               
-              <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="xl" >Therapeutics Categories</Text>
+              <Text pt={6} pb={2} px={6} fontWeight="bold" fontSize="xl" >Therapeutics Categories</Text>
                 <Divider />
                 <TherapeuticCategory />
           </GridItem>

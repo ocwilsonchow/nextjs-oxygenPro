@@ -60,7 +60,7 @@ function TherapeuticCategory() {
   const borderColor = useColorModeValue("gray.400", "gray.700")
 
   return (
-    <Flex p={2} flexWrap="wrap">
+    <Flex p={4} flexWrap="wrap">
       {categories.map((card, i) => {
         return (
           <Flex
