@@ -46,10 +46,10 @@ function DrugCard({ posts, width }) {
   };
 
   return (
-    <Flex flexWrap="wrap" p={5}>
+    <Flex flexWrap="wrap" p={2}>
       <Flex
         my={2}
-        mx={1}
+        mx={4}
         width="100%"
         alignItems="center"
         justifyContent="space-between"
@@ -101,7 +101,7 @@ function DrugCard({ posts, width }) {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <Flex flexWrap="wrap" justifyContent="center">
+            <Flex flexWrap="wrap" justifyContent="flex-start" >
               {posts.map((post, index) => {
                 return (
                   <GridItem
@@ -110,7 +110,7 @@ function DrugCard({ posts, width }) {
                     p={5}
                     bg={cardBackground}
                     maxH={1000}
-                    width={width >= 1100 ? "31%" : "100%"}
+                    width={width >= 1100 ? "31.5%" : "100%"}
                     borderRadius="lg"
                     overflowY="auto"
                     css={{

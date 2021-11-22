@@ -30,7 +30,7 @@ function Dynamic(params) {
         alignItems="center"
       >
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
           <BreadcrumbLink>{params.specificContent.category}</BreadcrumbLink>
