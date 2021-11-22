@@ -22,7 +22,7 @@ function Sidebar({ topics, posts }) {
       name: "Therapeutic Topics",
       route: "/therapeutics",
     },
-    { name: "Diseases", route: "/" },
+    { name: "Top 100 Drugs", route: "/" },
   ];
   const bgColor = useColorModeValue("gray.700", "gray.900");
 

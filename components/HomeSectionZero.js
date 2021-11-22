@@ -27,8 +27,14 @@ function HomeSectionZero() {
           fontWeight="bold"
           m={2}
           align="center"
+          bgClip="text"
+          bgGradient="linear(to-r, #8BC6EC ,#9599E2  )"
+
+         
+
+
         >
-          Revitalize your experience in healthcare journey
+          Revitalize healthcare experience
         </Text>
         <Text fontSize={["xs", "sm", "md", "xl"]} m={2} align="center">
           You can easily get the information about medications and diseases on
