@@ -10,6 +10,11 @@ import {
   BreadcrumbLink,
   Divider,
   useColorModeValue,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
@@ -21,37 +26,63 @@ function Dynamic(params) {
 
   return (
     <Layout topics={params.topics}>
-      <Breadcrumb
-        spacing="8px"
-        separator={<ChevronRightIcon color="gray.500" />}
-        fontWeight="bold"
-        py={4}
-        px={5}
-        alignItems="center"
-      >
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink>{params.specificContent.category}</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink>{params.specificContent.name}</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
-      <Divider />
-      <Flex
-        justifyContent="Flex-start"
-        flexDir="column"
-        p={["5", "5", "5", "7"]}
-      >
-        <Text  fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "4xl"]}>
-          {params.specificContent.name}
-        </Text>
-        <Center my={10} p={5} bg="black" fontWeight="bold" color="white">
-          Nice! The dynamic route is working! We are working hard on building
-          this page, stay tuned. 👀
-        </Center>
+      <Flex p={2} flexDir="column">
+        <Breadcrumb
+          spacing="8px"
+          separator={<ChevronRightIcon color="gray.500" />}
+          fontWeight="bold"
+          py={3}
+          px={3}
+          alignItems="center"
+        >
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink>{params.specificContent.category}</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink>{params.specificContent.name}</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        <Divider my={1}/>
+        <Tabs mt={1}>
+          <TabList>
+            <Tab fontWeight="bold">Overview</Tab>
+            <Tab fontWeight="bold">Drug Treatment</Tab>
+            <Tab fontWeight="bold">Professional</Tab>
+          </TabList>
+
+          <TabPanels>
+            <TabPanel>
+              <Flex
+                justifyContent="Flex-start"
+                flexDir="column"
+               
+              >
+                <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "4xl"]}>
+                  {params.specificContent.name}
+                </Text>
+                <Center
+                  my={10}
+                  p={5}
+                  bg="black"
+                  fontWeight="bold"
+                  color="white"
+                >
+                  Nice! The dynamic route is working! We are working hard on
+                  building this page, stay tuned. 👀
+                </Center>
+              </Flex>
+            </TabPanel>
+            <TabPanel>
+              <p>Development in progress</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Development in progress</p>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </Flex>
     </Layout>
   );
