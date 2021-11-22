@@ -10,6 +10,8 @@ import {
 export default function HomeSectionTwo() {
   const bgColor = useColorModeValue("gray.100", "gray.900");
 
+  const boxContent = [{}];
+
   return (
     <Flex
       justifyContent="center"
@@ -34,22 +36,22 @@ export default function HomeSectionTwo() {
           convenient way.
         </Text>
         <Flex justifyContent="center" m={5} flexWrap="wrap">
-          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
         </Flex>
