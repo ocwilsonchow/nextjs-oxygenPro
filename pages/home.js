@@ -13,6 +13,7 @@ import Header from "../components/Header";
 import Link from "next/link";
 import HomeSectionOne from "../components/HomeSectionOne";
 import HomeSectionTwo from "../components/HomeSectionTwo";
+import HomeSectionZero from "../components/HomeSectionZero"
 
 export default function home({ topics }) {
     console.log(topics)
@@ -21,7 +22,7 @@ export default function home({ topics }) {
       <nav>
         <Header topics={topics} />
       </nav>
-      <Center flexDir="column" my={["2vh", "5vh", "10vh", "15vh"]}>
+      <Center flexDir="column" my={["2vh", "5vh", "10vh", "10vh"]}>
         <Flex
           pb={10}
           flexDir="column"
@@ -37,17 +38,17 @@ export default function home({ topics }) {
             bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
             flexWrap="wrap"
           >
-            Revitalize Healthcare
+            Oxygen Health
           </Text>
 
           <Box>
             <Text
-              fontSize={["xl", "2xl", "3xl", "5xl"]}
+              fontSize={["2xl", "3xl", "4xl", "5xl"]}
               fontWeight="bold"
               align="center"
               px={5}
             >
-              Welcome to the modern medical library for everyone
+              The modern medical library for everyone
             </Text>
           </Box>
           <Center px={5} >
@@ -63,7 +64,7 @@ export default function home({ topics }) {
             </Text>
           </Center>
         </Flex>
-        <Center>
+        <Center py={5}>
           <Link href="/" passHref={true}>
             <Button
               size="lg"
@@ -75,15 +76,11 @@ export default function home({ topics }) {
               Get Started 💨
             </Button>
           </Link>
-          
-          {/* <Link href="/home" passHref={true}>
-            <Button size="lg" fontWeight="bold" colorScheme="twitter">
-              Know More 👀
-            </Button>
-          </Link> */}
         </Center>
       </Center>
-      
+      <Center>
+        <HomeSectionZero />
+      </Center>
       <Center>
         <HomeSectionTwo />
       </Center>
