@@ -29,10 +29,6 @@ function HomeSectionZero() {
           align="center"
           bgClip="text"
           bgGradient="linear(to-r, #8BC6EC ,#9599E2  )"
-
-         
-
-
         >
           Revitalize healthcare experience
         </Text>
@@ -48,7 +44,7 @@ function HomeSectionZero() {
             passHref={true}
           >
             <Button
-              mt={5}
+              mt={10}
               variant="outline"
               colorScheme="whatsapp"
               borderRadius="2rem"

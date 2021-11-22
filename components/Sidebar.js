@@ -25,6 +25,7 @@ function Sidebar({ topics, posts }) {
     { name: "Top 100 Drugs", route: "/" },
   ];
   const bgColor = useColorModeValue("gray.700", "gray.900");
+  const hoverColor = useColorModeValue("gray.700", "black");
 
   return (
     <Flex
@@ -43,7 +44,7 @@ function Sidebar({ topics, posts }) {
                 fontSize="sm"
                 key={i}
                 fontWeight="bold"
-                _hover={{ bg: "blue.400" }}
+                _hover={{ bg: hoverColor ,color: "white" }}
                 borderRadius="2EM"
                 _focus={{ boxShadow: "outline" }}
                 _active={{ bg: "gold" }}
@@ -73,7 +74,7 @@ function Sidebar({ topics, posts }) {
                 bg="none"
                 fontSize="sm"
                 fontWeight="bold"
-                _hover={{ bg: "teal.500" }}
+                _hover={{ bg: hoverColor ,color: "white" }}
                 borderRadius="2EM"
                 _focus={{ boxShadow: "outline" }}
                 _active={{ bg: "gold" }}

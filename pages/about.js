@@ -25,8 +25,11 @@ export default function about({ topics }) {
           flexDir="column"
           maxW="1000px"
         >
-          <Text my={10} mx={2} fontWeight="bold" fontSize={["3xl","3xl","3xl","5xl"]} align="center">
-            We value extraordinary healthcare experience that is available to everyone
+          <Text my={5} mx={2} fontWeight="bold" fontSize={["3xl","3xl","3xl","5xl"]} align="center">
+            About Us
+          </Text>
+          <Text  mx={2} mb={10} fontSize={["xl","xl","xl","2xl"]} align="center">
+            We value extraordinary healthcare experience that is available to everyone.
           </Text>
           <Tabs mt={1}>
             <TabList>

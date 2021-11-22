@@ -13,9 +13,12 @@ import Header from "../components/Header";
 import Link from "next/link";
 import HomeSectionOne from "../components/HomeSectionOne";
 import HomeSectionTwo from "../components/HomeSectionTwo";
-import HomeSectionZero from "../components/HomeSectionZero"
+import HomeSectionZero from "../components/HomeSectionZero";
+import Footer from "../components/Footer"
 
 export default function home({ topics }) {
+const textColor = useColorModeValue("black", "white")
+
 
   return (
     <div>
@@ -51,7 +54,7 @@ export default function home({ topics }) {
               The modern medical library for everyone
             </Text>
           </Box>
-          <Center px={5} >
+          <Center px={5}>
             <Text
               mt={5}
               fontSize={["xs", "small", "md", "xl"]}
@@ -59,10 +62,25 @@ export default function home({ topics }) {
               w={["100%", "80%", "60%", "60%"]}
             >
               Oxygen Pro is a platform for anyone on earth to access high
-              quality, evidence-based health and medical information. Our mission is to empower everyone to make better and informed self-care decisions, and to live a healthier life.
+              quality, evidence-based health and medical information. Our
+              mission is to empower everyone to make better and informed
+              self-care decisions, and to live a healthier life.
             </Text>
           </Center>
         </Flex>
+        <Center py={5}>
+          <Link href="/about" passHref={true}>
+            <Button
+              px={5}
+              borderRadius="1rem"
+              color={textColor}
+              size="xs"
+             variant="outline"
+            >
+              Learn more about our team and vision 💬
+            </Button>
+          </Link>
+        </Center>
         <Center py={5}>
           <Link href="/" passHref={true}>
             <Button
@@ -71,11 +89,13 @@ export default function home({ topics }) {
               fontWeight="bold"
               color="black"
               colorScheme="facebook"
+              borderRadius="1.5rem"
             >
               Get Started 💨
             </Button>
           </Link>
         </Center>
+      
       </Center>
       <Center>
         <HomeSectionZero />
@@ -86,9 +106,11 @@ export default function home({ topics }) {
       <Center>
         <HomeSectionTwo />
       </Center>
-     
-     
+      <footer>
+      <Footer />
+    </footer>
     </div>
+   
   );
 }
 

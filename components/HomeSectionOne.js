@@ -57,7 +57,7 @@ export default function HomeSectionOne() {
           </Avatar>
         </Stack>
         <Center>
-          <Button mt={10} variant="outline" borderRadius="2rem" maxW="300px">
+          <Button mt={10} variant="outline" borderRadius="2rem" maxW="300px " colorScheme="whatsapp">
             Learn more
           </Button>
         </Center>
