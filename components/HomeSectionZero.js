@@ -28,7 +28,7 @@ function HomeSectionZero() {
           m={2}
           align="center"
         >
-          Revolutionizing your experience in healthcare journey
+          Revitalize your experience in healthcare journey
         </Text>
         <Text fontSize={["xs", "sm", "md", "xl"]} m={2} align="center">
           You can easily get the information about medications and diseases on

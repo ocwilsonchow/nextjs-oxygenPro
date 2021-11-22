@@ -56,7 +56,6 @@ export default function home({ topics }) {
               mt={5}
               fontSize={["xs", "small", "md", "xl"]}
               align="center"
-              fontWeight="medium"
               w={["100%", "80%", "60%", "60%"]}
             >
               Oxygen Pro is a platform for anyone on earth to access high
@@ -82,11 +81,12 @@ export default function home({ topics }) {
         <HomeSectionZero />
       </Center>
       <Center>
-        <HomeSectionTwo />
-      </Center>
-      <Center>
         <HomeSectionOne />
       </Center>
+      <Center>
+        <HomeSectionTwo />
+      </Center>
+     
      
     </div>
   );

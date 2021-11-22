@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 export default function HomeSectionTwo() {
-  const bgColor = useColorModeValue("teal.500", "teal.800");
+  const bgColor = useColorModeValue("gray.100", "gray.900");
 
   return (
     <Flex
@@ -18,15 +18,12 @@ export default function HomeSectionTwo() {
       px={[10, 10, 10, 10]}
       w="100%"
       flexWrap="wrap"
-      bg={bgColor}
     >
       <Flex flexDir="column" maxW="1000px">
         <Text
           fontSize={["3xl", "4xl", "5xl", "6xl"]}
           fontWeight="bold"
           m={2}
-          bgGradient="linear(to-l, #7928CA, #FF0080)"
-          bgClip="text"
           align="center"
         >
           Tidy to read, easy to Navigate.
@@ -36,6 +33,26 @@ export default function HomeSectionTwo() {
           pharmacists to look up medication and treatment information in a
           convenient way.
         </Text>
+        <Flex justifyContent="center" m={5} flexWrap="wrap">
+          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+            User Interface
+          </Box>
+          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+            User Interface
+          </Box>
+          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+            User Interface
+          </Box>
+          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+            User Interface
+          </Box>
+          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+            User Interface
+          </Box>
+          <Box h="250px" w="300px" bg="black" p={5} m={2} rounded="1rem" bg={bgColor}>
+            User Interface
+          </Box>
+        </Flex>
         <Center>
           <Button maxW="300px" mt={5} variant="outline" borderRadius="2rem">
             See how we designed Oxygen
