@@ -106,7 +106,7 @@ function DrugCard({ posts, width }) {
                 return (
                   <GridItem
                     key={index}
-                    m={2}
+                    m={[1,1,2,2]}
                     p={5}
                     bg={cardBackground}
                     maxH={1000}
