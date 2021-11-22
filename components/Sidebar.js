@@ -40,6 +40,7 @@ function Sidebar({ topics, posts }) {
             <Link href={category.route} key={i} passHref={true}>
               <Flex
                 alignItems="center"
+                fontSize="sm"
                 key={i}
                 fontWeight="bold"
                 _hover={{ bg: "blue.400" }}
@@ -70,6 +71,7 @@ function Sidebar({ topics, posts }) {
             >
               <Box
                 bg="none"
+                fontSize="sm"
                 fontWeight="bold"
                 _hover={{ bg: "teal.500" }}
                 borderRadius="2EM"
