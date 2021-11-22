@@ -28,6 +28,7 @@ export default function HomeSectionOne() {
           fontWeight="bold"
           m={2}
           align="center"
+         
         >
           You, empowered to live better, healthier.
         </Text>

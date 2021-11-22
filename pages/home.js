@@ -16,7 +16,7 @@ import HomeSectionTwo from "../components/HomeSectionTwo";
 import HomeSectionZero from "../components/HomeSectionZero";
 import Footer from "../components/Footer"
 
-export default function home({ topics }) {
+export default function Home({ topics }) {
 const textColor = useColorModeValue("black", "white")
 
 

@@ -30,9 +30,9 @@ function Footer() {
     <Flex p={10}  bg={bgColor} justifyContent="center">
       <Flex maxW="1000px">
           <Flex>
-          {pages.map((page)=> {
+          {pages.map((page, index)=> {
               return (
-                  <Button bg="none" borderRadius="1.5rem" size="sm">{page.name}</Button>
+                  <Button key={index} bg="none" borderRadius="1.5rem" size="sm">{page.name}</Button>
               )
           })}
           </Flex>
