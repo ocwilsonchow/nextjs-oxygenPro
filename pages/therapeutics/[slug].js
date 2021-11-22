@@ -15,7 +15,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
 
-function dynamic(params) {
+function Dynamic(params) {
   console.log(params);
   const bgColor = useColorModeValue("gray.300", "gray.900")
   
@@ -53,15 +53,12 @@ function dynamic(params) {
           Nice! The dynamic route is working! We are working hard on building
           this page, stay tuned. 👀
         </Center>
-        {/* <Link href="/" passHref={true}>
-          <Button my={10}>Go back to home page </Button>
-        </Link> */}
       </Flex>
     </Layout>
   );
 }
 
-export default dynamic;
+export default Dynamic;
 
 export async function getStaticProps({ params }) {
   const posts = (await getPosts()) || [];
