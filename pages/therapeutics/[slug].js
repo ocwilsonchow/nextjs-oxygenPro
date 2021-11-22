@@ -9,7 +9,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Divider,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
@@ -17,8 +17,8 @@ import Layout from "../../components/Layout";
 
 function Dynamic(params) {
   console.log(params);
-  const bgColor = useColorModeValue("gray.300", "gray.900")
-  
+  const bgColor = useColorModeValue("gray.300", "gray.900");
+
   return (
     <Layout topics={params.topics}>
       <Breadcrumb
@@ -27,6 +27,7 @@ function Dynamic(params) {
         fontWeight="bold"
         py={4}
         px={5}
+        alignItems="center"
       >
         <BreadcrumbItem>
           <BreadcrumbLink href="#">Home</BreadcrumbLink>
@@ -42,11 +43,9 @@ function Dynamic(params) {
       <Flex
         justifyContent="Flex-start"
         flexDir="column"
-        p={["5","5", "5", "7"]}
-        h="90%"
-        bg={bgColor}
+        p={["5", "5", "5", "7"]}
       >
-        <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "5xl"]}>
+        <Text  fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "4xl"]}>
           {params.specificContent.name}
         </Text>
         <Center my={10} p={5} bg="black" fontWeight="bold" color="white">
