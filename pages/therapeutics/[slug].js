@@ -35,13 +35,13 @@ function Dynamic(params) {
           px={3}
           alignItems="center"
         >
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
+          <BreadcrumbItem fontSize="sm">
+            <BreadcrumbLink href="/therapeutics" >Home</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem>
+          <BreadcrumbItem fontSize="sm">
             <BreadcrumbLink>{params.specificContent.category}</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem>
+          <BreadcrumbItem fontSize="sm">
             <BreadcrumbLink>{params.specificContent.name}</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>

@@ -27,8 +27,6 @@ export default function HomeSectionOne() {
           fontSize={["3xl", "4xl", "5xl", "6xl"]}
           fontWeight="bold"
           m={2}
-          // bgGradient="linear(to-l, #7928CA, #FF0080)"
-          // bgClip="text"
           align="center"
         >
           You, empowered to live better, healthier.

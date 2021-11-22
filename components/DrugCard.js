@@ -59,15 +59,15 @@ function DrugCard({ posts, width }) {
           separator={<ChevronRightIcon color="gray.500" />}
           fontWeight="bold"
         >
-          <BreadcrumbItem>
+          <BreadcrumbItem fontSize="sm">
             <BreadcrumbLink href="#">Home</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem>
+          <BreadcrumbItem fontSize="sm">
             <BreadcrumbLink href="#">
               {medicineCategory.bodySystem}
             </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
+          </BreadcrumbItem >
+          <BreadcrumbItem fontSize="sm">
             <BreadcrumbLink href="#">
               {medicineCategory.therapeuticClass}
             </BreadcrumbLink>
