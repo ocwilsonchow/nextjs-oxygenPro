@@ -13,7 +13,7 @@ import { StarIcon } from "@chakra-ui/icons";
 function TherapeuticCategory() {
   const categories = [
     {
-      category: "Cardiovascular",
+      category: "Cardiovascular System",
       topic: [
         "Hypertension",
         "Myocardial infarction",
@@ -75,7 +75,7 @@ function TherapeuticCategory() {
             <Text
               fontWeight="bold"
               px={2}
-              fontSize={["lg", "lg", "xl", "2xl"]}
+              fontSize={["xl", "xl", "xl", "2xl"]}
               color="green.600"
             >
               {card.category}
@@ -85,7 +85,7 @@ function TherapeuticCategory() {
                 return (
                   <>
                     <ListItem
-                      fontSize={["xs", "sm", "lg", "lg"]}
+                      fontSize={["md", "md", "md", "md"]}
                       fontWeight="bold"
                       cursor="pointer"
                       _hover={{ bg: "blue.600" }}

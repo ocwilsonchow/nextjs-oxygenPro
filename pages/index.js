@@ -40,8 +40,6 @@ export default function Home({ posts, topics }) {
     };
   }, []);
 
-  console.log(topics)
-
   return (
     <>
       <Head>

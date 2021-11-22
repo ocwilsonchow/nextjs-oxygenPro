@@ -16,7 +16,7 @@ import HomeSectionTwo from "../components/HomeSectionTwo";
 import HomeSectionZero from "../components/HomeSectionZero"
 
 export default function home({ topics }) {
-    console.log(topics)
+
   return (
     <div>
       <nav>
