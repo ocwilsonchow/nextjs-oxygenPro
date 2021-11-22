@@ -33,10 +33,11 @@ export default function home({ topics }) {
             fontSize={["5xl", "6xl", "7xl", "8xl"]}
             fontWeight="bold"
             bgClip="text"
+            px={10}
             bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
             flexWrap="wrap"
           >
-            Revitalize Healthcare{""}
+            Revitalize Healthcare
           </Text>
 
           <Box>

@@ -27,45 +27,51 @@ export const getPosts = async () => {
   `;
 
   const result = await request(graphqlAPI, query);
-  console.log(result)
+  console.log(result);
   return result.drugsByDrugClasses;
 };
 
 export const getTopics = async () => {
   const query = gql`
-  query MyQuery2 {
-    __typename
-    therapeuticAreas {
-      name
-      slug
-      proOnly
-      id
+    query MyQuery2 {
+      __typename
+      therapeuticAreas {
+        name
+        slug
+        proOnly
+        id
+      }
     }
-  }
   `;
 
   const result = await request(graphqlAPI, query);
-  console.log(result)
+  console.log(result);
   return result;
 };
 
-
 export const getSpecificTopics = async (slug) => {
   const query = gql`
-    query MyQuery ($slug: String){
-      therapeuticArea(where: {slug: $slug}) {
+    query MyQuery($slug: String!) {
+      therapeuticArea(where: { slug: $slug }) {
+        briefSummary {
+          raw
+        }
         name
         id
         nonPharmacologicalTreatment
         pharmacologicalTreatmentSteps
         proOnly
         slug
+        category
+        complications
+        prognosis
+        signs
+        symptoms
       }
     }
   `;
 
-
-  const result = await request(graphqlAPI, query);
-  console.log(result)
-  return result;
-}
+  const result = await request(graphqlAPI, query, {slug});
+  console.log(result);
+  return result.therapeuticArea;
+};

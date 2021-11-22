@@ -33,11 +33,6 @@ function Sidebar({ topics, posts }) {
       alignItems="flex-start"
       className="sidebar"
     >
-      <Link href="/sponsor" passHref={true}>
-        <Button ml={2} bg={bgColor} color="white">
-          Sponsor ☕️
-        </Button>
-      </Link>
       <Divider my={3} />
       <Flex flexDir="column" alignItems="flex-start" w="90%" cursor="pointer">
         {categories.map((category, i) => {
@@ -95,6 +90,11 @@ function Sidebar({ topics, posts }) {
         );
       })}
       <Divider my={5} />
+      <Link href="/sponsor" passHref={true} >
+        <Button ml={2} mb={5} bg={bgColor} color="white">
+          Sponsor ☕️
+        </Button>
+      </Link>
     </Flex>
   );
 }

@@ -4,7 +4,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import { getPosts, getTopics } from "../services";
 
 export default function sponsor({ topics }) {
-  return (
+  return ( 
     <>
       <Header topics={topics} />
       <Flex justifyContent="center" bg="black" my={10} p={5}>

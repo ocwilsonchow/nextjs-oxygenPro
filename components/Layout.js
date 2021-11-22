@@ -41,8 +41,6 @@ const Layout = ({ topics, children }) => {
     };
   }, []);
 
-  console.log(topics);
-
   return (
     <>
       <Header topics={topics} />
@@ -100,11 +98,9 @@ const Layout = ({ topics, children }) => {
               },
             }}
           >
-            <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="md">
-              Therapeutics
-            </Text>
+            
             {children}
-            <Divider />
+            
           </GridItem>
         </Grid>
       </main>

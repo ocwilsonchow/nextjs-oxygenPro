@@ -1,22 +1,61 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button, Center, Flex, Text} from "@chakra-ui/react";
+import {
+  Button,
+  Center,
+  Flex,
+  Text,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Divider,
+  useColorModeValue
+} from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
 
-function dynamic(params, topics) {
+function dynamic(params) {
   console.log(params);
+  const bgColor = useColorModeValue("gray.300", "gray.900")
+  
   return (
     <Layout topics={params.topics}>
-      <Flex justifyContent="center" alignItems="center" flexDir="column" p={10} h="90%">
-        <Text fontWeight="bold" fontSize="xl">Welcome to the {params.specificTopic} page!</Text>
+      <Breadcrumb
+        spacing="8px"
+        separator={<ChevronRightIcon color="gray.500" />}
+        fontWeight="bold"
+        py={4}
+        px={5}
+      >
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink>{params.specificContent.category}</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink>{params.specificContent.name}</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+      <Divider />
+      <Flex
+        justifyContent="Flex-start"
+        flexDir="column"
+        p={["5","5", "5", "7"]}
+        h="90%"
+        bg={bgColor}
+      >
+        <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "5xl"]}>
+          {params.specificContent.name}
+        </Text>
         <Center my={10} p={5} bg="black" fontWeight="bold" color="white">
           Nice! The dynamic route is working! We are working hard on building
           this page, stay tuned. 👀
         </Center>
-        <Link href="/" passHref={true}>
+        {/* <Link href="/" passHref={true}>
           <Button my={10}>Go back to home page </Button>
-        </Link>
+        </Link> */}
       </Flex>
     </Layout>
   );
@@ -24,14 +63,14 @@ function dynamic(params, topics) {
 
 export default dynamic;
 
-export async function getStaticProps(context) {
+export async function getStaticProps({ params }) {
   const posts = (await getPosts()) || [];
   const topics = (await getTopics()) || [];
-  const specificTopic = context.params.slug;
-  const specificTopicContent = (await getSpecificTopics()) || [];
+  const specificTopicSlug = params.slug;
+  const specificContent = (await getSpecificTopics(params.slug)) || [];
 
   return {
-    props: { posts, topics, specificTopic, specificTopicContent },
+    props: { posts, topics, specificTopicSlug, specificContent },
   };
 }
 
