@@ -75,14 +75,14 @@ function Dynamic(params) {
                   {params.specificContent.name}
                 </Text>
                 <Flex flexWrap="wrap"  justifyContent="space-between">
-                  <Flex flexDir="column" >
-                    <Flex p={2} flexDir="column" my={2}>
+                  <Flex flexDir="column" w={["100%","100%", "50%", "50%"]} px={2} >
+                    <Flex p={2} bg="gray.800" flexDir="column" my={2}>
                       <Text fontWeight="extrabold">What is it?</Text>
                       <Text>{params.specificContent.briefSummary}</Text>
                     </Flex>
                   </Flex>
-                  <Flex flexDir="column" w="100%">
-                    <Flex bg="gray.800" p={2} flexDir="column" my={2}>
+                  <Flex flexDir="column"  w={["100%","100%", "50%", "50%"]} px={2}>
+                    <Flex bg="gray.800"  p={2} flexDir="column" my={2}>
                       <Text fontWeight="extrabold">Symptoms</Text>
                       <List>
                         {params.specificContent.symptoms.map((symptom, index) => {
