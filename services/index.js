@@ -53,9 +53,6 @@ export const getSpecificTopics = async (slug) => {
   const query = gql`
     query MyQuery($slug: String!) {
       therapeuticArea(where: { slug: $slug }) {
-        briefSummary {
-          raw
-        }
         name
         id
         nonPharmacologicalTreatment
@@ -67,11 +64,12 @@ export const getSpecificTopics = async (slug) => {
         prognosis
         signs
         symptoms
+        briefSummary
       }
     }
   `;
 
-  const result = await request(graphqlAPI, query, {slug});
+  const result = await request(graphqlAPI, query, { slug });
   console.log(result);
   return result.therapeuticArea;
 };

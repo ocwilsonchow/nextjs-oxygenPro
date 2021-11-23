@@ -27,9 +27,9 @@ function Footer() {
   ];
 
   return (
-    <Flex p={10}  bg={bgColor} justifyContent="center">
+    <Flex p={10}  bg={bgColor} justifyContent="center" w="100%">
       <Flex maxW="1000px">
-          <Flex>
+          <Flex flexWrap="wrap">
           {pages.map((page, index)=> {
               return (
                   <Button key={index} bg="none" borderRadius="1.5rem" size="sm">{page.name}</Button>

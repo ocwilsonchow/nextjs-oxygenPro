@@ -15,6 +15,11 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Code,
+  List,
+  ListItem,
+  HStack,
+  VStack
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
@@ -31,48 +36,123 @@ function Dynamic(params) {
           spacing="8px"
           separator={<ChevronRightIcon color="gray.500" />}
           fontWeight="bold"
-          py={3}
-          px={3}
+          py={2}
+          px={2}
           alignItems="center"
         >
-          <BreadcrumbItem fontSize="sm">
-            <BreadcrumbLink href="/therapeutics" >Home</BreadcrumbLink>
+          <BreadcrumbItem fontSize="xs">
+            <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem fontSize="sm">
+          <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink>{params.specificContent.category}</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem fontSize="sm">
+          <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink>{params.specificContent.name}</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
-        <Divider my={1}/>
+        <Divider my={1} />
         <Tabs mt={1}>
           <TabList>
-            <Tab fontWeight="bold">Overview</Tab>
-            <Tab fontWeight="bold">Drug Treatment</Tab>
-            <Tab fontWeight="bold">Professional</Tab>
+            <Tab fontWeight="bold" fontSize="sm">
+              Overview
+            </Tab>
+            <Tab fontWeight="bold" fontSize="sm">
+              Treatment
+            </Tab>
+            <Tab fontWeight="bold" fontSize="sm">
+              Professional
+            </Tab>
           </TabList>
 
           <TabPanels>
             <TabPanel>
-              <Flex
-                justifyContent="Flex-start"
-                flexDir="column"
-               
-              >
-                <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "4xl"]}>
+              <Flex justifyContent="Flex-start" flexDir="column">
+                <Text
+                  fontWeight="bold"
+                  mb={2}
+                  fontSize={["2xl", "2xl", "3xl", "3xl"]}
+                >
                   {params.specificContent.name}
                 </Text>
-                <Center
-                  my={10}
-                  p={5}
-                  bg="black"
-                  fontWeight="bold"
-                  color="white"
-                >
-                  Nice! The dynamic route is working! We are working hard on
-                  building this page, stay tuned. 👀
-                </Center>
+                <Flex flexWrap="wrap" justifyContent="space-between">
+                  <Flex flexDir="column">
+                    <Flex
+                      bg="gray.700"
+                      p={2}
+                      
+                      flexDir="column"
+                      my={2}
+                    >
+                      <Text fontWeight="extrabold">What is it?</Text>
+                      <Text>{params.specificContent.briefSummary}</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex flexDir="column">
+                  <Flex
+                    bg="gray.700"
+                    p={2}
+                
+                    flexDir="column"
+                    my={2}
+                  >
+                    <Text fontWeight="extrabold">Symptoms</Text>
+                    <List>
+                      {params.specificContent.symptoms.map((symptom) => {
+                        return (
+                          <ListItem>
+                            <Code mr={2} my={1}>
+                              {symptom}
+                            </Code>
+                          </ListItem>
+                        );
+                      })}
+                    </List>
+                  </Flex>
+                  <Flex
+                    bg="gray.700"
+                    p={2}
+                  
+                    flexDir="column"
+                    my={2}
+                  >
+                    <Text fontWeight="extrabold">Signs</Text>
+                    <List>
+                      {params.specificContent.signs.map((sign) => {
+                        return (
+                          <ListItem>
+                            <Code mr={2} my={1}>
+                              {sign}
+                            </Code>
+                          </ListItem>
+                        );
+                      })}
+                    </List>
+                  </Flex>
+                  <Flex
+                    bg="gray.700"
+                    p={2}
+                 
+                    flexDir="column"
+                    my={2}
+                  >
+                    <Text fontWeight="extrabold">Complications</Text>
+                    <List>
+                      {params.specificContent.complications.map(
+                        (complication) => {
+                          return (
+                            <ListItem>
+                              <Code mr={2} my={1}>
+                                {complication}
+                              </Code>
+                            </ListItem>
+                          );
+                        }
+                      )}
+                    </List>
+                  </Flex>
+                  </Flex>
+                
+                </Flex>
               </Flex>
             </TabPanel>
             <TabPanel>

@@ -49,7 +49,7 @@ function DrugCard({ posts, width }) {
     <Flex flexWrap="wrap" p={2}>
       <Flex
         my={2}
-        mx={4}
+        mx={2}
         width="100%"
         alignItems="center"
         justifyContent="space-between"
@@ -59,15 +59,15 @@ function DrugCard({ posts, width }) {
           separator={<ChevronRightIcon color="gray.500" />}
           fontWeight="bold"
         >
-          <BreadcrumbItem fontSize="sm">
+          <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink href="#">Home</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem fontSize="sm">
+          <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink href="#">
               {medicineCategory.bodySystem}
             </BreadcrumbLink>
           </BreadcrumbItem >
-          <BreadcrumbItem fontSize="sm">
+          <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink href="#">
               {medicineCategory.therapeuticClass}
             </BreadcrumbLink>
@@ -96,8 +96,8 @@ function DrugCard({ posts, width }) {
 
       <Tabs >
         <TabList>
-          <Tab fontWeight="bold">Drug Treatment</Tab>
-          <Tab fontWeight="bold">Treatment Guidelines</Tab>
+          <Tab fontWeight="bold" fontSize="sm">Drug Treatment</Tab>
+          <Tab fontWeight="bold" fontSize="sm"> Treatment Guidelines</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
