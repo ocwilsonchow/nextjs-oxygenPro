@@ -19,7 +19,7 @@ import {
   List,
   ListItem,
   HStack,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
@@ -66,7 +66,7 @@ function Dynamic(params) {
 
           <TabPanels>
             <TabPanel>
-              <Flex justifyContent="Flex-start" flexDir="column">
+              <Flex justifyContent="center" flexDir="column">
                 <Text
                   fontWeight="bold"
                   mb={2}
@@ -74,84 +74,59 @@ function Dynamic(params) {
                 >
                   {params.specificContent.name}
                 </Text>
-                <Flex flexWrap="wrap" justifyContent="space-between">
-                  <Flex flexDir="column">
-                    <Flex
-                      bg="gray.700"
-                      p={2}
-                      
-                      flexDir="column"
-                      my={2}
-                    >
+                <Flex flexWrap="wrap"  justifyContent="space-between">
+                  <Flex flexDir="column" >
+                    <Flex p={2} flexDir="column" my={2}>
                       <Text fontWeight="extrabold">What is it?</Text>
                       <Text>{params.specificContent.briefSummary}</Text>
                     </Flex>
                   </Flex>
-                  <Flex flexDir="column">
-                  <Flex
-                    bg="gray.700"
-                    p={2}
-                
-                    flexDir="column"
-                    my={2}
-                  >
-                    <Text fontWeight="extrabold">Symptoms</Text>
-                    <List>
-                      {params.specificContent.symptoms.map((symptom) => {
-                        return (
-                          <ListItem>
-                            <Code mr={2} my={1}>
-                              {symptom}
-                            </Code>
-                          </ListItem>
-                        );
-                      })}
-                    </List>
-                  </Flex>
-                  <Flex
-                    bg="gray.700"
-                    p={2}
-                  
-                    flexDir="column"
-                    my={2}
-                  >
-                    <Text fontWeight="extrabold">Signs</Text>
-                    <List>
-                      {params.specificContent.signs.map((sign) => {
-                        return (
-                          <ListItem>
-                            <Code mr={2} my={1}>
-                              {sign}
-                            </Code>
-                          </ListItem>
-                        );
-                      })}
-                    </List>
-                  </Flex>
-                  <Flex
-                    bg="gray.700"
-                    p={2}
-                 
-                    flexDir="column"
-                    my={2}
-                  >
-                    <Text fontWeight="extrabold">Complications</Text>
-                    <List>
-                      {params.specificContent.complications.map(
-                        (complication) => {
+                  <Flex flexDir="column" w="100%">
+                    <Flex bg="gray.800" p={2} flexDir="column" my={2}>
+                      <Text fontWeight="extrabold">Symptoms</Text>
+                      <List>
+                        {params.specificContent.symptoms.map((symptom) => {
                           return (
                             <ListItem>
                               <Code mr={2} my={1}>
-                                {complication}
+                                {symptom}
                               </Code>
                             </ListItem>
                           );
-                        }
-                      )}
-                    </List>
+                        })}
+                      </List>
+                    </Flex>
+                    <Flex bg="gray.800" p={2} flexDir="column" my={2}>
+                      <Text fontWeight="extrabold">Signs</Text>
+                      <List>
+                        {params.specificContent.signs.map((sign) => {
+                          return (
+                            <ListItem>
+                              <Code mr={2} my={1}>
+                                {sign}
+                              </Code>
+                            </ListItem>
+                          );
+                        })}
+                      </List>
+                    </Flex>
+                    <Flex bg="gray.800" p={2} flexDir="column" my={2}>
+                      <Text fontWeight="extrabold">Complications</Text>
+                      <List>
+                        {params.specificContent.complications.map(
+                          (complication) => {
+                            return (
+                              <ListItem>
+                                <Code mr={2} my={1}>
+                                  {complication}
+                                </Code>
+                              </ListItem>
+                            );
+                          }
+                        )}
+                      </List>
+                    </Flex>
                   </Flex>
-                  </Flex>
-                
                 </Flex>
               </Flex>
             </TabPanel>
