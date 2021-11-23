@@ -65,6 +65,7 @@ export const getSpecificTopics = async (slug) => {
         signs
         symptoms
         briefSummary
+        riskFactors
       }
     }
   `;

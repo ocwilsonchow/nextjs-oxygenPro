@@ -28,6 +28,7 @@ import Layout from "../../components/Layout";
 function Dynamic(params) {
   console.log(params);
   const bgColor = useColorModeValue("gray.300", "gray.900");
+  const cardColor = useColorModeValue("gray.200", "gray.800")
 
   return (
     <Layout topics={params.topics}>
@@ -71,33 +72,56 @@ function Dynamic(params) {
                   fontWeight="bold"
                   mb={2}
                   fontSize={["2xl", "2xl", "3xl", "3xl"]}
+                  px={2}
                 >
                   {params.specificContent.name}
                 </Text>
-                <Flex flexWrap="wrap"  justifyContent="space-between">
-                  <Flex flexDir="column" w={["100%","100%", "50%", "50%"]} px={2} >
-                    <Flex p={2} bg="gray.800" flexDir="column" my={2}>
-                      <Text fontWeight="extrabold">What is it?</Text>
+                <Flex flexWrap="wrap" justifyContent="space-between">
+                  <Flex
+                    flexDir="column"
+                    w={["100%", "100%", "50%", "50%"]}
+                    px={2}
+                  >
+                    <Flex p={2} bg={cardColor} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                      <Text fontWeight="extrabold" mb={2}>
+                        What is it?
+                      </Text>
                       <Text>{params.specificContent.briefSummary}</Text>
                     </Flex>
                   </Flex>
-                  <Flex flexDir="column"  w={["100%","100%", "50%", "50%"]} px={2}>
-                    <Flex bg="gray.800"  p={2} flexDir="column" my={2}>
-                      <Text fontWeight="extrabold">Symptoms</Text>
+                  <Flex
+                    flexDir="column"
+                    w={["100%", "100%", "50%", "50%"]}
+                    px={2}
+                  >
+                    <Flex
+                      bg={cardColor}
+                      p={2}
+                      flexDir="column"
+                      my={2}
+                      boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;"
+                    >
+                      <Text fontWeight="extrabold" mb={2}>
+                        Symptoms
+                      </Text>
                       <List>
-                        {params.specificContent.symptoms.map((symptom, index) => {
-                          return (
-                            <ListItem key={index}> 
-                              <Code mr={2} my={1}>
-                                {symptom}
-                              </Code>
-                            </ListItem>
-                          );
-                        })}
+                        {params.specificContent.symptoms.map(
+                          (symptom, index) => {
+                            return (
+                              <ListItem key={index}>
+                                <Code mr={2} my={1}>
+                                  {symptom}
+                                </Code>
+                              </ListItem>
+                            );
+                          }
+                        )}
                       </List>
                     </Flex>
-                    <Flex bg="gray.800" p={2} flexDir="column" my={2}>
-                      <Text fontWeight="extrabold">Signs</Text>
+                    <Flex bg={cardColor} p={2} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                      <Text fontWeight="extrabold" mb={2}>
+                        Signs
+                      </Text>
                       <List>
                         {params.specificContent.signs.map((sign, index) => {
                           return (
@@ -110,8 +134,28 @@ function Dynamic(params) {
                         })}
                       </List>
                     </Flex>
-                    <Flex bg="gray.800" p={2} flexDir="column" my={2}>
-                      <Text fontWeight="extrabold">Complications</Text>
+                    <Flex bg={cardColor} p={2} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                      <Text fontWeight="extrabold" mb={2}>
+                        Risk Factors
+                      </Text>
+                      <List>
+                        {params.specificContent.riskFactors.map(
+                          (risk, index) => {
+                            return (
+                              <ListItem key={index}>
+                                <Code mr={2} my={1}>
+                                  {risk}
+                                </Code>
+                              </ListItem>
+                            );
+                          }
+                        )}
+                      </List>
+                    </Flex>
+                    <Flex bg={cardColor} p={2} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                      <Text fontWeight="extrabold" mb={2}>
+                        Complications
+                      </Text>
                       <List>
                         {params.specificContent.complications.map(
                           (complication, index) => {
