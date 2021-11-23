@@ -85,9 +85,9 @@ function Dynamic(params) {
                     <Flex bg="gray.800" p={2} flexDir="column" my={2}>
                       <Text fontWeight="extrabold">Symptoms</Text>
                       <List>
-                        {params.specificContent.symptoms.map((symptom) => {
+                        {params.specificContent.symptoms.map((symptom, index) => {
                           return (
-                            <ListItem>
+                            <ListItem key={index}> 
                               <Code mr={2} my={1}>
                                 {symptom}
                               </Code>
@@ -99,9 +99,9 @@ function Dynamic(params) {
                     <Flex bg="gray.800" p={2} flexDir="column" my={2}>
                       <Text fontWeight="extrabold">Signs</Text>
                       <List>
-                        {params.specificContent.signs.map((sign) => {
+                        {params.specificContent.signs.map((sign, index) => {
                           return (
-                            <ListItem>
+                            <ListItem key={index}>
                               <Code mr={2} my={1}>
                                 {sign}
                               </Code>
@@ -114,9 +114,9 @@ function Dynamic(params) {
                       <Text fontWeight="extrabold">Complications</Text>
                       <List>
                         {params.specificContent.complications.map(
-                          (complication) => {
+                          (complication, index) => {
                             return (
-                              <ListItem>
+                              <ListItem key={index}>
                                 <Code mr={2} my={1}>
                                   {complication}
                                 </Code>
