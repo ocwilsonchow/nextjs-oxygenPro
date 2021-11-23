@@ -28,7 +28,7 @@ import Layout from "../../components/Layout";
 function Dynamic(params) {
   console.log(params);
   const bgColor = useColorModeValue("gray.300", "gray.900");
-  const cardColor = useColorModeValue("gray.200", "gray.800")
+  const cardColor = useColorModeValue("gray.200", "gray.800");
 
   return (
     <Layout topics={params.topics}>
@@ -52,7 +52,7 @@ function Dynamic(params) {
           </BreadcrumbItem>
         </Breadcrumb>
         <Divider my={1} />
-        <Tabs mt={1}>
+        <Tabs>
           <TabList>
             <Tab fontWeight="bold" fontSize="sm">
               Overview
@@ -82,7 +82,18 @@ function Dynamic(params) {
                     w={["100%", "100%", "50%", "50%"]}
                     px={2}
                   >
-                    <Flex p={2} bg={cardColor} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                    <Flex
+                      p={4}
+                      bg={cardColor}
+                      flexDir="column"
+                      my={2}
+                      transition="all ease 0.5s"
+                      _hover={{
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                      }}
+                      borderRadius="1rem"
+                    >
                       <Text fontWeight="extrabold" mb={2}>
                         What is it?
                       </Text>
@@ -96,11 +107,15 @@ function Dynamic(params) {
                   >
                     <Flex
                       bg={cardColor}
-                      p={2}
+                      p={4}
                       flexDir="column"
                       my={2}
-                      boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;"
-                    >
+                      borderRadius="1rem"
+                      transition="all ease 0.5s"
+                      _hover={{
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                      }}                    >
                       <Text fontWeight="extrabold" mb={2}>
                         Symptoms
                       </Text>
@@ -118,7 +133,17 @@ function Dynamic(params) {
                         )}
                       </List>
                     </Flex>
-                    <Flex bg={cardColor} p={2} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                    <Flex
+                      bg={cardColor}
+                      p={4}
+                      flexDir="column"
+                      my={2}
+                      borderRadius="1rem"
+                      transition="all ease 0.5s"
+                      _hover={{
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                      }}                    >
                       <Text fontWeight="extrabold" mb={2}>
                         Signs
                       </Text>
@@ -134,7 +159,17 @@ function Dynamic(params) {
                         })}
                       </List>
                     </Flex>
-                    <Flex bg={cardColor} p={2} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                    <Flex
+                      bg={cardColor}
+                      p={4}
+                      flexDir="column"
+                      my={2}
+                      borderRadius="1rem"
+                      transition="all ease 0.5s"
+                      _hover={{
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                      }}                    >
                       <Text fontWeight="extrabold" mb={2}>
                         Risk Factors
                       </Text>
@@ -152,7 +187,17 @@ function Dynamic(params) {
                         )}
                       </List>
                     </Flex>
-                    <Flex bg={cardColor} p={2} flexDir="column" my={2}  boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                    <Flex
+                      bg={cardColor}
+                      p={4}
+                      borderRadius="1rem"
+                      flexDir="column"
+                      my={2}
+                      transition="all ease 0.5s"
+                      _hover={{
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                      }}                    >
                       <Text fontWeight="extrabold" mb={2}>
                         Complications
                       </Text>
