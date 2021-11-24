@@ -18,10 +18,11 @@ import {
   Code,
   List,
   ListItem,
+  ListIcon,
   HStack,
   VStack,
 } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
 
@@ -83,7 +84,7 @@ function Dynamic(params) {
                     px={2}
                   >
                     <Flex
-                    borderLeft="0.5rem solid tomato"
+                      borderLeft="0.5rem solid tomato"
                       p={4}
                       bg={cardColor}
                       flexDir="column"
@@ -107,7 +108,7 @@ function Dynamic(params) {
                     px={2}
                   >
                     <Flex
-                    borderLeft="0.5rem solid teal"
+                      borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       flexDir="column"
@@ -127,6 +128,10 @@ function Dynamic(params) {
                           (symptom, index) => {
                             return (
                               <ListItem key={index}>
+                                <ListIcon
+                                  as={ArrowForwardIcon}
+                                  color="green.500"
+                                />
                                 <Code mr={2} my={1}>
                                   {symptom}
                                 </Code>
@@ -137,7 +142,7 @@ function Dynamic(params) {
                       </List>
                     </Flex>
                     <Flex
-                    borderLeft="0.5rem solid teal"
+                      borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       flexDir="column"
@@ -156,6 +161,10 @@ function Dynamic(params) {
                         {params.specificContent.signs.map((sign, index) => {
                           return (
                             <ListItem key={index}>
+                              <ListIcon
+                                as={ArrowForwardIcon}
+                                color="green.500"
+                              />
                               <Code mr={2} my={1}>
                                 {sign}
                               </Code>
@@ -165,7 +174,7 @@ function Dynamic(params) {
                       </List>
                     </Flex>
                     <Flex
-                    borderLeft="0.5rem solid teal"
+                      borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       flexDir="column"
@@ -185,6 +194,10 @@ function Dynamic(params) {
                           (risk, index) => {
                             return (
                               <ListItem key={index}>
+                                <ListIcon
+                                  as={ArrowForwardIcon}
+                                  color="green.500"
+                                />
                                 <Code mr={2} my={1}>
                                   {risk}
                                 </Code>
@@ -195,7 +208,7 @@ function Dynamic(params) {
                       </List>
                     </Flex>
                     <Flex
-                    borderLeft="0.5rem solid teal"
+                      borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       borderRadius="0.5rem"
@@ -215,6 +228,10 @@ function Dynamic(params) {
                           (complication, index) => {
                             return (
                               <ListItem key={index}>
+                                <ListIcon
+                                  as={ArrowForwardIcon}
+                                  color="green.500"
+                                />
                                 <Code mr={2} my={1}>
                                   {complication}
                                 </Code>
@@ -230,7 +247,7 @@ function Dynamic(params) {
             </TabPanel>
             <TabPanel>
               <Flex
-              borderLeft="0.5rem solid teal"
+                borderLeft="0.5rem solid lightBlue"
                 bg={cardColor}
                 p={4}
                 borderRadius="0.5rem"
@@ -243,15 +260,78 @@ function Dynamic(params) {
                 }}
               >
                 <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                  Treatment Steps
+                  First line
                 </Text>
                 <List>
-                  {params.specificContent.pharmacologicalTreatmentSteps.map(
+                  {params.specificContent.firstLineTreatment.map(
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                          <Code mr={2} my={1}>
-                           Step {index +1}: {step}
+                           <ListIcon as={ArrowForwardIcon} color="green.500" />
+                          <Code colorScheme="transparent" mr={2} my={1}>
+                            {step}
+                          </Code>
+                        </ListItem>
+                      );
+                    }
+                  )}
+                </List>
+              </Flex>
+              <Flex
+                borderLeft="0.5rem solid tomato"
+                bg={cardColor}
+                p={4}
+                borderRadius="0.5rem"
+                flexDir="column"
+                my={2}
+                transition="all ease 0.5s"
+                _hover={{
+                  boxShadow:
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                }}
+              >
+                <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                  Second line
+                </Text>
+                <List>
+                  {params.specificContent.secondLineTreatment.map(
+                    (step, index) => {
+                      return (
+                        <ListItem key={index}>
+                           <ListIcon as={ArrowForwardIcon} color="green.500" />
+                          <Code colorScheme="transparent" mr={2} my={1}>
+                            {step}
+                          </Code>
+                        </ListItem>
+                      );
+                    }
+                  )}
+                </List>
+              </Flex>
+              <Flex
+                borderLeft="0.5rem solid pink"
+                bg={cardColor}
+                p={4}
+                borderRadius="0.5rem"
+                flexDir="column"
+                my={2}
+                transition="all ease 0.5s"
+                _hover={{
+                  boxShadow:
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                }}
+              >
+                <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                  Third line
+                </Text>
+                <List>
+                  {params.specificContent.thirdLineTreatment.map(
+                    (step, index) => {
+                      return (
+                        <ListItem key={index}>
+                          <ListIcon as={ArrowForwardIcon} color="green.500" />
+                          <Code colorScheme="transparent" mr={2} my={1}>
+                            {step}
                           </Code>
                         </ListItem>
                       );
