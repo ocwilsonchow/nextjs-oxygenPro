@@ -36,22 +36,22 @@ export default function HomeSectionTwo() {
           convenient way.
         </Text>
         <Flex justifyContent="center" m={5} flexWrap="wrap">
-          <Box h="250px" w="300px" fontWeight="bold" fontSize="2xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" fontWeight="bold" fontSize="2xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" fontWeight="bold" fontSize="2xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" fontWeight="bold" fontSize="2xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" fontWeight="bold" fontSize="2xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
-          <Box h="250px" w="300px" fontWeight="bold" fontSize="2xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box h="250px" w="300px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
             User Interface
           </Box>
         </Flex>

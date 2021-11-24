@@ -121,47 +121,13 @@ function Dynamic(params) {
                       }}
                     >
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        Symptoms
+                        Signs and Symptoms
                       </Text>
                       <List>
-                        {params.specificContent.symptoms.map(
-                          (symptom, index) => {
-                            return (
-                              <ListItem key={index}>
-                                <Code colorScheme="transparent"  mr={2} my={1}>
-                                  <ListIcon
-                                    as={ArrowForwardIcon}
-                                    color="green.500"
-                                  />
-                                  {symptom}
-                                </Code>
-                              </ListItem>
-                            );
-                          }
-                        )}
-                      </List>
-                    </Flex>
-                    <Flex
-                      borderLeft="0.5rem solid teal"
-                      bg={cardColor}
-                      p={4}
-                      flexDir="column"
-                      my={2}
-                      borderRadius="0.5rem"
-                      transition="all ease 0.5s"
-                      _hover={{
-                        boxShadow:
-                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}
-                    >
-                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        Signs
-                      </Text>
-                      <List>
-                        {params.specificContent.signs.map((sign, index) => {
+                      {params.specificContent.signs.map((sign, index) => {
                           return (
                             <ListItem key={index}>
-                              <Code colorScheme="transparent"  mr={2} my={1}>
+                              <Code  colorScheme="transparent"  mr={2} my={1}>
                                 {" "}
                                 <ListIcon
                                   as={ArrowForwardIcon}
@@ -172,8 +138,25 @@ function Dynamic(params) {
                             </ListItem>
                           );
                         })}
+                        {params.specificContent.symptoms.map(
+                          (symptom, index) => {
+                            return (
+                              <ListItem key={index}>
+                                <Code   colorScheme="transparent" mr={2} my={1}>
+                                  <ListIcon
+                                    as={ArrowForwardIcon}
+                                    color="green.500"
+                                  />
+                                  {symptom}
+                                </Code>
+                              </ListItem>
+                            );
+                          }
+                        )}
+                        
                       </List>
                     </Flex>
+                   
                     <Flex
                       borderLeft="0.5rem solid teal"
                       bg={cardColor}
@@ -302,7 +285,7 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                          <Code colorScheme="transparent" mr={2} my={1}>
+                          <Code colorScheme="none" mr={2} my={1}>
                             {" "}
                             <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}

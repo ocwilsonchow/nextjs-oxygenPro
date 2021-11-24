@@ -82,7 +82,7 @@ function TherapeuticCategory() {
                     <ListItem
                       fontSize={["md", "md", "md", "md"]}
                       cursor="pointer"
-                      _hover={{ bg: "blue.600" }}
+                      _hover={{ bg: "blue.400" }}
                       _focus={{ boxShadow: "outline" }}
                       _active={{ bg: "teal.500" }}
                       transition="all ease 0.5s"
