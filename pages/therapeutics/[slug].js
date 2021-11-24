@@ -83,6 +83,7 @@ function Dynamic(params) {
                     px={2}
                   >
                     <Flex
+                    borderLeft="0.5rem solid tomato"
                       p={4}
                       bg={cardColor}
                       flexDir="column"
@@ -106,6 +107,7 @@ function Dynamic(params) {
                     px={2}
                   >
                     <Flex
+                    borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       flexDir="column"
@@ -115,7 +117,8 @@ function Dynamic(params) {
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}                    >
+                      }}
+                    >
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Symptoms
                       </Text>
@@ -134,6 +137,7 @@ function Dynamic(params) {
                       </List>
                     </Flex>
                     <Flex
+                    borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       flexDir="column"
@@ -143,7 +147,8 @@ function Dynamic(params) {
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}                    >
+                      }}
+                    >
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Signs
                       </Text>
@@ -160,6 +165,7 @@ function Dynamic(params) {
                       </List>
                     </Flex>
                     <Flex
+                    borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       flexDir="column"
@@ -169,7 +175,8 @@ function Dynamic(params) {
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}                    >
+                      }}
+                    >
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Risk Factors
                       </Text>
@@ -188,6 +195,7 @@ function Dynamic(params) {
                       </List>
                     </Flex>
                     <Flex
+                    borderLeft="0.5rem solid teal"
                       bg={cardColor}
                       p={4}
                       borderRadius="0.5rem"
@@ -197,7 +205,8 @@ function Dynamic(params) {
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}                    >
+                      }}
+                    >
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Complications
                       </Text>
@@ -220,7 +229,36 @@ function Dynamic(params) {
               </Flex>
             </TabPanel>
             <TabPanel>
-              <p>Development in progress</p>
+              <Flex
+              borderLeft="0.5rem solid teal"
+                bg={cardColor}
+                p={4}
+                borderRadius="0.5rem"
+                flexDir="column"
+                my={2}
+                transition="all ease 0.5s"
+                _hover={{
+                  boxShadow:
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                }}
+              >
+                <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                  Treatment Steps
+                </Text>
+                <List>
+                  {params.specificContent.pharmacologicalTreatmentSteps.map(
+                    (step, index) => {
+                      return (
+                        <ListItem key={index}>
+                          <Code mr={2} my={1}>
+                           Step {index +1}: {step}
+                          </Code>
+                        </ListItem>
+                      );
+                    }
+                  )}
+                </List>
+              </Flex>
             </TabPanel>
             <TabPanel>
               <p>Development in progress</p>

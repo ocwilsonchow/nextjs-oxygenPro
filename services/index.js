@@ -55,8 +55,8 @@ export const getSpecificTopics = async (slug) => {
       therapeuticArea(where: { slug: $slug }) {
         name
         id
-        nonPharmacologicalTreatment
         pharmacologicalTreatmentSteps
+        firstLineTreatment
         proOnly
         slug
         category

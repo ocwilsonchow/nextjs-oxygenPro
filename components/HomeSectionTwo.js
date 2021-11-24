@@ -28,7 +28,7 @@ export default function HomeSectionTwo() {
           m={2}
           align="center"
         >
-          Tidy to read, easy to Navigate.
+          Tidy to read, easy to navigate.
         </Text>
         <Text fontSize={["xs", "sm", "md", "xl"]} m={2} align="center">
           Oxygen Pro is designed for pharmacy students, trainee pharmacists and
