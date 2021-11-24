@@ -90,7 +90,6 @@ function TherapeuticCategory() {
                       px={2}
                       my={1}
                       key={i}
-                      borderRadius="xl"
                     >
                       <Text>{title}</Text>
                     </ListItem>
