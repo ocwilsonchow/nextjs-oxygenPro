@@ -99,7 +99,7 @@ function Dynamic(params) {
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         What is it?
                       </Text>
-                      <Text>{params.specificContent.briefSummary}</Text>
+                      <Code colorScheme="transparent" >{params.specificContent.briefSummary}</Code>
                     </Flex>
                   </Flex>
                   <Flex
@@ -128,7 +128,7 @@ function Dynamic(params) {
                           (symptom, index) => {
                             return (
                               <ListItem key={index}>
-                                <Code mr={2} my={1}>
+                                <Code colorScheme="transparent"  mr={2} my={1}>
                                   <ListIcon
                                     as={ArrowForwardIcon}
                                     color="green.500"
@@ -161,7 +161,7 @@ function Dynamic(params) {
                         {params.specificContent.signs.map((sign, index) => {
                           return (
                             <ListItem key={index}>
-                              <Code mr={2} my={1}>
+                              <Code colorScheme="transparent"  mr={2} my={1}>
                                 {" "}
                                 <ListIcon
                                   as={ArrowForwardIcon}
@@ -195,7 +195,7 @@ function Dynamic(params) {
                           (risk, index) => {
                             return (
                               <ListItem key={index}>
-                                <Code mr={2} my={1}>
+                                <Code colorScheme="transparent"  mr={2} my={1}>
                                   {" "}
                                   <ListIcon
                                     as={ArrowForwardIcon}
@@ -230,7 +230,7 @@ function Dynamic(params) {
                           (complication, index) => {
                             return (
                               <ListItem key={index}>
-                                <Code mr={2} my={1}>
+                                <Code colorScheme="transparent"  mr={2} my={1}>
                                   {" "}
                                   <ListIcon
                                     as={ArrowForwardIcon}
@@ -250,7 +250,7 @@ function Dynamic(params) {
             </TabPanel>
             <TabPanel>
               <Flex
-                borderLeft="0.5rem solid lightBlue"
+                borderLeft="0.5rem solid pink"
                 bg={cardColor}
                 p={4}
                 borderRadius="0.5rem"
@@ -263,7 +263,7 @@ function Dynamic(params) {
                 }}
               >
                 <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                  First line
+                  FIRST LINE
                 </Text>
                 <List>
                   {params.specificContent.firstLineTreatment.map(
@@ -282,7 +282,7 @@ function Dynamic(params) {
                 </List>
               </Flex>
               <Flex
-                borderLeft="0.5rem solid tomato"
+                borderLeft="0.5rem solid pink"
                 bg={cardColor}
                 p={4}
                 borderRadius="0.5rem"
@@ -295,7 +295,7 @@ function Dynamic(params) {
                 }}
               >
                 <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                  Second line
+                  SECOND LINE
                 </Text>
                 <List>
                   {params.specificContent.secondLineTreatment.map(
@@ -327,7 +327,7 @@ function Dynamic(params) {
                 }}
               >
                 <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                  Third line
+                  THIRD LINE
                 </Text>
                 <List>
                   {params.specificContent.thirdLineTreatment.map(
