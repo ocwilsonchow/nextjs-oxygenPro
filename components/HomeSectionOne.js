@@ -39,24 +39,7 @@ export default function HomeSectionOne() {
           to go in depth, we have also got you covered.
         </Text>
         <Flex justifyContent="center" m={5} flexWrap="wrap"></Flex>
-        <Stack direction="row" spacing={4} justifyContent="center">
-          <Avatar>
-            <AvatarBadge boxSize="1.25em" bg="green.500" />
-          </Avatar>
-          <Avatar src="https://image.cnbcfm.com/api/v1/image/106926992-1628885077267-elon.jpg?v=1635173166">
-            <AvatarBadge
-              borderColor="papayawhip"
-              bg="tomato"
-              boxSize="1.25em"
-            />
-          </Avatar>
-          <Avatar src="https://image.cnbcfm.com/api/v1/image/105931782-1558695236322gettyimages-96211512.jpeg?v=1633528274">
-            <AvatarBadge borderColor="blue.500" bg="blue" boxSize="1.25em" />
-          </Avatar>
-          <Avatar>
-            <AvatarBadge borderColor="gold" bg="green" boxSize="1.25em" />
-          </Avatar>
-        </Stack>
+        
         <Center>
           <Button mt={10} variant="outline" borderRadius="2rem" maxW="300px " colorScheme="whatsapp">
             Learn more

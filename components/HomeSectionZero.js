@@ -5,6 +5,10 @@ import {
   Center,
   Box,
   useColorModeValue,
+  AvatarGroup,
+  AvatarBadge,
+  Avatar,
+  Stack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -30,19 +34,35 @@ function HomeSectionZero() {
           bgClip="text"
           bgGradient="linear(to-r, #8BC6EC ,#9599E2  )"
         >
-          Revitalize healthcare experience
+          We connect people from every corner of the world.
         </Text>
-        <Text fontSize={["xs", "sm", "md", "xl"]} m={2} align="center">
-          You can easily get the information about medications and diseases on
-          Oxygen. Our content is carefully designed and edited to ensure you get
-          all the essential information you need. Of course, for those who love
-          to go in depth, we have also got you covered.
+        <Text fontSize={["xs", "sm", "md", "xl"]} m={2} mb={10} align="center">
+          We have integrated an interaction function in our library. You can
+          chat with other users who are online. You can also comment, make notes
+          and request improvement on each of the content in the library. By
+          building a user network, we can leverage the power of people to
+          enhance our content as well as the experience of using this library.
         </Text>
+        <Stack direction="row" spacing={4} justifyContent="center">
+          <Avatar src="http://prod-upp-image-read.ft.com/c3891ea0-d3b2-11e9-8d46-8def889b4137">
+            <AvatarBadge boxSize="1.25em" bg="green.500" />
+          </Avatar>
+          <Avatar src="https://image.cnbcfm.com/api/v1/image/106926992-1628885077267-elon.jpg?v=1635173166">
+            <AvatarBadge
+              borderColor="papayawhip"
+              bg="tomato"
+              boxSize="1.25em"
+            />
+          </Avatar>
+          <Avatar src="https://image.cnbcfm.com/api/v1/image/105931782-1558695236322gettyimages-96211512.jpeg?v=1633528274">
+            <AvatarBadge borderColor="blue.500" bg="blue" boxSize="1.25em" />
+          </Avatar>
+          <Avatar src="https://static01.nyt.com/images/2020/02/22/business/22berkshire1/22berkshire1-mobileMasterAt3x.jpg">
+            <AvatarBadge borderColor="gold" bg="green" boxSize="1.25em" />
+          </Avatar>
+        </Stack>
         <Center>
-          <Link
-            href="/about"
-            passHref={true}
-          >
+          <Link href="/about" passHref={true}>
             <Button
               mt={10}
               variant="outline"
