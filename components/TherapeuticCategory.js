@@ -57,7 +57,7 @@ function TherapeuticCategory() {
   ];
 
   const cardBackgroundColor = useColorModeValue("gray.200", "gray.800");
-  const borderColor = useColorModeValue("gray.400", "gray.700")
+  const borderColor = useColorModeValue("gray.400", "gray.700");
 
   return (
     <Flex p={4} flexWrap="wrap">
@@ -71,15 +71,8 @@ function TherapeuticCategory() {
             bg={cardBackgroundColor}
             w={["100%", "100%", "31%", "23.5%"]}
             borderRadius="0.5rem"
-            borderLeft="0.5rem solid tomato"
-            
           >
-            <Text
-              fontWeight="bold"
-              px={2}
-              fontSize={["xl", "xl", "xl", "2xl"]}
-              
-            >
+            <Text fontWeight="bold" px={2} fontSize={["xl", "xl", "xl", "2xl"]}>
               {card.category}
             </Text>
             <List my={2}>
@@ -88,7 +81,6 @@ function TherapeuticCategory() {
                   <>
                     <ListItem
                       fontSize={["md", "md", "md", "md"]}
-                      
                       cursor="pointer"
                       _hover={{ bg: "blue.600" }}
                       _focus={{ boxShadow: "outline" }}
@@ -102,7 +94,7 @@ function TherapeuticCategory() {
                     >
                       <Text>{title}</Text>
                     </ListItem>
-                    <Divider my={1} borderColor={borderColor}/>
+                    <Divider my={1} borderColor={borderColor} />
                   </>
                 );
               })}

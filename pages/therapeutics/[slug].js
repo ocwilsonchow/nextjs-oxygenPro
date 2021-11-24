@@ -127,12 +127,12 @@ function Dynamic(params) {
                         {params.specificContent.symptoms.map(
                           (symptom, index) => {
                             return (
-                              
                               <ListItem key={index}>
-                                <Code mr={2} my={1}><ListIcon
-                                  as={ArrowForwardIcon}
-                                  color="green.500"
-                                />
+                                <Code mr={2} my={1}>
+                                  <ListIcon
+                                    as={ArrowForwardIcon}
+                                    color="green.500"
+                                  />
                                   {symptom}
                                 </Code>
                               </ListItem>
@@ -161,11 +161,12 @@ function Dynamic(params) {
                         {params.specificContent.signs.map((sign, index) => {
                           return (
                             <ListItem key={index}>
-                             
-                              <Code mr={2} my={1}> <ListIcon
-                                as={ArrowForwardIcon}
-                                color="green.500"
-                              />
+                              <Code mr={2} my={1}>
+                                {" "}
+                                <ListIcon
+                                  as={ArrowForwardIcon}
+                                  color="green.500"
+                                />
                                 {sign}
                               </Code>
                             </ListItem>
@@ -194,11 +195,12 @@ function Dynamic(params) {
                           (risk, index) => {
                             return (
                               <ListItem key={index}>
-                                
-                                <Code mr={2} my={1}> <ListIcon
-                                as={ArrowForwardIcon}
-                                color="green.500"
-                              />
+                                <Code mr={2} my={1}>
+                                  {" "}
+                                  <ListIcon
+                                    as={ArrowForwardIcon}
+                                    color="green.500"
+                                  />
                                   {risk}
                                 </Code>
                               </ListItem>
@@ -228,11 +230,12 @@ function Dynamic(params) {
                           (complication, index) => {
                             return (
                               <ListItem key={index}>
-                                
-                                <Code mr={2} my={1}> <ListIcon
-                                as={ArrowForwardIcon}
-                                color="green.500"
-                              />
+                                <Code mr={2} my={1}>
+                                  {" "}
+                                  <ListIcon
+                                    as={ArrowForwardIcon}
+                                    color="green.500"
+                                  />
                                   {complication}
                                 </Code>
                               </ListItem>
@@ -267,11 +270,9 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                           
-                          <Code colorScheme="transparent" mr={2} my={1}> <ListIcon
-                                as={ArrowForwardIcon}
-                                color="green.500"
-                              />
+                          <Code colorScheme="transparent" mr={2} my={1}>
+                            {" "}
+                            <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
                           </Code>
                         </ListItem>
@@ -301,11 +302,9 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                           
-                          <Code colorScheme="transparent" mr={2} my={1}> <ListIcon
-                                as={ArrowForwardIcon}
-                                color="green.500"
-                              />
+                          <Code colorScheme="transparent" mr={2} my={1}>
+                            {" "}
+                            <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
                           </Code>
                         </ListItem>
@@ -335,11 +334,9 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                        
-                          <Code colorScheme="transparent" mr={2} my={1}> <ListIcon
-                                as={ArrowForwardIcon}
-                                color="green.500"
-                              />
+                          <Code colorScheme="transparent" mr={2} my={1}>
+                            {" "}
+                            <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
                           </Code>
                         </ListItem>
