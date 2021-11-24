@@ -92,9 +92,9 @@ function Dynamic(params) {
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
                       }}
-                      borderRadius="1rem"
+                      borderRadius="0.5rem"
                     >
-                      <Text fontWeight="extrabold" mb={2}>
+                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         What is it?
                       </Text>
                       <Text>{params.specificContent.briefSummary}</Text>
@@ -110,13 +110,13 @@ function Dynamic(params) {
                       p={4}
                       flexDir="column"
                       my={2}
-                      borderRadius="1rem"
+                      borderRadius="0.5rem"
                       transition="all ease 0.5s"
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
                       }}                    >
-                      <Text fontWeight="extrabold" mb={2}>
+                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Symptoms
                       </Text>
                       <List>
@@ -138,13 +138,13 @@ function Dynamic(params) {
                       p={4}
                       flexDir="column"
                       my={2}
-                      borderRadius="1rem"
+                      borderRadius="0.5rem"
                       transition="all ease 0.5s"
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
                       }}                    >
-                      <Text fontWeight="extrabold" mb={2}>
+                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Signs
                       </Text>
                       <List>
@@ -164,13 +164,13 @@ function Dynamic(params) {
                       p={4}
                       flexDir="column"
                       my={2}
-                      borderRadius="1rem"
+                      borderRadius="0.5rem"
                       transition="all ease 0.5s"
                       _hover={{
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
                       }}                    >
-                      <Text fontWeight="extrabold" mb={2}>
+                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Risk Factors
                       </Text>
                       <List>
@@ -190,7 +190,7 @@ function Dynamic(params) {
                     <Flex
                       bg={cardColor}
                       p={4}
-                      borderRadius="1rem"
+                      borderRadius="0.5rem"
                       flexDir="column"
                       my={2}
                       transition="all ease 0.5s"
@@ -198,7 +198,7 @@ function Dynamic(params) {
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
                       }}                    >
-                      <Text fontWeight="extrabold" mb={2}>
+                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Complications
                       </Text>
                       <List>
