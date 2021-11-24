@@ -70,7 +70,8 @@ function TherapeuticCategory() {
             m={2}
             bg={cardBackgroundColor}
             w={["100%", "100%", "31%", "23.5%"]}
-            borderRadius="15px"
+            borderRadius="0.5rem"
+            borderLeft="0.5rem solid tomato"
             
           >
             <Text
@@ -87,7 +88,7 @@ function TherapeuticCategory() {
                   <>
                     <ListItem
                       fontSize={["md", "md", "md", "md"]}
-                      fontWeight="bold"
+                      
                       cursor="pointer"
                       _hover={{ bg: "blue.600" }}
                       _focus={{ boxShadow: "outline" }}
@@ -99,7 +100,7 @@ function TherapeuticCategory() {
                       key={i}
                       borderRadius="xl"
                     >
-                      {title}
+                      <Text>{title}</Text>
                     </ListItem>
                     <Divider my={1} borderColor={borderColor}/>
                   </>
