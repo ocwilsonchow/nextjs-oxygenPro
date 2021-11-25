@@ -30,10 +30,10 @@ export default function HomeSectionOne() {
         <Accordion maxW="1000px" allowMultiple  bg={bgColor}>
           {content.map((content, index) => {
             return (
-              <AccordionItem>
+              <AccordionItem  key={index}>
                 <h2>
                   <AccordionButton>
-                    <Box flex="1" textAlign="left" fontWeight="bold" fontSize="2xl" key={index}>
+                    <Box flex="1" textAlign="left" fontWeight="bold" fontSize="2xl">
                       {content.title}
                     </Box>
                     <AccordionIcon />
