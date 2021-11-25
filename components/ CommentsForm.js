@@ -40,13 +40,13 @@ function CommentsForm() {
 
   return (
     <Flex justifyContent="space-between" w="100%" flexWrap="wrap">
-      <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={5}>
+      <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={[1,1,2,2]}>
         <Text fontWeight="bold" mb={2}>
           Your Comments
         </Text>
         <Textarea borderColor={borderColor}></Textarea>
       </Flex>
-      <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={5}>
+      <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={[1,1,2,2]}>
         <Text fontWeight="bold" mb={2}>
           Comments
         </Text>
@@ -65,7 +65,7 @@ function CommentsForm() {
               <Avatar>
                 <AvatarBadge boxSize="1.25em" bg="green.500" />
               </Avatar>
-              <Flex flexDir="column" w="100%" p={2}>
+              <Flex flexDir="column" w="100%" ml={2} p={2}>
                 <Text fontWeight="bold">{comment.name}</Text>
                 <Text>{comment.comment}</Text>
               </Flex>
