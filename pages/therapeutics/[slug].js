@@ -65,7 +65,10 @@ function Dynamic(params) {
             </Tab>
             <Tab fontWeight="bold" fontSize="sm">
               <Flex alignItems="center">
-                Forum <Badge mx={2} colorScheme="whatsapp">New</Badge>
+                Forum{" "}
+                <Badge mx={2} colorScheme="whatsapp">
+                  New
+                </Badge>
               </Flex>
             </Tab>
           </TabList>
@@ -419,10 +422,7 @@ function Dynamic(params) {
               )}
             </TabPanel>
             <TabPanel>
-              <Center bg="tomato" p={5} fontWeight="bold">
-                Development in progress 🔧
-              </Center>
-              <CommentsForm />
+              <CommentsForm topic={params.specificContent.name} />
             </TabPanel>
           </TabPanels>
         </Tabs>

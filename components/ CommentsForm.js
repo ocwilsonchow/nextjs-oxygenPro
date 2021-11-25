@@ -10,27 +10,27 @@ import {
   AvatarGroup,
 } from "@chakra-ui/react";
 
-function CommentsForm() {
+function CommentsForm({topic}) {
   const cardColor = useColorModeValue("gray.200", "gray.700");
   const borderColor = useColorModeValue("gray.300", "gray.700");
 
   const comments = [
     {
-      name: "Wilson",
+      name: "Wilson ",
       avatar: "",
       id: "1",
       comment: "Hello everyone, this forum is built for the whole community!",
       date: "25-11-2021",
     },
     {
-      name: "Matthew",
+      name: "Elon Mask",
       avatar: "",
       id: "2",
       comment: "Awesome!",
       date: "25-11-2021",
     },
     {
-      name: "Nicole",
+      name: "Steven Jobs",
       avatar: "",
       id: "3",
       comment: "Love it!",
@@ -48,12 +48,12 @@ function CommentsForm() {
       </Flex>
       <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={[1,1,2,2]}>
         <Text fontWeight="bold" mb={2}>
-          Comments
+          Comments related to {topic}
         </Text>
         {comments.map((comment, index) => {
           return (
             <Flex
-              my={2}
+              mb={4}
               key={index}
               w="100%"
               justifyContent="center"
