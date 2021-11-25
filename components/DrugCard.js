@@ -217,7 +217,7 @@ function DrugCard({ posts, width }) {
                         );
                       })}
                     </List>
-                    <List flexWrap="wrap">
+                   {post.monitoringRequirement.length!==0 && <List flexWrap="wrap">
                       <Text mr={2} fontWeight="bold">
                         Monitoring Requirement:
                       </Text>
@@ -234,7 +234,7 @@ function DrugCard({ posts, width }) {
                           </List>
                         );
                       })}
-                    </List>
+                    </List>}
                     <List flexWrap="wrap">
                       <ListItem mr={2} fontWeight="bold">
                         Remarks:
