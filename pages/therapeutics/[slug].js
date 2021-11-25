@@ -97,9 +97,11 @@ function Dynamic(params) {
                       borderRadius="0.5rem"
                     >
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        What is it?
+                        Overview
                       </Text>
-                      <Code colorScheme="transparent" >{params.specificContent.briefSummary}</Code>
+                      <Code colorScheme="transparent">
+                        {params.specificContent.briefSummary}
+                      </Code>
                     </Flex>
                   </Flex>
                   <Flex
@@ -124,10 +126,10 @@ function Dynamic(params) {
                         Signs and Symptoms
                       </Text>
                       <List>
-                      {params.specificContent.signs.map((sign, index) => {
+                        {params.specificContent.signs.map((sign, index) => {
                           return (
                             <ListItem key={index}>
-                              <Code  colorScheme="transparent"  mr={2} my={1}>
+                              <Code colorScheme="transparent" mr={2} my={1}>
                                 {" "}
                                 <ListIcon
                                   as={ArrowForwardIcon}
@@ -142,7 +144,7 @@ function Dynamic(params) {
                           (symptom, index) => {
                             return (
                               <ListItem key={index}>
-                                <Code   colorScheme="transparent" mr={2} my={1}>
+                                <Code colorScheme="transparent" mr={2} my={1}>
                                   <ListIcon
                                     as={ArrowForwardIcon}
                                     color="green.500"
@@ -153,10 +155,9 @@ function Dynamic(params) {
                             );
                           }
                         )}
-                        
                       </List>
                     </Flex>
-                   
+
                     <Flex
                       borderLeft="0.5rem solid teal"
                       bg={cardColor}
@@ -178,7 +179,7 @@ function Dynamic(params) {
                           (risk, index) => {
                             return (
                               <ListItem key={index}>
-                                <Code colorScheme="transparent"  mr={2} my={1}>
+                                <Code colorScheme="transparent" mr={2} my={1}>
                                   {" "}
                                   <ListIcon
                                     as={ArrowForwardIcon}
@@ -213,7 +214,7 @@ function Dynamic(params) {
                           (complication, index) => {
                             return (
                               <ListItem key={index}>
-                                <Code colorScheme="transparent"  mr={2} my={1}>
+                                <Code colorScheme="transparent" mr={2} my={1}>
                                   {" "}
                                   <ListIcon
                                     as={ArrowForwardIcon}
@@ -264,7 +265,7 @@ function Dynamic(params) {
                   )}
                 </List>
               </Flex>
-              <Flex
+              { params.specificContent.secondLineTreatment.length !== 0 && <Flex
                 borderLeft="0.5rem solid pink"
                 bg={cardColor}
                 p={4}
@@ -295,39 +296,44 @@ function Dynamic(params) {
                     }
                   )}
                 </List>
-              </Flex>
-              <Flex
-                borderLeft="0.5rem solid pink"
-                bg={cardColor}
-                p={4}
-                borderRadius="0.5rem"
-                flexDir="column"
-                my={2}
-                transition="all ease 0.5s"
-                _hover={{
-                  boxShadow:
-                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                }}
-              >
-                <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                  THIRD LINE
-                </Text>
-                <List>
-                  {params.specificContent.thirdLineTreatment.map(
-                    (step, index) => {
-                      return (
-                        <ListItem key={index}>
-                          <Code colorScheme="transparent" mr={2} my={1}>
-                            {" "}
-                            <ListIcon as={ArrowForwardIcon} color="green.500" />
-                            {step}
-                          </Code>
-                        </ListItem>
-                      );
-                    }
-                  )}
-                </List>
-              </Flex>
+              </Flex>}
+              {params.specificContent.thirdLineTreatment.length !== 0 && (
+                <Flex
+                  borderLeft="0.5rem solid pink"
+                  bg={cardColor}
+                  p={4}
+                  borderRadius="0.5rem"
+                  flexDir="column"
+                  my={2}
+                  transition="all ease 0.5s"
+                  _hover={{
+                    boxShadow:
+                      "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                  }}
+                >
+                  <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                    THIRD LINE
+                  </Text>
+                  <List>
+                    {params.specificContent.thirdLineTreatment.map(
+                      (step, index) => {
+                        return (
+                          <ListItem key={index}>
+                            <Code colorScheme="transparent" mr={2} my={1}>
+                              {" "}
+                              <ListIcon
+                                as={ArrowForwardIcon}
+                                color="green.500"
+                              />
+                              {step}
+                            </Code>
+                          </ListItem>
+                        );
+                      }
+                    )}
+                  </List>
+                </Flex>
+              )}
             </TabPanel>
             <TabPanel>
               <p>Development in progress</p>
