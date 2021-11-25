@@ -53,6 +53,7 @@ function Sidebar({ topics, posts }) {
                 my={2}
                 w="100%"
                 transition="all ease 0.5s"
+          
               >
                 <Flex key={i}>{category.name}</Flex>
               </Flex>
@@ -85,6 +86,7 @@ function Sidebar({ topics, posts }) {
                 transition="all ease 0.5s"
                 cursor="pointer"
                 key={index}
+              
               >
                 {topic.name}
               </Box>

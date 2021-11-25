@@ -7,7 +7,7 @@ export default function sponsor({ topics }) {
   return ( 
     <>
       <Header topics={topics} />
-      <Flex justifyContent="center" bg="black" my={10} p={5}>
+      <Flex justifyContent="center"  my={10} p={5}>
         <Text
           fontSize="4xl"
           fontWeight="bold"

@@ -34,6 +34,7 @@ const textColor = useColorModeValue("black", "white")
         >
           <Text
             align="center"
+   
             fontSize={["5xl", "6xl", "7xl", "8xl"]}
             fontWeight="bold"
             bgClip="text"
@@ -50,6 +51,7 @@ const textColor = useColorModeValue("black", "white")
               fontWeight="bold"
               align="center"
               px={5}
+        
             >
               The modern medical library for everyone
             </Text>
@@ -60,6 +62,7 @@ const textColor = useColorModeValue("black", "white")
               fontSize={["xs", "small", "md", "xl"]}
               align="center"
               w={["100%", "80%", "60%", "60%"]}
+              
             >
               Oxygen Pro is a platform for anyone on earth to access high
               quality, evidence-based health and medical information. Our
@@ -76,6 +79,7 @@ const textColor = useColorModeValue("black", "white")
               color={textColor}
               size="xs"
              variant="outline"
+            
             >
               Learn more about our team and vision 💬
             </Button>
@@ -90,6 +94,7 @@ const textColor = useColorModeValue("black", "white")
               color="black"
               colorScheme="facebook"
               borderRadius="1.5rem"
+         
             >
               Get Started 💨
             </Button>
@@ -100,11 +105,12 @@ const textColor = useColorModeValue("black", "white")
       <Center>
         <HomeSectionZero />
       </Center>
-      <Center>
-        <HomeSectionOne />
-      </Center>
+     
       <Center>
         <HomeSectionTwo />
+      </Center>
+      <Center>
+        <HomeSectionOne />
       </Center>
       <footer>
       <Footer />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {useRouter } from 'next/router'
 import Link from "next/link";
 import {
   Button,
@@ -29,6 +30,13 @@ import Layout from "../../components/Layout";
 import CommentsForm from "../../components/ CommentsForm";
 
 function Dynamic(params) {
+  const router = useRouter();
+
+  if(router.isFallback){
+    return <Loader />
+  }
+
+
   console.log(params);
   const bgColor = useColorModeValue("gray.300", "gray.900");
   const cardColor = useColorModeValue("gray.200", "gray.800");
@@ -106,173 +114,181 @@ function Dynamic(params) {
                       <Text fontWeight="extrabold" fontSize="xl" mb={2}>
                         Overview
                       </Text>
-                      <Text fontFamily="mono" colorScheme="transparent">
+                      <Text  colorScheme="transparent">
                         {params.specificContent.briefSummary}
                       </Text>
                     </Flex>
-                    <Flex
-                      borderLeft="0.5rem solid tomato"
-                      p={4}
-                      bg={cardColor}
-                      flexDir="column"
-                      my={2}
-                      transition="all ease 0.5s"
-                      _hover={{
-                        boxShadow:
-                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}
-                      borderRadius="0.5rem"
-                    >
-                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        Counselling
-                      </Text>
-                      <List fontFamily="mono" colorScheme="transparent">
-                        {params.specificContent.counselling.map(
-                          (counselling, index) => {
-                            return (
-                              <ListItem mb={2} key={index}>
-                                {" "}
-                                <ListIcon
-                                  as={ArrowForwardIcon}
-                                  color="green.500"
-                                />
-                                {counselling.text}
-                              </ListItem>
-                            );
-                          }
-                        )}
-                      </List>
-                    </Flex>
+                    {params.specificContent.counselling.length !== 0 && (
+                      <Flex
+                        borderLeft="0.5rem solid tomato"
+                        p={4}
+                        bg={cardColor}
+                        flexDir="column"
+                        my={2}
+                        transition="all ease 0.5s"
+                        _hover={{
+                          boxShadow:
+                            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                        }}
+                        borderRadius="0.5rem"
+                      >
+                        <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                          Counselling
+                        </Text>
+                        <List  colorScheme="transparent">
+                          {params.specificContent.counselling.map(
+                            (counselling, index) => {
+                              return (
+                                <ListItem mb={2} key={index}>
+                                  {" "}
+                                  <ListIcon
+                                    as={ArrowForwardIcon}
+                                    color="green.500"
+                                  />
+                                  {counselling.text}
+                                </ListItem>
+                              );
+                            }
+                          )}
+                        </List>
+                      </Flex>
+                    )}
                   </Flex>
                   <Flex
                     flexDir="column"
                     w={["100%", "100%", "50%", "50%"]}
                     px={2}
                   >
-                    <Flex
-                      borderLeft="0.5rem solid teal"
-                      bg={cardColor}
-                      p={4}
-                      flexDir="column"
-                      my={2}
-                      borderRadius="0.5rem"
-                      transition="all ease 0.5s"
-                      _hover={{
-                        boxShadow:
-                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}
-                    >
-                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        Signs and Symptoms
-                      </Text>
-                      <List>
-                        {params.specificContent.signs.map((sign, index) => {
-                          return (
-                            <ListItem key={index}>
-                              <Text fontFamily="mono" mr={2} my={1}>
-                                {" "}
-                                <ListIcon
-                                  as={ArrowForwardIcon}
-                                  color="green.500"
-                                />
-                                {sign}
-                              </Text>
-                            </ListItem>
-                          );
-                        })}
-                        {params.specificContent.symptoms.map(
-                          (symptom, index) => {
+                    {params.specificContent.counselling.symptoms !== 0 && (
+                      <Flex
+                        borderLeft="0.5rem solid teal"
+                        bg={cardColor}
+                        p={4}
+                        flexDir="column"
+                        my={2}
+                        borderRadius="0.5rem"
+                        transition="all ease 0.5s"
+                        _hover={{
+                          boxShadow:
+                            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                        }}
+                      >
+                        <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                          Signs and Symptoms
+                        </Text>
+                        <List>
+                          {params.specificContent.signs.map((sign, index) => {
                             return (
                               <ListItem key={index}>
-                                <Text fontFamily="mono" mr={2} my={1}>
+                                <Text mr={2} my={1}>
+                                  {" "}
                                   <ListIcon
                                     as={ArrowForwardIcon}
                                     color="green.500"
                                   />
-                                  {symptom}
+                                  {sign}
                                 </Text>
                               </ListItem>
                             );
-                          }
-                        )}
-                      </List>
-                    </Flex>
+                          })}
+                          {params.specificContent.symptoms.map(
+                            (symptom, index) => {
+                              return (
+                                <ListItem key={index}>
+                                  <Text  mr={2} my={1}>
+                                    <ListIcon
+                                      as={ArrowForwardIcon}
+                                      color="green.500"
+                                    />
+                                    {symptom}
+                                  </Text>
+                                </ListItem>
+                              );
+                            }
+                          )}
+                        </List>
+                      </Flex>
+                    )}
 
-                    <Flex
-                      borderLeft="0.5rem solid teal"
-                      bg={cardColor}
-                      p={4}
-                      flexDir="column"
-                      my={2}
-                      borderRadius="0.5rem"
-                      transition="all ease 0.5s"
-                      _hover={{
-                        boxShadow:
-                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}
-                    >
-                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        Risk Factors
-                      </Text>
-                      <List>
-                        {params.specificContent.riskFactors.map(
-                          (risk, index) => {
-                            return (
-                              <ListItem key={index}>
-                                <Text
-                                  fontFamily="mono"
-                                  colorScheme="transparent"
-                                  mr={2}
-                                  my={1}
-                                >
-                                  {" "}
-                                  <ListIcon
-                                    as={ArrowForwardIcon}
-                                    color="green.500"
-                                  />
-                                  {risk}
-                                </Text>
-                              </ListItem>
-                            );
-                          }
-                        )}
-                      </List>
-                    </Flex>
-                    <Flex
-                      borderLeft="0.5rem solid teal"
-                      bg={cardColor}
-                      p={4}
-                      borderRadius="0.5rem"
-                      flexDir="column"
-                      my={2}
-                      transition="all ease 0.5s"
-                      _hover={{
-                        boxShadow:
-                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
-                      }}
-                    >
-                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
-                        Complications
-                      </Text>
-                      <List>
-                        {params.specificContent.complications.map(
-                          (complication, index) => {
-                            return (
-                              <ListItem key={index}>
-                                <Text fontFamily="mono" mr={2} my={1}>
-                                  {" "}
-                                  <ListIcon
-                                    as={ArrowForwardIcon}
-                                    color="green.500"
-                                  />
-                                  {complication}
-                                </Text>
-                              </ListItem>
-                            );
-                          }
-                        )}
-                      </List>
-                    </Flex>
+                    {params.specificContent.riskFactors.length !== 0 && (
+                      <Flex
+                        borderLeft="0.5rem solid teal"
+                        bg={cardColor}
+                        p={4}
+                        flexDir="column"
+                        my={2}
+                        borderRadius="0.5rem"
+                        transition="all ease 0.5s"
+                        _hover={{
+                          boxShadow:
+                            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                        }}
+                      >
+                        <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                          Risk Factors
+                        </Text>
+                        <List>
+                          {params.specificContent.riskFactors.map(
+                            (risk, index) => {
+                              return (
+                                <ListItem key={index}>
+                                  <Text
+                                    
+                                    colorScheme="transparent"
+                                    mr={2}
+                                    my={1}
+                                  >
+                                    {" "}
+                                    <ListIcon
+                                      as={ArrowForwardIcon}
+                                      color="green.500"
+                                    />
+                                    {risk}
+                                  </Text>
+                                </ListItem>
+                              );
+                            }
+                          )}
+                        </List>
+                      </Flex>
+                    )}
+                    {params.specificContent.complications.length !== 0 && (
+                      <Flex
+                        borderLeft="0.5rem solid teal"
+                        bg={cardColor}
+                        p={4}
+                        borderRadius="0.5rem"
+                        flexDir="column"
+                        my={2}
+                        transition="all ease 0.5s"
+                        _hover={{
+                          boxShadow:
+                            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                        }}
+                      >
+                        <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                          Complications
+                        </Text>
+                        <List>
+                          {params.specificContent.complications.map(
+                            (complication, index) => {
+                              return (
+                                <ListItem key={index}>
+                                  <Text mr={2} my={1}>
+                                    {" "}
+                                    <ListIcon
+                                      as={ArrowForwardIcon}
+                                      color="green.500"
+                                    />
+                                    {complication}
+                                  </Text>
+                                </ListItem>
+                              );
+                            }
+                          )}
+                        </List>
+                      </Flex>
+                    )}
                   </Flex>
                 </Flex>
               </Flex>
@@ -299,7 +315,7 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                          <Text fontFamily="mono" mr={2} my={1}>
+                          <Text  mr={2} my={1}>
                             <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
                           </Text>
@@ -331,7 +347,7 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Text fontFamily="mono" mr={2} my={1}>
+                            <Text mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
@@ -368,7 +384,7 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Text fontFamily="mono" mr={2} my={1}>
+                            <Text mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
@@ -405,7 +421,7 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Text fontFamily="mono" mr={2} my={1}>
+                            <Text  mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
@@ -454,6 +470,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };

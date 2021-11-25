@@ -66,7 +66,7 @@ function DrugCard({ posts, width }) {
             <BreadcrumbLink href="#">
               {medicineCategory.bodySystem}
             </BreadcrumbLink>
-          </BreadcrumbItem >
+          </BreadcrumbItem>
           <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink href="#">
               {medicineCategory.therapeuticClass}
@@ -94,19 +94,24 @@ function DrugCard({ posts, width }) {
       </Flex>
       <Divider mb={3} />
 
-      <Tabs >
+      <Tabs>
         <TabList>
-          <Tab fontWeight="bold" fontSize="sm">Drug Treatment</Tab>
-          <Tab fontWeight="bold" fontSize="sm"> Treatment Guidelines</Tab>
+          <Tab fontWeight="bold" fontSize="sm">
+            Drug Treatment
+          </Tab>
+          <Tab fontWeight="bold" fontSize="sm">
+            {" "}
+            Treatment Guidelines
+          </Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <Flex flexWrap="wrap" justifyContent="flex-start" >
+            <Flex flexWrap="wrap" justifyContent="flex-start">
               {posts.map((post, index) => {
                 return (
                   <GridItem
                     key={index}
-                    m={[1,1,2,2]}
+                    m={[1, 1, 2, 2]}
                     p={5}
                     bg={cardBackground}
                     maxH={1000}
@@ -134,24 +139,26 @@ function DrugCard({ posts, width }) {
                     <Badge colorScheme="messenger" fontSize="md" mb={3}>
                       {post.drugClass}
                     </Badge>
-                    <Flex flexDir="column">
-                      <Text mr={2} fontWeight="bold">
-                        Brands:
-                      </Text>
-                      {post.brandNames.map((brandName, index) => {
-                        return (
-                          <List key={index}>
-                            <ListItem my={1} mr={2}>
-                              <ListIcon
-                                as={AiFillCheckCircle}
-                                color="green.500"
-                              />
-                              {brandName}
-                            </ListItem>
-                          </List>
-                        );
-                      })}
-                    </Flex>
+                    {post.brandNames.length !== 0 && (
+                      <Flex flexDir="column">
+                        <Text mr={2} fontWeight="bold">
+                          Brands:
+                        </Text>
+                        {post.brandNames.map((brandName, index) => {
+                          return (
+                            <List key={index}>
+                              <ListItem my={1} mr={2}>
+                                <ListIcon
+                                  as={AiFillCheckCircle}
+                                  color="green.500"
+                                />
+                                {brandName}
+                              </ListItem>
+                            </List>
+                          );
+                        })}
+                      </Flex>
+                    )}
                     <Flex>
                       <Text mr={2} fontWeight="bold">
                         Indications:

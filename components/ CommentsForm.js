@@ -8,18 +8,21 @@ import {
   Avatar,
   AvatarBadge,
   AvatarGroup,
+  Input,
+  Divider
 } from "@chakra-ui/react";
 
-function CommentsForm({topic}) {
+function CommentsForm({ topic }) {
   const cardColor = useColorModeValue("gray.200", "gray.700");
   const borderColor = useColorModeValue("gray.300", "gray.700");
+  const bgColor = useColorModeValue("gray.200", "gray.800");
 
   const comments = [
     {
       name: "Wilson ",
       avatar: "",
       id: "1",
-      comment: "Hello everyone, this forum is built for the whole community!",
+      comment: "Hello everyone, this forum is built for the whole healthcare professional community!",
       date: "25-11-2021",
     },
     {
@@ -40,15 +43,32 @@ function CommentsForm({topic}) {
 
   return (
     <Flex justifyContent="space-between" w="100%" flexWrap="wrap">
-      <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={[1,1,2,2]}>
-        <Text fontWeight="bold" mb={2}>
+      <Flex
+        flexDir="column"
+        my={2}
+        w={["100%", "100%", "100%", "50%"]}
+        p={[1, 1, 2, 2]}
+        pr={[0,0,0,10]}
+      >
+        <Text fontWeight="bold" fontSize="xl" mb={2}>
           Your Comments
         </Text>
-        <Textarea borderColor={borderColor}></Textarea>
+        <Textarea
+          placeholder="What is your thought?"
+          borderColor={borderColor}
+          mb={4}
+        />
+       
       </Flex>
-      <Flex flexDir="column" my={2} w={["100%", "100%", "100%", "50%"]} p={[1,1,2,2]}>
-        <Text fontWeight="bold" mb={2}>
-          Comments related to {topic}
+      
+      <Flex
+        flexDir="column"
+        my={2}
+        w={["100%", "100%", "100%", "50%"]}
+        p={[1, 1, 2, 2]}
+      >
+        <Text fontWeight="bold" mb={2} fontSize="xl">
+          {topic} Forum
         </Text>
         {comments.map((comment, index) => {
           return (
@@ -59,7 +79,7 @@ function CommentsForm({topic}) {
               justifyContent="center"
               alignItems="center"
               bg={cardColor}
-              borderRadius="1rem"
+              borderRadius="0.5rem"
               p={2}
             >
               <Avatar>
@@ -67,7 +87,7 @@ function CommentsForm({topic}) {
               </Avatar>
               <Flex flexDir="column" w="100%" ml={2} p={2}>
                 <Text fontWeight="bold">{comment.name}</Text>
-                <Text>{comment.comment}</Text>
+                <Text fontWeight="light" fontFamily="mono">{comment.comment}</Text>
               </Flex>
             </Flex>
           );
