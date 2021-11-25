@@ -30,12 +30,6 @@ import Layout from "../../components/Layout";
 import CommentsForm from "../../components/ CommentsForm";
 
 function Dynamic(params) {
-  const router = useRouter();
-
-  if(router.isFallback){
-    return <Loader />
-  }
-
 
   console.log(params);
   const bgColor = useColorModeValue("gray.300", "gray.900");
