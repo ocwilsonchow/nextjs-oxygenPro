@@ -114,7 +114,7 @@ function DrugCard({ posts, width }) {
                     m={[1, 1, 2, 2]}
                     p={5}
                     bg={cardBackground}
-                    maxH={1000}
+                    maxH={800}
                     width={width >= 1100 ? "31.5%" : "100%"}
                     borderRadius="lg"
                     overflowY="auto"
@@ -285,7 +285,7 @@ function DrugCard({ posts, width }) {
                               target="_blank"
                               rel="noreferrer"
                             >
-                              SPC
+                              Link
                             </a>
                           </Button>
                         </AccordionPanel>
