@@ -254,11 +254,10 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                          <Code colorScheme="transparent" mr={2} my={1}>
-                            {" "}
+                          <Text colorScheme="transparent" mr={2} my={1}>
                             <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
-                          </Code>
+                          </Text>
                         </ListItem>
                       );
                     }
@@ -286,11 +285,11 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                          <Code colorScheme="none" mr={2} my={1}>
+                          <Text colorScheme="none" mr={2} my={1}>
                             {" "}
                             <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
-                          </Code>
+                          </Text>
                         </ListItem>
                       );
                     }
@@ -319,14 +318,51 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Code colorScheme="transparent" mr={2} my={1}>
+                            <Text colorScheme="transparent" mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
                                 color="green.500"
                               />
                               {step}
-                            </Code>
+                            </Text>
+                          </ListItem>
+                        );
+                      }
+                    )}
+                  </List>
+                </Flex>
+              )}
+              {params.specificContent.furtherLineTreatment.length !== 0 && (
+                <Flex
+                  borderLeft="0.5rem solid pink"
+                  bg={cardColor}
+                  p={4}
+                  borderRadius="0.5rem"
+                  flexDir="column"
+                  my={2}
+                  transition="all ease 0.5s"
+                  _hover={{
+                    boxShadow:
+                      "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                  }}
+                >
+                  <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                    FURTHER TREATMENT
+                  </Text>
+                  <List>
+                    {params.specificContent.furtherLineTreatment.map(
+                      (step, index) => {
+                        return (
+                          <ListItem key={index}>
+                            <Text colorScheme="transparent" mr={2} my={1}>
+                              {" "}
+                              <ListIcon
+                                as={ArrowForwardIcon}
+                                color="green.500"
+                              />
+                              {step}
+                            </Text>
                           </ListItem>
                         );
                       }
