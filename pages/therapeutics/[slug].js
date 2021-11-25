@@ -21,11 +21,12 @@ import {
   ListIcon,
   HStack,
   VStack,
+  Badge,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
-import CommentsForm from "../../components/ CommentsForm"
+import CommentsForm from "../../components/ CommentsForm";
 
 function Dynamic(params) {
   console.log(params);
@@ -63,7 +64,9 @@ function Dynamic(params) {
               Treatment
             </Tab>
             <Tab fontWeight="bold" fontSize="sm">
-              Forum
+              <Flex alignItems="center">
+                Forum <Badge mx={2} colorScheme="whatsapp">New</Badge>
+              </Flex>
             </Tab>
           </TabList>
 
@@ -416,7 +419,7 @@ function Dynamic(params) {
               )}
             </TabPanel>
             <TabPanel>
-              <Center bg={bgColor} p={5} fontWeight="bold">
+              <Center bg="tomato" p={5} fontWeight="bold">
                 Development in progress 🔧
               </Center>
               <CommentsForm />
