@@ -5,12 +5,14 @@ import {
   useColorModeValue,
   Text,
   useMediaQuery,
-  Divider
+  Divider,
+  Center,
+  Spinner
 } from "@chakra-ui/react";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import { getPosts, getTopics } from "../../services";
-import Layout from "../../components/Layout"
+import Layout from "../../components/Layout";
 import TherapeuticCategory from "../../components/TherapeuticCategory";
 
 export default function Index({ topics }) {
@@ -20,6 +22,7 @@ export default function Index({ topics }) {
   ]);
   const gridBackground = useColorModeValue("gray.100", "gray.900");
   const [width, setWidth] = useState();
+  const bgColor = useColorModeValue("gray.300", "gray.900");
 
   useEffect(() => {
     if (isLargeScreen) {
@@ -100,10 +103,14 @@ export default function Index({ topics }) {
               },
             }}
           >
-              
-              <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="xl" >Minor Ailments</Text>
-                <Divider />
-                <Text p={5}>Welcome to the minor ailment page</Text>
+            <Text pt={5} pb={2} px={5} fontWeight="bold" fontSize="xl">
+              Minor Ailments
+            </Text>
+            <Divider />
+            <Text p={5}>Welcome to the minor ailment page</Text>
+            <Center bg={bgColor} p={10} fontWeight="bold">
+              Development in progress  <Spinner mx={2}/>
+            </Center>
           </GridItem>
         </Grid>
       </main>
@@ -116,8 +123,6 @@ export async function getStaticProps() {
   const topics = (await getTopics()) || [];
 
   return {
-    
     props: { posts, topics },
-
   };
 }

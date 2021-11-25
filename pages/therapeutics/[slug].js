@@ -259,12 +259,7 @@ function Dynamic(params) {
                     (step, index) => {
                       return (
                         <ListItem key={index}>
-                          <Text
-                            fontFamily="mono"
-                            colorScheme="transparent"
-                            mr={2}
-                            my={1}
-                          >
+                          <Text fontFamily="mono" mr={2} my={1}>
                             <ListIcon as={ArrowForwardIcon} color="green.500" />
                             {step}
                           </Text>
@@ -296,12 +291,7 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Text
-                              fontFamily="mono"
-                              colorScheme="none"
-                              mr={2}
-                              my={1}
-                            >
+                            <Text fontFamily="mono" mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
@@ -338,12 +328,7 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Text
-                              fontFamily="mono"
-                              colorScheme="transparent"
-                              mr={2}
-                              my={1}
-                            >
+                            <Text fontFamily="mono" mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
@@ -380,12 +365,7 @@ function Dynamic(params) {
                       (step, index) => {
                         return (
                           <ListItem key={index}>
-                            <Text
-                              fontFamily="mono"
-                              colorScheme="transparent"
-                              mr={2}
-                              my={1}
-                            >
+                            <Text fontFamily="mono" mr={2} my={1}>
                               {" "}
                               <ListIcon
                                 as={ArrowForwardIcon}
@@ -402,7 +382,7 @@ function Dynamic(params) {
               )}
             </TabPanel>
             <TabPanel>
-              <p>Development in progress</p>
+              <Center bg={bgColor} p={10} fontWeight="bold">Development in progress 🔧</Center>
             </TabPanel>
           </TabPanels>
         </Tabs>
