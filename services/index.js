@@ -70,6 +70,12 @@ export const getSpecificTopics = async (slug) => {
         symptoms
         briefSummary
         riskFactors
+        counselling {
+          html
+          text
+          raw
+          markdown
+        }
       }
     }
   `;

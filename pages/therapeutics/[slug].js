@@ -103,6 +103,39 @@ function Dynamic(params) {
                         {params.specificContent.briefSummary}
                       </Text>
                     </Flex>
+                    <Flex
+                      borderLeft="0.5rem solid tomato"
+                      p={4}
+                      bg={cardColor}
+                      flexDir="column"
+                      my={2}
+                      transition="all ease 0.5s"
+                      _hover={{
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;",
+                      }}
+                      borderRadius="0.5rem"
+                    >
+                      <Text fontWeight="extrabold" fontSize="xl" mb={2}>
+                        Counselling
+                      </Text>
+                      <List fontFamily="mono" colorScheme="transparent">
+                        {params.specificContent.counselling.map(
+                          (counselling, index) => {
+                            return (
+                              <ListItem mb={2} key={index}>
+                                {" "}
+                                <ListIcon
+                                  as={ArrowForwardIcon}
+                                  color="green.500"
+                                />
+                                {counselling.text}
+                              </ListItem>
+                            );
+                          }
+                        )}
+                      </List>
+                    </Flex>
                   </Flex>
                   <Flex
                     flexDir="column"
@@ -382,7 +415,9 @@ function Dynamic(params) {
               )}
             </TabPanel>
             <TabPanel>
-              <Center bg={bgColor} p={10} fontWeight="bold">Development in progress 🔧</Center>
+              <Center bg={bgColor} p={10} fontWeight="bold">
+                Development in progress 🔧
+              </Center>
             </TabPanel>
           </TabPanels>
         </Tabs>
