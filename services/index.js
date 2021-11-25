@@ -35,7 +35,7 @@ export const getTopics = async () => {
   const query = gql`
     query MyQuery2 {
       __typename
-      therapeuticAreas {
+      therapeuticAreas  (orderBy: name_ASC) {
         name
         slug
         proOnly
