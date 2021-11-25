@@ -25,6 +25,7 @@ import {
 import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
+import CommentsForm from "../../components/ CommentsForm"
 
 function Dynamic(params) {
   console.log(params);
@@ -62,7 +63,7 @@ function Dynamic(params) {
               Treatment
             </Tab>
             <Tab fontWeight="bold" fontSize="sm">
-              Professional
+              Forum
             </Tab>
           </TabList>
 
@@ -415,9 +416,10 @@ function Dynamic(params) {
               )}
             </TabPanel>
             <TabPanel>
-              <Center bg={bgColor} p={10} fontWeight="bold">
+              <Center bg={bgColor} p={5} fontWeight="bold">
                 Development in progress 🔧
               </Center>
+              <CommentsForm />
             </TabPanel>
           </TabPanels>
         </Tabs>
