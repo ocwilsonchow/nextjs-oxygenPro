@@ -18,8 +18,6 @@ export default function HomeSectionTwo() {
       justifyContent="center"
       alignItems="center"
       py={[10, 10, 20, "100px"]}
-     
-      bg="black"
       flexWrap="wrap"
       w="100%"
     >
