@@ -18,11 +18,12 @@ export default function HomeSectionTwo() {
       justifyContent="center"
       alignItems="center"
       py={[10, 10, 20, "100px"]}
-      px={[10, 10, 10, 10]}
-      
+     
+      bg="black"
       flexWrap="wrap"
+      w="100%"
     >
-      <Flex flexDir="column" maxW="1000px">
+      <Flex flexDir="column" justifyContent="center" maxW="1000px">
         <Text
           fontSize={["3xl", "4xl", "5xl", "6xl"]}
           fontWeight="bold"
