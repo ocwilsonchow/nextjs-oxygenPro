@@ -27,7 +27,7 @@ function Footer() {
   ];
 
   return (
-    <Flex p={10}  bg={bgColor} justifyContent="center" w="100%" bg="black">
+    <Flex p={10}  bg={bgColor} justifyContent="center" w="100%">
       <Flex maxW="1000px">
           <Flex flexWrap="wrap">
           {pages.map((page, index)=> {
