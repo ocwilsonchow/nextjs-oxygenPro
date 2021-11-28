@@ -27,8 +27,8 @@ function Footer() {
   ];
 
   return (
-    <Flex p={10}  bg={bgColor} justifyContent="center" w="100%">
-      <Flex maxW="1000px">
+    <Flex p={10}  bg={bgColor} justifyContent="center" w="100%" >
+      <Flex maxW="1000px" flexDir="column">
           <Flex flexWrap="wrap">
           {pages.map((page, index)=> {
               return (
@@ -36,8 +36,9 @@ function Footer() {
               )
           })}
           </Flex>
-          
+          <Divider />
       </Flex>
+      
      
     </Flex>
   );
