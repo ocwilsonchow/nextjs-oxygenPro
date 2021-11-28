@@ -67,11 +67,13 @@ function Header({ width, topics }) {
   return (
     <>
       <Flex
-        py={4}
+        py={3}
         px={5}
         justifyContent="space-between"
         alignItems="center"
         flexWrap="wrap"
+        w="100%"
+        
       >
         <Flex ml="1%" alignItems="center">
           <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "3xl"]}>

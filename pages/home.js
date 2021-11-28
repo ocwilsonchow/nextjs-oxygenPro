@@ -23,7 +23,7 @@ const textColor = useColorModeValue("black", "white")
   return (
     <div>
       <nav>
-        <Header topics={topics} />
+        <Header topics={topics}/>
       </nav>
       <Center flexDir="column" my={["2vh", "5vh", "10vh", "10vh"]}>
         <Flex

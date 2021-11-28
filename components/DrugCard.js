@@ -136,7 +136,7 @@ function DrugCard({ posts, width }) {
                         return <Text key={i}>{name}</Text>;
                       })}
                     </Text>
-                    <Badge colorScheme="messenger" fontSize="md" mb={3}>
+                    <Badge colorScheme="messenger" fontSize="md" mb={3} flexWrap="wrap">
                       {post.drugClass}
                     </Badge>
                     {post.brandNames.length !== 0 && (
@@ -202,7 +202,7 @@ function DrugCard({ posts, width }) {
                         })}
                       </ListItem>
                     </List>
-                    <List flexWrap="wrap">
+                    {post.caution.length!==0 &&  <List flexWrap="wrap">
                       <Text mr={2} fontWeight="bold">
                         Cautions:
                       </Text>
@@ -216,7 +216,7 @@ function DrugCard({ posts, width }) {
                           </List>
                         );
                       })}
-                    </List>
+                    </List>}
                    {post.monitoringRequirement.length!==0 && <List flexWrap="wrap">
                       <Text mr={2} fontWeight="bold">
                         Monitoring Requirement:

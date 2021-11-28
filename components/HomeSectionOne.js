@@ -24,7 +24,7 @@ export default function HomeSectionOne() {
 
   
   return (
-    <Flex flexDir="column" justifyContent="center" alignItems="center" w="100%" m={10}>
+    <Flex flexDir="column" justifyContent="center" alignItems="center"  m={10}>
       <Text my={10} fontSize="4xl" fontWeight="bold">FAQs</Text>
       <Flex w="100%" justifyContent="center" >
         <Accordion maxW="1000px" allowMultiple  bg={bgColor}>

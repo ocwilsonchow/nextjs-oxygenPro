@@ -14,11 +14,12 @@ export default function HomeSectionTwo() {
 
   return (
     <Flex
+      flexDir="column"
       justifyContent="center"
       alignItems="center"
       py={[10, 10, 20, "100px"]}
       px={[10, 10, 10, 10]}
-      w="100%"
+      
       flexWrap="wrap"
     >
       <Flex flexDir="column" maxW="1000px">
@@ -36,22 +37,63 @@ export default function HomeSectionTwo() {
           convenient way.
         </Text>
         <Flex justifyContent="center" m={5} flexWrap="wrap">
-          <Box h="250px" w="400px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box
+            h="250px"
+            w="300px"
+            fontWeight="bold"
+            fontSize="xl"
+            p={5}
+            m={2}
+            rounded="1rem"
+            bg={bgColor}
+          >
             User Experience
           </Box>
-          <Box h="250px" w="400px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box
+            h="250px"
+            w="300px"
+            fontWeight="bold"
+            fontSize="xl"
+            p={5}
+            m={2}
+            rounded="1rem"
+            bg={bgColor}
+          >
             Functionality
           </Box>
-          <Box h="250px" w="400px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box
+            h="250px"
+            w="300px"
+            fontWeight="bold"
+            fontSize="xl"
+            p={5}
+            m={2}
+            rounded="1rem"
+            bg={bgColor}
+          >
             Community
           </Box>
-          <Box h="250px" w="400px" fontWeight="bold" fontSize="xl" p={5} m={2} rounded="1rem" bg={bgColor}>
+          <Box
+            h="250px"
+            w="300px"
+            fontWeight="bold"
+            fontSize="xl"
+            p={5}
+            m={2}
+            rounded="1rem"
+            bg={bgColor}
+          >
             Convenience
           </Box>
-         
         </Flex>
         <Center>
-          <Button maxW="300px" mt={5} variant="outline" borderRadius="2rem" colorScheme="whatsapp">
+          <Button
+            maxW="300px"
+            mt={5}
+            variant="outline"
+            borderRadius="2rem"
+            colorScheme="whatsapp"
+          >
             See how we designed Oxygen
           </Button>
         </Center>
