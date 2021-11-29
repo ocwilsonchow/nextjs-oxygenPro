@@ -17,7 +17,7 @@ import {
 import { getPosts, getTopics } from "../services";
 
 export default function SignIn({ topics }) {
-  const cardColor = useColorModeValue("gray.200", "gray.700");
+  const cardColor = useColorModeValue("white", "gray.700");
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function SignIn({ topics }) {
           Create your account
         </Text>
         <Center m={5}>Development in progress 🔧</Center>
-        <Flex p={10} bg={cardColor} w="400px" borderRadius="1rem" flexDir="column">
+        <Flex p={10} bg={cardColor} w="400px" borderRadius="1rem" flexDir="column" boxShadow="lg">
           <FormControl id="email" mb={5}>
             <FormLabel>Email address</FormLabel>
             <Input type="email" />
