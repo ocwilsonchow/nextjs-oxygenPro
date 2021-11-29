@@ -13,7 +13,7 @@ import {
 import Link from "next/link";
 
 function HomeSectionZero() {
-  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const bgColor = useColorModeValue("white", "gray.900");
 
   return (
     <Flex
