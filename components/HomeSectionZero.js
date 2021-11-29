@@ -19,7 +19,7 @@ function HomeSectionZero() {
     <Flex
       justifyContent="center"
       alignItems="center"
-      py={[10, 10, 20, "150px"]}
+      py={[10, 10, 20, "100px"]}
       px={[10, 10, 20, 20]}
       w="100%"
       flexWrap="wrap"
