@@ -53,6 +53,7 @@ import {
   MenuDivider,
   Badge
 } from "@chakra-ui/react";
+import {LockIcon} from "@chakra-ui/icons"
 import Sidebar from "./Sidebar";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
@@ -95,28 +96,10 @@ function Header({ width, topics }) {
           <Link href="/home" passHref={true}>
             <IconButton icon={<FaHome />} rounded="100%" mx={[1, 1, 2, 2]} />
           </Link>
-          <Popover>
-            <PopoverTrigger>
-              <IconButton
-                icon={<SearchIcon />}
-                mx={[1, 1, 2, 2]}
-                borderRadius="100%"
-              >
-                Trigger
-              </IconButton>
-            </PopoverTrigger>
-            <Portal>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverBody>
-                  <InputGroup>
-                    <Input placeholder="Search the library + Enter" />
-                    <InputRightElement mr={5} />
-                  </InputGroup>
-                </PopoverBody>
-              </PopoverContent>
-            </Portal>
-          </Popover>
+          <Link href="/signIn" passHref={true}>
+            <IconButton icon={<LockIcon />} rounded="100%" mx={[1, 1, 2, 2]} />
+          </Link>
+         
           <IconButton
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}

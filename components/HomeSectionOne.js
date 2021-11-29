@@ -22,18 +22,29 @@ export default function HomeSectionOne() {
     },
   ];
 
-  
   return (
-    <Flex flexDir="column" justifyContent="center" alignItems="center" w="100%" >
-      <Text my={10} fontSize="4xl" fontWeight="bold">FAQs</Text>
-      <Flex  justifyContent="center" >
-        <Accordion maxW="1000px" allowMultiple  bg={bgColor}>
+    <Flex
+      
+      justifyContent="center"
+      alignItems="center"
+      w="100%"
+      bg={bgColor}
+      py={10}
+    >
+      
+      <Flex>
+        <Accordion allowMultiple m={5}>
           {content.map((content, index) => {
             return (
-              <AccordionItem  key={index}>
+              <AccordionItem key={index}>
                 <h2>
                   <AccordionButton>
-                    <Box flex="1" textAlign="left" fontWeight="bold" fontSize="2xl">
+                    <Box
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize="2xl"
+                    >
                       {content.title}
                     </Box>
                     <AccordionIcon />
