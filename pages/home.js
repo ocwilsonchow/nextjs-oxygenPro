@@ -77,7 +77,7 @@ const textColor = useColorModeValue("black", "white")
               px={5}
               borderRadius="1rem"
               color={textColor}
-              size="xs"
+              size="sm"
              variant="outline"
             
             >

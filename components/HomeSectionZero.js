@@ -63,13 +63,7 @@ function HomeSectionZero() {
         </Stack>
         <Center>
           <Link href="/about" passHref={true}>
-            <Button
-              mt={10}
-              variant="outline"
-              colorScheme="whatsapp"
-              borderRadius="2rem"
-              maxW="300px"
-            >
+            <Button mt={10} variant="outline" borderRadius="2rem" maxW="300px">
               Know more about our team
             </Button>
           </Link>

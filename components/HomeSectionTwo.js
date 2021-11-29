@@ -48,42 +48,7 @@ export default function HomeSectionTwo() {
           >
             User Experience
           </Box>
-          <Box
-            h="250px"
-            w="300px"
-            fontWeight="bold"
-            fontSize="xl"
-            p={5}
-            m={2}
-            rounded="1rem"
-            bg={bgColor}
-          >
-            Functionality
-          </Box>
-          <Box
-            h="250px"
-            w="300px"
-            fontWeight="bold"
-            fontSize="xl"
-            p={5}
-            m={2}
-            rounded="1rem"
-            bg={bgColor}
-          >
-            Community
-          </Box>
-          <Box
-            h="250px"
-            w="300px"
-            fontWeight="bold"
-            fontSize="xl"
-            p={5}
-            m={2}
-            rounded="1rem"
-            bg={bgColor}
-          >
-            Convenience
-          </Box>
+          
         </Flex>
         <Center>
           <Button
@@ -91,7 +56,6 @@ export default function HomeSectionTwo() {
             mt={5}
             variant="outline"
             borderRadius="2rem"
-            colorScheme="whatsapp"
           >
             See how we designed Oxygen
           </Button>
