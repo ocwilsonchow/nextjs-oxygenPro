@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { getPosts, getTopics } from "../services";
 
-export default function signIn({ topics }) {
+export default function SignIn({ topics }) {
   const cardColor = useColorModeValue("gray.200", "gray.700");
 
   return (
