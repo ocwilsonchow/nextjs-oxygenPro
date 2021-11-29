@@ -14,16 +14,15 @@ import Link from "next/link";
 import HomeSectionOne from "../components/HomeSectionOne";
 import HomeSectionTwo from "../components/HomeSectionTwo";
 import HomeSectionZero from "../components/HomeSectionZero";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 
 export default function Home({ topics }) {
-const textColor = useColorModeValue("black", "white")
-
+  const textColor = useColorModeValue("black", "white");
 
   return (
     <div>
       <nav>
-        <Header topics={topics}/>
+        <Header topics={topics} />
       </nav>
       <Center flexDir="column" my={["2vh", "5vh", "10vh", "10vh"]}>
         <Flex
@@ -34,7 +33,6 @@ const textColor = useColorModeValue("black", "white")
         >
           <Text
             align="center"
-   
             fontSize={["5xl", "6xl", "7xl", "8xl"]}
             fontWeight="bold"
             bgClip="text"
@@ -51,7 +49,6 @@ const textColor = useColorModeValue("black", "white")
               fontWeight="bold"
               align="center"
               px={5}
-        
             >
               The modern medical library for everyone
             </Text>
@@ -62,7 +59,6 @@ const textColor = useColorModeValue("black", "white")
               fontSize={["xs", "small", "md", "xl"]}
               align="center"
               w={["100%", "80%", "60%", "60%"]}
-              
             >
               Oxygen Pro is a platform for anyone on earth to access high
               quality, evidence-based health and medical information. Our
@@ -77,9 +73,7 @@ const textColor = useColorModeValue("black", "white")
               px={5}
               borderRadius="1rem"
               color={textColor}
-              size="sm"
-             variant="outline"
-            
+              variant="outline"
             >
               Learn more about our team and vision 💬
             </Button>
@@ -94,18 +88,16 @@ const textColor = useColorModeValue("black", "white")
               color="black"
               colorScheme="facebook"
               borderRadius="1.5rem"
-         
             >
               Get Started 💨
             </Button>
           </Link>
         </Center>
-      
       </Center>
       <Center>
         <HomeSectionZero />
       </Center>
-     
+
       <Center>
         <HomeSectionTwo />
       </Center>
@@ -113,10 +105,9 @@ const textColor = useColorModeValue("black", "white")
         <HomeSectionOne />
       </Center>
       <footer>
-      <Footer />
-    </footer>
+        <Footer />
+      </footer>
     </div>
-   
   );
 }
 
