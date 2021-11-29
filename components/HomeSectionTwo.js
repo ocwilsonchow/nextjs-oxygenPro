@@ -92,9 +92,9 @@ export default function HomeSectionTwo() {
                   </Text>
                   <Text fontSize="2xl">Per Month</Text>
                   <Box my={5}>
-                    {content.features.map((feature) => {
+                    {content.features.map((feature, i) => {
                       return (
-                        <Text fontSize="md" fontWeight="light" my={2}>
+                        <Text fontSize="md" fontWeight="light" my={2} key={i}>
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>
