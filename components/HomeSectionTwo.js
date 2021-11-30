@@ -30,7 +30,7 @@ export default function HomeSectionTwo() {
       proFeatures: [],
     },
     {
-      name: "Pharmacist",
+      name: "Pro",
       description: "Designed for practising pharmacists",
       fee: "HKD 120",
       features: ["Minor ailments", "Common therapeutics",  "Top 100 Drugs"],
@@ -80,7 +80,7 @@ export default function HomeSectionTwo() {
                 <Flex flexDir="column" fontSize="3xl">
                   <Text>{content.name}</Text>
 
-                  <Text fontWeight="extrabold" fontSize="4xl" color="teal.400">
+                  <Text fontWeight="extrabold" fontSize="5xl" color="teal.400">
                     {content.fee}
                   </Text>
                   <Text fontSize="2xl">Per Month</Text>
