@@ -51,9 +51,9 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
-  Badge
+  Badge,
 } from "@chakra-ui/react";
-import {LockIcon} from "@chakra-ui/icons"
+import { LockIcon } from "@chakra-ui/icons";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
@@ -64,7 +64,6 @@ function Header({ width, topics }) {
   const btnRef = React.useRef();
   const bgColor = useColorModeValue("white", "gray.800");
 
-
   return (
     <>
       <Flex
@@ -74,7 +73,6 @@ function Header({ width, topics }) {
         alignItems="center"
         flexWrap="wrap"
         w="100%"
-        
       >
         <Flex ml="1%" alignItems="center">
           <Text fontWeight="bold" fontSize={["2xl", "2xl", "3xl", "3xl"]}>
@@ -99,7 +97,7 @@ function Header({ width, topics }) {
           <Link href="/signIn" passHref={true}>
             <IconButton icon={<LockIcon />} rounded="100%" mx={[1, 1, 2, 2]} />
           </Link>
-         
+
           <IconButton
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}
@@ -151,4 +149,3 @@ function Header({ width, topics }) {
 }
 
 export default Header;
-

@@ -40,7 +40,7 @@ export default function Home({ topics }) {
             bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
             flexWrap="wrap"
           >
-            Oxygen Health
+            Oxygen Pro
           </Text>
 
           <Box>

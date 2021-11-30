@@ -3,13 +3,24 @@ import {
   Flex,
   Center,
   useColorModeValue,
+  IconButton,
   Button,
   Divider,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
+import {
+  MoonIcon,
+  SunIcon,
+  SearchIcon,
+  HamburgerIcon,
+  EditIcon,
+  ChevronDownIcon,
+} from "@chakra-ui/icons";
 
 function Footer() {
-  const bgColor = useColorModeValue("gray.200", "gray.900");
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bgColor = useColorModeValue("gray.100", "gray.900");
   const pages = [
     {
       name: "Overview",
@@ -47,11 +58,28 @@ function Footer() {
         </Flex>
         <Divider />
         <Flex my={5} flexWrap="wrap">
-          <Text fontSize="xs" fontWeight="light" color="gray.400" px={2}>
+          <Text fontSize="xs" fontWeight="light" px={2}>
             © 2021 Oxygen Pro. All rights reserved.
           </Text>
-          
         </Flex>
+        <IconButton
+        variant="outline"
+          icon={
+            colorMode === "light" ? (
+              <Flex alignItems="center">
+                <MoonIcon mr={2}/>
+                <Text>Dark Mode</Text>
+              </Flex>
+            ) : (
+              <Flex alignItems="center">
+                <SunIcon mr={2}/>
+                <Text>Light Mode</Text>
+              </Flex>
+            )
+          }
+          onClick={toggleColorMode}
+          mx={[1, 1, 2, 2]}
+        />
       </Flex>
     </Flex>
   );

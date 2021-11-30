@@ -103,7 +103,7 @@ export default function HomeSectionTwo() {
                   </Box>
                 </Flex>
                 <Flex >
-                  <Button w="100%">Start free trial</Button>
+                  <Button w="100%" variant="outline" borderRadius="2rem" color="facebook">Start free trial</Button>
                 </Flex>
               </Flex>
             );

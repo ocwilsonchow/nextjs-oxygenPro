@@ -20,20 +20,27 @@ export default function HomeSectionOne() {
       description:
         "Oxygen Pro is an online platform designed for pharmacy students and pharmacists to revisit pharmacy knowledge.",
     },
+    {
+      title: "Is Oxygen Pro free?",
+      description: "Oxygen Pro Student is free for everyone.",
+    },
+    {
+      title: "How does the mentorship programme work?",
+      description:
+        "We collaborate with practising pharmacists and assign one of them to be your tutor according to your preference and personal profile.",
+    },
+    {
+      title: "Is Oxygen Pro free?",
+      description: "Oxygen Pro Student is free for everyone.",
+    },
   ];
 
   return (
-    <Flex
+    <Flex bg={bgColor} w="100%" justifyContent="center" py={10}>
       
-      justifyContent="center"
-      alignItems="center"
-      w="100%"
-      bg={bgColor}
-      py={10}
-    >
-      
-      <Flex>
-        <Accordion allowMultiple m={5}>
+      <Flex w="100%" maxW="1000px">
+        <Accordion allowMultiple m={5} w="100%">
+          <Center mb={10} fontWeight="bold" fontSize="4xl">In case you missed anything.</Center>
           {content.map((content, index) => {
             return (
               <AccordionItem key={index}>
@@ -43,7 +50,8 @@ export default function HomeSectionOne() {
                       flex="1"
                       textAlign="left"
                       fontWeight="bold"
-                      fontSize="2xl"
+                      my={3}
+                      fontSize="xl"
                     >
                       {content.title}
                     </Box>
