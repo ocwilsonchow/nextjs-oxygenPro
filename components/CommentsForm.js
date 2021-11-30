@@ -80,7 +80,8 @@ function CommentsForm({ topic }) {
               alignItems="center"
               bg={cardColor}
               borderRadius="0.5rem"
-              p={2}
+              py={2}
+              px={5}
             >
               <Avatar>
                 <AvatarBadge boxSize="1.25em" bg="green.500" />
