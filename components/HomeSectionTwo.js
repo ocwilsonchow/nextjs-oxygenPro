@@ -18,30 +18,24 @@ export default function HomeSectionTwo() {
       description: "Designed for pharmacy students",
       fee: "Free",
       features: ["Minor ailments", "Common therapeutics", "Forum access"],
+      advancedFeatures: [],
+      proFeatures: [],
     },
     {
       name: "Foundation",
       description: "Designed for trainee pharmacists",
       fee: "HKD 50",
-      features: [
-        "Minor ailments",
-        "Common therapeutics",
-        "Note-taking",
-        "Forum access",
-        "Mentorship",
-      ],
+      features: ["Minor ailments", "Common therapeutics", "Forum access"],
+      advancedFeatures: ["Note-taking", "Mentorship"],
+      proFeatures: [],
     },
     {
       name: "Pharmacist",
       description: "Designed for practising pharmacists",
       fee: "HKD 100",
-      features: [
-        "Minor ailments",
-        "Common therapeutics",
-        "Note-taking",
-        "Forum access",
-        "Mentorship",
-      ],
+      features: ["Minor ailments", "Common therapeutics", "Forum access"],
+      advancedFeatures: ["Note-taking", "Mentorship"],
+      proFeatures: ["live chat", "unlimited note-taking"],
     },
   ];
 
@@ -72,8 +66,7 @@ export default function HomeSectionTwo() {
           {boxContent.map((content, i) => {
             return (
               <Flex
-                h="450px"
-                w="300px"
+                w={["100%","80%","300px","300px"]}
                 fontWeight="bold"
                 fontSize="xl"
                 p={(5, 5, 5, 10)}
@@ -94,7 +87,35 @@ export default function HomeSectionTwo() {
                   <Box my={5}>
                     {content.features.map((feature, i) => {
                       return (
-                        <Text fontSize="md" fontWeight="light" my={2} key={i}>
+                        <Text fontSize="md" fontWeight="normal" my={2} key={i}>
+                          <CheckCircleIcon mr={3} />
+                          {feature}
+                        </Text>
+                      );
+                    })}
+                    {content.advancedFeatures.map((feature, i) => {
+                      return (
+                        <Text
+                          color="blue.400"
+                          fontSize="md"
+                          fontWeight="normal"
+                          my={2}
+                          key={i}
+                        >
+                          <CheckCircleIcon mr={3} />
+                          {feature}
+                        </Text>
+                      );
+                    })}
+                    {content.proFeatures.map((feature, i) => {
+                      return (
+                        <Text
+                          color="green.500"
+                          fontSize="md"
+                          fontWeight="normal"
+                          my={2}
+                          key={i}
+                        >
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>
@@ -102,8 +123,15 @@ export default function HomeSectionTwo() {
                     })}
                   </Box>
                 </Flex>
-                <Flex >
-                  <Button w="100%" variant="outline" borderRadius="2rem" color="facebook">Start free trial</Button>
+                <Flex>
+                  <Button
+                    w="100%"
+                    variant="outline"
+                    borderRadius="2rem"
+                    color="facebook"
+                  >
+                    Start free trial
+                  </Button>
                 </Flex>
               </Flex>
             );
