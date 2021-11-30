@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/icons";
 import {
   Center,
+  Badge,
   Flex,
   Text,
   Stack,
@@ -39,7 +40,7 @@ function Header({ width, topics }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const bgColor = useColorModeValue("white", "gray.800");
+  const logoColor = useColorModeValue("white", "gray.800");
 
   return (
     <>
@@ -58,9 +59,8 @@ function Header({ width, topics }) {
           <Text
             fontSize={["2xl", "2xl", "3xl", "3xl"]}
             fontWeight="bold"
-            colorScheme="facebook"
             bgClip="text"
-            bgGradient="linear(to-r, gray.500, gray.500, gray.600)"
+            bgGradient="linear(to-t, blue.500, blue.400)"
             cursor="pointer"
           >
             Pro
