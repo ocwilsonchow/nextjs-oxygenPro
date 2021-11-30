@@ -27,7 +27,7 @@ import {
 import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
-import CommentsForm from "../../components/ CommentsForm";
+import CommentsForm from "../../components/CommentsForm";
 
 function Dynamic(params) {
 
