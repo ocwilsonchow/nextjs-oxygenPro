@@ -28,6 +28,7 @@ import { ChevronRightIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { getPosts, getSpecificTopics, getTopics } from "../../services";
 import Layout from "../../components/Layout";
 import CommentsForm from "../../components/CommentsForm";
+import MyNotes from "../../components/MyNotes";
 
 function Dynamic(params) {
 
@@ -68,7 +69,15 @@ function Dynamic(params) {
             <Tab fontWeight="bold" fontSize="sm">
               <Flex alignItems="center">
                 Forum{" "}
-                <Badge mx={2} colorScheme="whatsapp">
+                <Badge ml={2} colorScheme="whatsapp">
+                  New
+                </Badge>
+              </Flex>
+            </Tab>
+            <Tab fontWeight="bold" fontSize="sm">
+              <Flex alignItems="center">
+                My Notes
+                <Badge ml={2} colorScheme="whatsapp">
                   New
                 </Badge>
               </Flex>
@@ -433,6 +442,9 @@ function Dynamic(params) {
             </TabPanel>
             <TabPanel>
               <CommentsForm topic={params.specificContent.name} />
+            </TabPanel>
+            <TabPanel>
+              <MyNotes />
             </TabPanel>
           </TabPanels>
         </Tabs>

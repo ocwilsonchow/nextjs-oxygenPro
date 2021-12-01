@@ -40,7 +40,7 @@ export default function HomeSectionOne() {
       
       <Flex w="100%" maxW="1000px">
         <Accordion allowMultiple m={5} w="100%">
-          <Center mb={10} fontWeight="bold" fontSize="4xl">In case you missed anything.</Center>
+          <Center mb={10} fontWeight="bold" fontSize={["2xl","3xl","3xl","4xl"]}>In case you missed anything.</Center>
           {content.map((content, index) => {
             return (
               <AccordionItem key={index}>

@@ -17,7 +17,7 @@ export default function HomeSectionTwo() {
       name: "Student",
       description: "Designed for pharmacy students",
       fee: "Free",
-      features: ["Minor ailments", "Common therapeutics",  "Top 100 Drugs"],
+      features: ["Minor ailments", "Common therapeutics", "Top 100 Drugs"],
       advancedFeatures: [],
       proFeatures: [],
     },
@@ -25,17 +25,17 @@ export default function HomeSectionTwo() {
       name: "Foundation",
       description: "Designed for trainee pharmacists",
       fee: "HKD 50",
-      features: ["Minor ailments", "Common therapeutics",  "Top 100 Drugs"],
-      advancedFeatures: ["Forum access", "Note-taking", "Mentorship"],
+      features: ["Minor ailments", "Common therapeutics", "Top 100 Drugs"],
+      advancedFeatures: ["Forum access", "Note taking", "Mentorship"],
       proFeatures: [],
     },
     {
       name: "Pro",
       description: "Designed for practising pharmacists",
-      fee: "HKD 120",
-      features: ["Minor ailments", "Common therapeutics",  "Top 100 Drugs"],
-      advancedFeatures: ["Forum access", "Note-taking", "Mentorship"],
-      proFeatures: ["Live chat", "Unlimited note-taking"],
+      fee: "HKD 100",
+      features: ["Minor ailments", "Common therapeutics", "Top 100 Drugs"],
+      advancedFeatures: ["Forum access", "Note taking", "Mentorship"],
+      proFeatures: ["Live online chat group", "Unlimited note-taking"],
     },
   ];
 
@@ -66,7 +66,7 @@ export default function HomeSectionTwo() {
           {boxContent.map((content, i) => {
             return (
               <Flex
-                w={["100%","80%","300px","300px"]}
+                w={["100%", "80%", "300px", "300px"]}
                 fontWeight="bold"
                 fontSize="xl"
                 p={(5, 5, 5, 10)}
@@ -80,14 +80,20 @@ export default function HomeSectionTwo() {
                 <Flex flexDir="column" fontSize="3xl">
                   <Text>{content.name}</Text>
 
-                  <Text fontWeight="extrabold" fontSize="5xl" color="teal.400">
+                  <Text
+                    fontWeight="extrabold"
+                    fontSize="5xl"
+                    color="teal.400"
+                    bgGradient='linear(to-l, #7928CA, #FF0080)'
+                    bgClip="text"
+                  >
                     {content.fee}
                   </Text>
                   <Text fontSize="2xl">Per Month</Text>
                   <Box my={5}>
                     {content.features.map((feature, i) => {
                       return (
-                        <Text fontSize="md" fontWeight="normal" my={2} key={i}>
+                        <Text fontSize="md" my={2} key={i}>
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>
@@ -95,13 +101,7 @@ export default function HomeSectionTwo() {
                     })}
                     {content.advancedFeatures.map((feature, i) => {
                       return (
-                        <Text
-                          color="blue.400"
-                          fontSize="md"
-                          fontWeight="normal"
-                          my={2}
-                          key={i}
-                        >
+                        <Text color="blue.400" fontSize="md" my={2} key={i}>
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>
@@ -109,13 +109,7 @@ export default function HomeSectionTwo() {
                     })}
                     {content.proFeatures.map((feature, i) => {
                       return (
-                        <Text
-                          color="green.500"
-                          fontSize="md"
-                          fontWeight="normal"
-                          my={2}
-                          key={i}
-                        >
+                        <Text color="green.400" fontSize="md" my={2} key={i}>
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>

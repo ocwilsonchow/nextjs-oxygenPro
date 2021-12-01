@@ -118,6 +118,7 @@ function DrugCard({ posts, width }) {
                     width={width >= 1100 ? "31.5%" : "100%"}
                     borderRadius="lg"
                     overflowY="auto"
+                    fontSize="md"
                     css={{
                       "&::-webkit-scrollbar": {
                         width: "4px",
