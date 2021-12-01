@@ -84,8 +84,8 @@ export default function HomeSectionTwo() {
                     fontWeight="extrabold"
                     fontSize="5xl"
                     color="teal.400"
-                    bgGradient='linear(to-l, #7928CA, #FF0080)'
                     bgClip="text"
+                    bgGradient="linear(to-t, blue.500, blue.400)"
                   >
                     {content.fee}
                   </Text>
