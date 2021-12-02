@@ -55,7 +55,7 @@ export default function HomeSectionTwo() {
           m={2}
           align="center"
         >
-          Speed up your revision process
+          Speed up your revision process.
         </Text>
         <Text fontSize={["xs", "sm", "md", "xl"]} m={2} align="center">
           Oxygen Pro is designed for pharmacy students, trainee pharmacists and
@@ -90,7 +90,7 @@ export default function HomeSectionTwo() {
                     {content.fee}
                   </Text>
                   <Text fontSize="2xl">Per Month</Text>
-                  <Box my={5}>
+                  <Box my={5} fontWeight="normal">
                     {content.features.map((feature, i) => {
                       return (
                         <Text fontSize="md" my={2} key={i}>

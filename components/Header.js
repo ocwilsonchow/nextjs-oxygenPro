@@ -71,7 +71,7 @@ function Header({ width, topics }) {
           <Link href="/home" passHref={true}>
             <IconButton icon={<FaHome />} rounded="100%" mx={[1, 1, 2, 2]} />
           </Link>
-          <Link href="/signIn" passHref={true}>
+          <Link href="/authentication" passHref={true}>
             <IconButton icon={<LockIcon />} rounded="100%" mx={[1, 1, 2, 2]} />
           </Link>
 

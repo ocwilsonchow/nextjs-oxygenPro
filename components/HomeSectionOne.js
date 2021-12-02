@@ -30,8 +30,8 @@ export default function HomeSectionOne() {
         "We collaborate with practising pharmacists and assign one of them to be your tutor according to your preference and personal profile.",
     },
     {
-      title: "Is Oxygen Pro free?",
-      description: "Oxygen Pro Student is free for everyone.",
+      title: "If I am not happy with the product, can I have a refund?",
+      description: "We want to make sure our users are satisfied with the product. In case you are unhappy or have any problem, please email sinlongchow@gmail.com so that our team can reach out to you.",
     },
   ];
 

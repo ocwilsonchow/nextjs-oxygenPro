@@ -83,11 +83,11 @@ export default function Home({ topics }) {
           <Link href="/" passHref={true}>
             <Button
               size="lg"
-              bg="yellow.400"
+              
               fontWeight="bold"
-              color="black"
-              colorScheme="facebook"
+              colorScheme="orange"
               borderRadius="1.5rem"
+              transition="all ease 0.5s"
             >
               Get Started 💨
             </Button>

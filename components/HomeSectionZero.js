@@ -31,8 +31,7 @@ function HomeSectionZero() {
           fontWeight="bold"
           m={2}
           align="center"
-          bgClip="text"
-          bgGradient="linear(to-r, #8BC6EC ,#9599E2  )"
+          
         >
           We connect people from every corner of the world.
         </Text>
