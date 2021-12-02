@@ -53,11 +53,12 @@ export default function HomeSectionTwo() {
           fontSize={["3xl", "4xl", "5xl", "6xl"]}
           fontWeight="bold"
           m={2}
+          mx={5}
           align="center"
         >
           Speed up your revision process.
         </Text>
-        <Text fontSize={["xs", "sm", "md", "xl"]} m={2} align="center">
+        <Text fontSize={["xs", "sm", "md", "xl"]} my={2} mx={5} align="center">
           Oxygen Pro is designed for pharmacy students, trainee pharmacists and
           pharmacists to look up medication and treatment information in a
           convenient way.
@@ -85,7 +86,8 @@ export default function HomeSectionTwo() {
                     fontSize="5xl"
                     color="teal.400"
                     bgClip="text"
-                    bgGradient="linear(to-t, blue.500, blue.400)"
+                    bgGradient="linear(to-r, gray.400, yellow.400, pink.300)"
+                    flexWrap="wrap"
                   >
                     {content.fee}
                   </Text>
@@ -101,7 +103,7 @@ export default function HomeSectionTwo() {
                     })}
                     {content.advancedFeatures.map((feature, i) => {
                       return (
-                        <Text color="blue.400" fontSize="md" my={2} key={i}>
+                        <Text fontSize="md" my={2} key={i}>
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>
@@ -109,7 +111,7 @@ export default function HomeSectionTwo() {
                     })}
                     {content.proFeatures.map((feature, i) => {
                       return (
-                        <Text color="green.400" fontSize="md" my={2} key={i}>
+                        <Text fontSize="md" my={2} key={i}>
                           <CheckCircleIcon mr={3} />
                           {feature}
                         </Text>

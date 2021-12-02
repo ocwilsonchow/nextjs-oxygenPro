@@ -13,22 +13,44 @@ import {
   Divider,
   Center,
 } from "@chakra-ui/react";
-import { createUserWithEmailAndPassword, getAuth, auth} from "firebase/auth";
-
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
 function SignUp() {
   const cardColor = useColorModeValue("white", "gray.700");
+
+  const [error, setError] = useState("");
+  const [errorCode, setErrorCode] = useState("");
+
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerConfirmPassword, setRegisterConfirmPassword] = useState("");
 
-
   const register = async () => {
+    if (registerPassword !== registerConfirmPassword) {
+      return setError("Opps! Password do not match 😬");
+    }
+
     try {
-      const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-      console.log(user)
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      sendEmailVerification(auth.currentUser);
+      setError("");
+      setErrorCode("");
     } catch (error) {
-      console.log(error.message);
+      const errorCode = error.code;
+      setErrorCode(errorCode);
+      console.log(error);
+      return setError("Opps! Failed to create an account because");
     }
   };
 
@@ -76,7 +98,15 @@ function SignUp() {
             }}
           />
         </FormControl>
-        <Button mb={5} onClick={register}>Create account</Button>
+        <Button mb={5} onClick={register}>
+          Create account
+        </Button>
+        {error && (
+          <Flex p={5} bg="teal.800">
+            {error}
+            {errorCode}
+          </Flex>
+        )}
         <Divider />
         <Box mt={5}>Already have an account? Log in to Oxygen</Box>
       </Flex>
