@@ -85,9 +85,11 @@ export default function Home({ topics }) {
               size="lg"
               
               fontWeight="bold"
-              colorScheme="orange"
+              bg="blue.500"
+              color="white"
               borderRadius="1.5rem"
               transition="all ease 0.5s"
+              colorScheme="whatsapp"
             >
               Get Started 💨
             </Button>

@@ -30,16 +30,16 @@ function SignIn() {
           Sign In
         </Text>
         <FormControl id="email" mb={5}>
-          <FormLabel>Email address</FormLabel>
-          <Input type="email" />
+        <FormLabel>Email address</FormLabel>
+          <Input type="email" placeholder="Email" />
         </FormControl>
         <FormControl id="password" mb={5}>
           <FormLabel>Password</FormLabel>
-          <Input type="password" />
+          <Input type="password" placeholder="Password"/>
         </FormControl>
         <FormControl id="confirm-password" mb={5}>
           <FormLabel>Confirm Password</FormLabel>
-          <Input type="password" />
+          <Input type="password" placeholder="Password"/>
         </FormControl>
         <Button mb={5}>Sign In</Button>
         <Divider />
