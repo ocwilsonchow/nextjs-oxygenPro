@@ -43,10 +43,8 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 
-
 function CommentsForm({ topic }) {
   const cardColor = useColorModeValue("gray.200", "gray.700");
-  const borderColor = useColorModeValue("gray.300", "gray.700");
 
   useEffect(() => {
     const collectionRef = collection(db, "comments");
@@ -105,22 +103,20 @@ function CommentsForm({ topic }) {
     return getComments();
   };
 
+  const borderColor = useColorModeValue("gray.300", "gray.600");
+
   return (
     <Flex justifyContent="space-between" w="100%" flexWrap="wrap">
       <Flex
         flexDir="column"
         my={2}
-        w={["100%", "100%", "100%", "50%"]}
-        p={[1, 1, 2, 2]}
-        pr={[0, 0, 0, 10]}
-       
+        w={["100%", "100%", "100%", "48%"]}
+        borderRadius="0.5rem"
       >
-        <Text fontWeight="bold" fontSize="xl" mb={2}>
+        <Text fontWeight="bold" fontSize="xl" my={2}>
           Your Comments
         </Text>
-        <Flex mb={3} justifyContent="space-between">
-        
-        </Flex>
+        <Flex mb={3} justifyContent="space-between"></Flex>
         <FormControl isRequired>
           <FormLabel fontWeight="bold">Your Name</FormLabel>
           <Input
@@ -129,16 +125,29 @@ function CommentsForm({ topic }) {
             onChange={(e) => setNewUserName(e.target.value)}
             mb={3}
             autoComplete="off"
+            borderColor={borderColor}
           />
           <FormLabel fontWeight="bold">Your Thoughts</FormLabel>
           <Textarea
             value={newComment}
             placeholder="What's on your mind?"
             onChange={(e) => setNewComment(e.target.value)}
+            borderColor={borderColor}
           />
-          <Flex flexDir="column" w="100%">
+          <Flex
+            flexDir="column"
+            justifyContent="center"
+            alignItems="center"
+            w="100%"
+          >
             {error !== "" && (
-              <Alert mt={3} status="error" bg="tomato" fontSize="sm">
+              <Alert
+                mt={3}
+                status="error"
+                bg="gray.700"
+                color="white"
+                fontSize="sm"
+              >
                 <AlertIcon />
                 <AlertDescription>{error}</AlertDescription>
                 <CloseButton
@@ -176,6 +185,7 @@ function CommentsForm({ topic }) {
                 setNewComment("");
                 setNewUserName("");
               }}
+              colorScheme="facebook"
             >
               Submit
             </Button>
@@ -194,7 +204,6 @@ function CommentsForm({ topic }) {
           Forum
         </Text>
         {comments.map((comment, index) => {
-          
           return (
             <Flex
               mb={4}
@@ -203,12 +212,13 @@ function CommentsForm({ topic }) {
               justifyContent="center"
               alignItems="center"
               bg={cardColor}
-              borderRadius="0.5rem"
               py={2}
               px={5}
+              borderLeft="0.5rem solid lightBlue"
+              borderRadius="0.5rem"
             >
               <Avatar name={comment.username}>
-                <AvatarBadge boxSize="1.25em" bg="blue.500"   />
+                <AvatarBadge boxSize="1.25em" bg="blue.500" />
               </Avatar>
               <Flex flexDir="column" w="100%" ml={2} p={2}>
                 <Text fontWeight="bold">{comment.username}</Text>
@@ -221,7 +231,7 @@ function CommentsForm({ topic }) {
                   fontSize="xs"
                   fontFamily="mono"
                 >
-                  Topic: {comment.topic}, {comment.timestamp.toDate().toDateString()}
+                  Topic: {comment.topic},{" "}
                 </Text>
               </Flex>
             </Flex>
