@@ -70,33 +70,47 @@ function SignIn() {
     <Flex flexDir="column" justifyContent="center" alignItems="center" p={5}>
       <Flex
         p={10}
-        bg={cardColor}
+       
         w={["100%", "80%", "400px", "400px"]}
-        borderRadius="1rem"
+     
         flexDir="column"
-        boxShadow=" rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;"
       >
         <Text fontWeight="bold" fontSize="4xl" align="center" mb={8}>
           Sign In
         </Text>
         <FormControl id="email" mb={5}>
           <FormLabel>Email address</FormLabel>
-          <Input type="email" placeholder="Email" value={loginEmail} onChange={(e)=>{
-            setLoginEmail(e.target.value)
-          }}/>
+          <Input
+            type="email"
+            placeholder="Email"
+            value={loginEmail}
+            onChange={(e) => {
+              setLoginEmail(e.target.value);
+            }}
+          />
         </FormControl>
         <FormControl id="password" mb={5}>
           <FormLabel>Password</FormLabel>
-          <Input type="password" placeholder="Password" value={loginPassword} onChange={(e)=>{
-            setLoginPassword(e.target.value)} }/>
+          <Input
+            type="password"
+            placeholder="Password"
+            value={loginPassword}
+            onChange={(e) => {
+              setLoginPassword(e.target.value);
+            }}
+          />
         </FormControl>
         {error && (
-          <Text color="red.500">
-            {error}{""}{errorCode} 😬
+          <Text p={2} bg="tomato" my={2}>
+            {error}
+            {""}
+            {errorCode} 😬
           </Text>
         )}
 
-        <Button mb={5} onClick={login}>Sign In</Button>
+        <Button mb={5} onClick={login}>
+          Sign In
+        </Button>
         <Divider />
         <Box mt={5}>Have not got an account? Sign up now</Box>
       </Flex>

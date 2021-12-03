@@ -13,6 +13,11 @@ import {
   Button,
   Divider,
   Center,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
 } from "@chakra-ui/react";
 import { getPosts, getTopics } from "../services";
 import {
@@ -24,6 +29,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { auth } from "../firebase";
+import Footer from "../components/Footer";
 
 import SignUp from "../components/SignUp";
 import SignIn from "../components/SignIn";
@@ -52,8 +58,6 @@ export default function Authentication({ topics }) {
     });
   }, [user]);
 
-  console.log(user, email, emailVerified);
-
   const login = async () => {};
 
   const logout = async () => {};
@@ -61,9 +65,30 @@ export default function Authentication({ topics }) {
   return (
     <>
       <Header topics={topics} />
-      {user === null && <SignUp />}
-      {user === null && <SignIn />}
-      {user !==null && email!==undefined && <SignOut />}
+      <Flex justifyContent="center" w="100%" mb={10} h="80vh">
+        <Tabs
+        p={2}
+          bg={cardColor}
+          size="md"
+          variant='enclosed'
+          borderRadius="0.5rem"
+          boxShadow=" rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;"
+          isFitted
+       >
+          <TabList>
+            <Tab  fontWeight="bold">Sign In</Tab>
+            <Tab  fontWeight="bold">Create Account</Tab>
+          </TabList>
+
+          <TabPanels>
+            <TabPanel>{user === null && <SignIn />}</TabPanel>
+            <TabPanel>{user === null && <SignUp />}</TabPanel>
+          </TabPanels>
+        </Tabs>
+
+        {user !== null && email !== undefined && <SignOut />}
+      </Flex>
+      <Footer />
     </>
   );
 }

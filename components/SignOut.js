@@ -51,7 +51,7 @@ function SignOut() {
     });
   }, [user]);
 
-  console.log(user, email, emailVerified);
+
 
   return (
     <Flex flexDir="column" justifyContent="center" alignItems="center" p={5}>
