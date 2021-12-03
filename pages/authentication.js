@@ -63,7 +63,7 @@ export default function Authentication({ topics }) {
       <Header topics={topics} />
       {user === null && <SignUp />}
       {user === null && <SignIn />}
-      {user !==null && <SignOut />}
+      {user !==null && email!==undefined && <SignOut />}
     </>
   );
 }
