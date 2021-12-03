@@ -36,7 +36,7 @@ import SignIn from "../components/SignIn";
 import SignOut from "../components/SignOut";
 
 export default function Authentication({ topics }) {
-  const cardColor = useColorModeValue("white", "gray.700");
+  const cardColor = useColorModeValue("white", "gray.900");
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -65,19 +65,19 @@ export default function Authentication({ topics }) {
   return (
     <>
       <Header topics={topics} />
-      <Flex justifyContent="center" w="100%" mb={10} h="80vh">
+      <Flex justifyContent="center" w="100%" mb={20} >
         <Tabs
-        p={2}
+          p={3}
           bg={cardColor}
           size="md"
-          variant='enclosed'
+          variant="enclosed"
           borderRadius="0.5rem"
-          boxShadow=" rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;"
+          boxShadow="rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;"
           isFitted
-       >
+        >
           <TabList>
-            <Tab  fontWeight="bold">Sign In</Tab>
-            <Tab  fontWeight="bold">Create Account</Tab>
+            <Tab fontWeight="bold">Sign In</Tab>
+            <Tab fontWeight="bold">Create Account</Tab>
           </TabList>
 
           <TabPanels>

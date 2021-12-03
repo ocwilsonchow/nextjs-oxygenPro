@@ -56,13 +56,7 @@ function SignUp() {
 
   return (
     <Flex flexDir="column" justifyContent="center" alignItems="center" p={5}>
-      <Flex
-        p={10}
-        bg={cardColor}
-        w={["100%", "80%", "400px", "400px"]}
-       
-        flexDir="column"
-      >
+      <Flex p={10} w={["100%", "80%", "400px", "400px"]} flexDir="column">
         <Text fontWeight="bold" fontSize="4xl" align="center" mb={8}>
           Create Account
         </Text>
@@ -102,7 +96,8 @@ function SignUp() {
         </Button>
         {error && (
           <Flex p={5} bg="teal.800" color="white">
-            {error}{""}
+            {error}
+            {""}
             {errorCode} 😉
           </Flex>
         )}
