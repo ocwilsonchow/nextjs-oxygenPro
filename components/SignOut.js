@@ -57,6 +57,8 @@ function SignOut() {
         borderRadius="1rem"
         flexDir="column"
         h="80vh"
+        boxShadow="rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;"
+
       >
         <Text fontWeight="bold" fontSize="4xl" align="center" mb={4}>
           Welcome back! {displayName}
@@ -66,19 +68,19 @@ function SignOut() {
         </Text>
 
         {emailVerified == false && (
-          <Flex p={4} bg={cardTwoColor} my={1} fontWeight="bold">
+          <Flex p={4} bg="tomato" my={1} fontWeight="bold">
             Your email address has not verified, check your email and verify by
             clicking the link provided 😉
           </Flex>
         )}
         <Flex bg={cardTwoColor} flexDir="column" my={1} p={4}>
-          <Text fontSize="sm" fontWeight="bold">
+          <Text  fontWeight="bold">
             Your registered email: {email}
           </Text>
         </Flex>
 
         <Flex bg={cardTwoColor} flexDir="column" my={1} p={4}>
-          <Text fontSize="sm" fontWeight="bold"> 
+          <Text  fontWeight="bold"> 
             Your username: 
           </Text>
         </Flex>
