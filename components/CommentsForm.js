@@ -190,7 +190,7 @@ function CommentsForm({ topic }) {
         w={["100%", "100%", "100%", "50%"]}
         p={[1, 1, 2, 2]}
       >
-        <Text fontWeight="bold" mb={2} fontSize="xl">
+        <Text fontWeight="bold" mb={5} fontSize="xl">
           Forum
         </Text>
         {comments.map((comment, index) => {
@@ -207,8 +207,8 @@ function CommentsForm({ topic }) {
               py={2}
               px={5}
             >
-              <Avatar>
-                <AvatarBadge boxSize="1.25em" bg="green.500" />
+              <Avatar name={comment.username}>
+                <AvatarBadge boxSize="1.25em" bg="blue.500"   />
               </Avatar>
               <Flex flexDir="column" w="100%" ml={2} p={2}>
                 <Text fontWeight="bold">{comment.username}</Text>
