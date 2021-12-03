@@ -42,16 +42,11 @@ import {
   orderBy,
   serverTimestamp,
 } from "firebase/firestore";
-import moment from "moment";
+
 
 function CommentsForm({ topic }) {
   const cardColor = useColorModeValue("gray.200", "gray.700");
   const borderColor = useColorModeValue("gray.300", "gray.700");
-  const [dateState, setDateState] = useState(new Date());
-
-  useEffect(() => {
-    setInterval(() => setDateState(new Date()), 10000);
-  }, []);
 
   useEffect(() => {
     const collectionRef = collection(db, "comments");
@@ -118,22 +113,16 @@ function CommentsForm({ topic }) {
         w={["100%", "100%", "100%", "50%"]}
         p={[1, 1, 2, 2]}
         pr={[0, 0, 0, 10]}
+       
       >
         <Text fontWeight="bold" fontSize="xl" mb={2}>
           Your Comments
         </Text>
         <Flex mb={3} justifyContent="space-between">
-          <Code mr={2} bg="none">
-            🗓{" "}
-            {dateState.toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            })}
-          </Code>
+        
         </Flex>
         <FormControl isRequired>
-          <FormLabel fontWeight="bold">Your name</FormLabel>
+          <FormLabel fontWeight="bold">Your Name</FormLabel>
           <Input
             placeholder="Your name"
             value={newUserName}
@@ -141,7 +130,7 @@ function CommentsForm({ topic }) {
             mb={3}
             autoComplete="off"
           />
-          <FormLabel fontWeight="bold">Your thoughts</FormLabel>
+          <FormLabel fontWeight="bold">Your Thoughts</FormLabel>
           <Textarea
             value={newComment}
             placeholder="What's on your mind?"
@@ -149,7 +138,7 @@ function CommentsForm({ topic }) {
           />
           <Flex flexDir="column" w="100%">
             {error !== "" && (
-              <Alert mt={3} status="error" bg="teal.500" fontSize="sm">
+              <Alert mt={3} status="error" bg="tomato" fontSize="sm">
                 <AlertIcon />
                 <AlertDescription>{error}</AlertDescription>
                 <CloseButton
