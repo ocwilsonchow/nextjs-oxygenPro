@@ -68,7 +68,7 @@ function SignOut() {
         </Text>
 
         {emailVerified == false && (
-          <Flex p={4} bg="tomato" my={1} fontWeight="bold">
+          <Flex p={4} bg="tomato" my={4} fontWeight="bold">
             Your email address has not verified, check your email and verify by
             clicking the link provided 😉
           </Flex>
