@@ -66,7 +66,7 @@ export default function Authentication({ topics }) {
     <>
       <Header topics={topics} />
       <Flex justifyContent="center" w="100%" mb={20} >
-        <Tabs
+      {user==null &&  <Tabs
           p={3}
           bg={cardColor}
           size="md"
@@ -81,10 +81,10 @@ export default function Authentication({ topics }) {
           </TabList>
 
           <TabPanels>
-            <TabPanel>{user === null && <SignIn />}</TabPanel>
-            <TabPanel>{user === null && <SignUp />}</TabPanel>
+            <TabPanel><SignIn /></TabPanel>
+            <TabPanel><SignUp /></TabPanel>
           </TabPanels>
-        </Tabs>
+        </Tabs>}
 
         {user !== null && email !== undefined && <SignOut />}
       </Flex>
