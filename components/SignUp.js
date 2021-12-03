@@ -50,7 +50,7 @@ function SignUp() {
       const errorCode = error.code;
       setErrorCode(errorCode);
       console.log(error);
-      return setError("Opps! Failed to create an account because");
+      return setError("Opps! Failed to create an account because ");
     }
   };
 
@@ -59,7 +59,7 @@ function SignUp() {
       <Flex
         p={10}
         bg={cardColor}
-        w={["100%", "80%", "400px", "450px"]}
+        w={["100%", "80%", "400px", "400px"]}
         borderRadius="1rem"
         flexDir="column"
         boxShadow=" rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;"
@@ -102,9 +102,9 @@ function SignUp() {
           Create account
         </Button>
         {error && (
-          <Flex p={5} bg="teal.800">
-            {error}
-            {errorCode}
+          <Flex p={5} bg="teal.800" color="white">
+            {error}{""}
+            {errorCode} 😉
           </Flex>
         )}
         <Divider />

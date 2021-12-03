@@ -46,6 +46,7 @@ function Dynamic(params) {
           py={2}
           px={2}
           alignItems="center"
+          flexWrap="wrap"
         >
           <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
