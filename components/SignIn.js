@@ -92,7 +92,7 @@ function SignIn() {
         </FormControl>
         {error && (
           <Text color="red.500">
-            {error} "{errorCode}" 😬
+            {error}{""}{errorCode} 😬
           </Text>
         )}
 
