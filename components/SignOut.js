@@ -33,9 +33,11 @@ function SignOut() {
 
   const logout = async () => {
     await signOut(auth);
-    setEmail(undefined);
-    setEmailVerified();
+    setEmail();
+    setEmailVerified()
+   
   };
+
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       if (user !== null) {
@@ -49,7 +51,7 @@ function SignOut() {
     });
   }, [user]);
 
-  console.log(emailVerified);
+  console.log(user, email, emailVerified);
 
   return (
     <Flex flexDir="column" justifyContent="center" alignItems="center" p={5}>

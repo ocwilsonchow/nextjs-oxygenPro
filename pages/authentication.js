@@ -39,8 +39,6 @@ export default function Authentication({ topics }) {
   const [emailVerified, setEmailVerified] = useState();
   const [displayName, setDisplayName] = useState();
 
- 
-
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       if (user !== null) {
@@ -54,7 +52,7 @@ export default function Authentication({ topics }) {
     });
   }, [user]);
 
-  console.log(user, email, emailVerified)
+  console.log(user, email, emailVerified);
 
   const login = async () => {};
 
@@ -63,9 +61,9 @@ export default function Authentication({ topics }) {
   return (
     <>
       <Header topics={topics} />
-      {user === null && <SignUp/>}
-     {user === null && <SignIn />}
-     {user !== null && <SignOut />}
+      {user === null && <SignUp />}
+      {user === null && <SignIn />}
+      {user !==null && <SignOut />}
     </>
   );
 }
