@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import {
   Flex,
   Text,
@@ -24,7 +25,7 @@ import {
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
-  Code
+  Code,
 } from "@chakra-ui/react";
 
 import { db } from "../firebase";
@@ -41,6 +42,7 @@ import {
   orderBy,
   serverTimestamp,
 } from "firebase/firestore";
+import moment from "moment";
 
 function CommentsForm({ topic }) {
   const cardColor = useColorModeValue("gray.200", "gray.700");
@@ -48,7 +50,7 @@ function CommentsForm({ topic }) {
   const [dateState, setDateState] = useState(new Date());
 
   useEffect(() => {
-    setInterval(() => setDateState(new Date()), 1000);
+    setInterval(() => setDateState(new Date()), 10000);
   }, []);
 
   useEffect(() => {
@@ -65,14 +67,11 @@ function CommentsForm({ topic }) {
     return getComments();
   }, []);
 
-
   const [newUserName, setNewUserName] = useState("");
   const [newComment, setNewComment] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState();
   const [comments, setComments] = useState([]);
-
-
 
   const createComment = async () => {
     if (newComment === "" || newUserName === "") {
@@ -84,6 +83,7 @@ function CommentsForm({ topic }) {
         comment: newComment,
         username: newUserName,
         timestamp: serverTimestamp(),
+        topic: topic,
       });
       setSuccess(true);
     } catch (error) {
@@ -110,8 +110,6 @@ function CommentsForm({ topic }) {
     return getComments();
   };
 
-
-
   return (
     <Flex justifyContent="space-between" w="100%" flexWrap="wrap">
       <Flex
@@ -125,22 +123,12 @@ function CommentsForm({ topic }) {
           Your Comments
         </Text>
         <Flex mb={3} justifyContent="space-between">
-          <Code mr={2} >
+          <Code mr={2} bg="none">
             🗓{" "}
             {dateState.toLocaleDateString("en-GB", {
               day: "numeric",
               month: "short",
               year: "numeric",
-            })}
-          </Code>
-
-          <Code>
-            ⏰{" "}
-            {dateState.toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              second: "numeric",
-              hour12: false,
             })}
           </Code>
         </Flex>
@@ -214,13 +202,14 @@ function CommentsForm({ topic }) {
         p={[1, 1, 2, 2]}
       >
         <Text fontWeight="bold" mb={2} fontSize="xl">
-          {topic} Forum
+          Forum
         </Text>
         {comments.map((comment, index) => {
+          
           return (
             <Flex
               mb={4}
-              key={index}
+              key={comment.id}
               w="100%"
               justifyContent="center"
               alignItems="center"
@@ -236,6 +225,14 @@ function CommentsForm({ topic }) {
                 <Text fontWeight="bold">{comment.username}</Text>
                 <Text fontWeight="light" fontFamily="mono">
                   {comment.comment}
+                </Text>
+                <Text
+                  opacity="0.3"
+                  fontWeight="light"
+                  fontSize="xs"
+                  fontFamily="mono"
+                >
+                  Topic: {comment.topic}, {comment.timestamp.toDate().toDateString()}
                 </Text>
               </Flex>
             </Flex>
