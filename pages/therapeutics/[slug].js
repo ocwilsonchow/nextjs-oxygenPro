@@ -46,7 +46,7 @@ function Dynamic(params) {
           py={2}
           px={2}
           alignItems="center"
-          flexWrap="wrap"
+          
         >
           <BreadcrumbItem fontSize="xs">
             <BreadcrumbLink href="/therapeutics">Home</BreadcrumbLink>
@@ -60,7 +60,7 @@ function Dynamic(params) {
         </Breadcrumb>
         <Divider my={1} />
         <Tabs>
-          <TabList>
+          <TabList  flexWrap="wrap">
             <Tab fontWeight="bold" fontSize="sm">
               Overview
             </Tab>

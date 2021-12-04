@@ -12,13 +12,17 @@ import {
   Button,
   Divider,
   Center,
+  Stack,
 } from "@chakra-ui/react";
 import { onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
+import { Radio, RadioGroup } from "@chakra-ui/react";
 
 function SignOut() {
   const cardColor = useColorModeValue("white", "gray.900");
   const cardTwoColor = useColorModeValue("gray.300", "gray.800");
+
+  const [value, setValue] = React.useState("1");
 
   const [user, setUser] = useState({});
   const [email, setEmail] = useState();
@@ -26,7 +30,6 @@ function SignOut() {
   const [displayName, setDisplayName] = useState();
   const [username, setUsername] = useState();
   const [message, setMessage] = useState();
- 
 
   const logout = async () => {
     await signOut(auth);
@@ -58,7 +61,6 @@ function SignOut() {
         flexDir="column"
         h="80vh"
         boxShadow="rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;"
-
       >
         <Text fontWeight="bold" fontSize="4xl" align="center" mb={4}>
           Welcome back! {displayName}
@@ -66,29 +68,31 @@ function SignOut() {
         <Text fontWeight="bold" fontSize="42xl" align="center" mb={4}>
           You are logged in 😉
         </Text>
-
         {emailVerified == false && (
-          <Flex p={4} bg="tomato" my={4} fontWeight="bold">
+          <Flex p={4} bg="black" color="white" my={4} fontWeight="bold">
             Your email address has not verified, check your email and verify by
             clicking the link provided 😉
           </Flex>
         )}
         <Flex bg={cardTwoColor} flexDir="column" my={1} p={4}>
-          <Text  fontWeight="bold">
-            Your registered email: {email}
-          </Text>
+          <Text fontWeight="bold">Your registered email: {email}</Text>
         </Flex>
-
         <Flex bg={cardTwoColor} flexDir="column" my={1} p={4}>
-          <Text  fontWeight="bold"> 
-            Your username: 
-          </Text>
+          <Text fontWeight="bold">Your username:</Text>
         </Flex>
-
         <Button my={5} onClick={logout}>
           Sign out
         </Button>
-        <Divider />
+
+        <RadioGroup onChange={setValue} value={value}>
+          <Stack direction="row">
+            <Radio value="1">First</Radio>
+            <Radio value="2">Second</Radio>
+            <Radio value="3">Third</Radio>
+          </Stack>
+        </RadioGroup>
+
+        <Divider my={5}/>
       </Flex>
     </Flex>
   );
